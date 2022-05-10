@@ -6,10 +6,10 @@ This is a booking system for semester 2 project.
 
 ### RBS-num
 
-    ### RBS-num-impl
+ ### RBS-num-impl
 
-    This is a normal implementation
+  This is text for impl branch
 
-    ### RBS-num-Bug-Fix
+ ### RBS-num-Bug-Fix
     
-    This is a template for bug fix
+  This is text for bug fix
