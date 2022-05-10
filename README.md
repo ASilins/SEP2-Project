@@ -4,12 +4,6 @@ This is a booking system for semester 2 project.
 
 ## Changelog
 
-### RBS-num
+### RBS-num-branchName
 
- ### RBS-num-impl
-
-  This is text for impl branch
-
- ### RBS-num-Bug-Fix
-    
-  This is text for bug fix
+This is dummy text
