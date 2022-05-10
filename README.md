@@ -4,6 +4,10 @@ This is a booking system for semester 2 project.
 
 ## Changelog
 
-### Test
+### RBS-30
 
-#### Sub Test
+#### RBS-30-impl
+
+I fucked up
+
+### RBS-30-Bug-Fix
