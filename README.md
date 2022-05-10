@@ -4,10 +4,12 @@ This is a booking system for semester 2 project.
 
 ## Changelog
 
-### RBS-30
+  ### RBS-%
 
-#### RBS-30-impl
+    #### RBS-%-impl
 
-I fucked up
+      This is a normal implementation
 
-### RBS-30-Bug-Fix
+    #### RBS-%-Bug-Fix
+    
+      This is a template for bug fix
