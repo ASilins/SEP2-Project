@@ -51,3 +51,7 @@ This is dummy text
 ### RBS-48
 
 Made server classes and wrote javadocs
+
+### RBS-47
+
+Added few classes in the server and wrote javadocs
