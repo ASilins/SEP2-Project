@@ -3,7 +3,9 @@ package com.uno.server.networking;
 import com.uno.database.Database;
 import com.uno.database.DatabaseImpl;
 import com.uno.server.model.MenuItemsHandlerImpl;
+import com.uno.server.model.OrderHandlerImpl;
 import com.uno.shared.networking.MenuItemsServer;
+import com.uno.shared.networking.OrderServer;
 import com.uno.shared.networking.Server;
 
 import java.rmi.AlreadyBoundException;
@@ -31,7 +33,7 @@ public class ServerImpl implements Server {
   /**
    * This class adds the object to a registry and sets the name as well
    * the object that is registered.
-   * @throws RemoteException If not possible to create and bind registry
+   * @throws RemoteException If not possible to create and bind registry.
    * @throws AlreadyBoundException If there is a registry with name server on
    * that port.
    */
@@ -41,11 +43,20 @@ public class ServerImpl implements Server {
   }
 
   /**
-   * Returns MenuItemServer object
-   * @return MenuItemServer object
+   * Returns MenuItemServer object.
+   * @return MenuItemServer object.
    */
   @Override
   public MenuItemsServer getMenuItemsServer() {
     return new MenuItemsServerImpl(new MenuItemsHandlerImpl(new DatabaseImpl()));
+  }
+
+  /**
+   * Returns OrderServer object.
+   * @return OrderServer object.
+   */
+  @Override
+  public OrderServer getOrderServer() {
+    return new OrderServerImpl(new OrderHandlerImpl(new DatabaseImpl()));
   }
 }
