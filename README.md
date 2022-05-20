@@ -47,3 +47,7 @@ added in project structure for the GUI to run
 ### RBS-num-branchName
 
 This is dummy text
+
+### RBS-48
+
+Made server classes and wrote javadocs
