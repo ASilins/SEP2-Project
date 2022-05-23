@@ -56,7 +56,17 @@ Made server classes and wrote javadocs
 
 Added few classes in the server and wrote javadocs
 
+### RBS-46
+
+Created classes that send and take information from 
+the database.
+There is a singleton class that keeps information about the 
+connection to the database. Used state pattern for sending 
+and receiving information from the database. Using state 
+patterns allows the use of one interface and smaller code.
+
 ### RBS-50
 
 Created server side for taking Order objects from the 
 Database to the client
+

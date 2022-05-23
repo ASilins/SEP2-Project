@@ -28,6 +28,6 @@ public class MenuItemsHandlerImpl implements MenuItemsHandler {
    */
   @Override
   public ArrayList<MenuItem> getMenuItems() {
-    return null;
+    return database.getMenuItems();
   }
 }

@@ -28,7 +28,7 @@ public class OrderHandlerImpl implements OrderHandler{
    */
   @Override
   public void createOrder(Order order) {
-
+    database.createOrder(order);
   }
 
   /**
