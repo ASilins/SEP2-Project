@@ -47,3 +47,11 @@ added in project structure for the GUI to run
 ### RBS-num-branchName
 
 This is dummy text
+
+### RBS-17-45
+
+Created client side for handling an order
+
+### RBS-17-49
+
+Created client side that handles retrieving menu items from the server
