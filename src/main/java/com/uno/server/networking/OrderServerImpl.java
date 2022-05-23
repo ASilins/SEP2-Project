@@ -6,6 +6,7 @@ import com.uno.shared.transferobjects.Order;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 /**
  * This class implements OrderServer Interface. This server object handles
@@ -39,5 +40,15 @@ public class OrderServerImpl implements OrderServer {
   @Override
   public void createOrder(Order order) throws RemoteException {
     handler.createOrder(order);
+  }
+
+  /**
+   * Method that return a list of Orders from the database
+   * @return A list of Order objects
+   * @throws RemoteException If not possible to return
+   */
+  @Override
+  public ArrayList<Order> getOrders() throws RemoteException {
+    return handler.getOrders();
   }
 }
