@@ -3,6 +3,8 @@ package com.uno.server.model;
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Order;
 
+import java.util.ArrayList;
+
 /**
  * A class that handles Order objects from the database to the client.
  * @author Arturs Silins
@@ -27,5 +29,14 @@ public class OrderHandlerImpl implements OrderHandler{
   @Override
   public void createOrder(Order order) {
 
+  }
+
+  /**
+   * Method that gets all orders from the database
+   * @return A list of order objects
+   */
+  @Override
+  public ArrayList<Order> getOrders() {
+    return null;
   }
 }

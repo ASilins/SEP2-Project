@@ -4,6 +4,7 @@ import com.uno.shared.transferobjects.Order;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 /**
  * An interface that creates order object in database.
@@ -18,4 +19,11 @@ public interface OrderServer extends Remote {
    * @throws RemoteException If it is not possible to receive the object.
    */
   void createOrder(Order order) throws RemoteException;
+
+  /**
+   * Method that gets all orders from the database.
+   * @return a list of Order Objects
+   * @throws RemoteException If it's not possible to call the method
+   */
+  ArrayList<Order> getOrders() throws RemoteException;
 }

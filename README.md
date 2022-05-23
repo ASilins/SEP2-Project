@@ -55,3 +55,8 @@ Made server classes and wrote javadocs
 ### RBS-47
 
 Added few classes in the server and wrote javadocs
+
+### RBS-50
+
+Created server side for taking Order objects from the 
+Database to the client

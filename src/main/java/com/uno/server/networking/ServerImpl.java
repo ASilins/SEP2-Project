@@ -1,6 +1,7 @@
 package com.uno.server.networking;
 
 import com.uno.database.Database;
+import com.uno.database.DatabaseHandler;
 import com.uno.database.DatabaseImpl;
 import com.uno.server.model.MenuItemsHandlerImpl;
 import com.uno.server.model.OrderHandlerImpl;
