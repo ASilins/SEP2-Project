@@ -48,6 +48,14 @@ added in project structure for the GUI to run
 
 This is dummy text
 
+### RBS-17-45
+
+Created client side for handling an order
+
+### RBS-17-49
+
+Created client side that handles retrieving menu items from the server
+
 ### RBS-48
 
 Made server classes and wrote javadocs
@@ -69,4 +77,3 @@ patterns allows the use of one interface and smaller code.
 
 Created server side for taking Order objects from the 
 Database to the client
-
