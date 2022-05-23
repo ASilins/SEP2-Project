@@ -2,6 +2,8 @@ package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Order;
 
+import java.util.ArrayList;
+
 /**
  * An interface that is used to send and receive Order objects
  * using these methods.
@@ -15,4 +17,10 @@ public interface OrderHandler {
    * @param order The object that will be sent to the database.
    */
   void createOrder(Order order);
+
+  /**
+   * Returns a list of order objects from the database
+   * @return A list of Order Objects
+   */
+  ArrayList<Order> getOrders();
 }
