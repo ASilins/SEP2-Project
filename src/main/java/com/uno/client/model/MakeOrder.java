@@ -2,6 +2,8 @@ package com.uno.client.model;
 
 import com.uno.shared.transferobjects.Order;
 
+import java.util.ArrayList;
+
 public interface MakeOrder {
 
     /**
@@ -10,4 +12,9 @@ public interface MakeOrder {
      */
     void createOrder(Order order);
 
+    /**
+     * A method that returns a list of order objects.
+     * @return A list of order objects
+     */
+    ArrayList<Order> getOrders();
 }

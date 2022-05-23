@@ -77,3 +77,7 @@ patterns allows the use of one interface and smaller code.
 
 Created server side for taking Order objects from the 
 Database to the client
+
+### RBS-52
+
+Added methods that take from the server a list of order items
