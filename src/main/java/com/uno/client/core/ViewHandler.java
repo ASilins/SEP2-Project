@@ -22,6 +22,42 @@ public class ViewHandler {
     openMenuScene();
   }
 
+public void openMenuScene(){
+    if(menuScene == null){
+      try{
+        Parent root = loadFXML("src/main/java/com/uno/client/view/menuItem/menu.fxml");
 
+        menuScene = new Scene(root);
+        stage.setTitle("Menu");
+      } catch(Exception e){
+        e.printStackTrace();
+      }
+    }
+  stage.setScene(menuScene);
+  stage.show();
+}
 
+  public void openOrderScene(){
+    if(orderScene == null){
+      try{
+        Parent root = loadFXML("src/main/java/com/uno/client/view/order/order.fxml");
+
+        orderScene = new Scene(root);
+        stage.setTitle("Order");
+      } catch(Exception e){
+        e.printStackTrace();
+      }
+    }
+    stage.setScene(orderScene);
+    stage.show();
+    }
+private Parent loadFXML (String path) throws IOException{
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource(path));
+    Parent root = loader.load();
+
+    ViewController ctrl =loader.getController();
+    ctrl.init(this, vmf);
+    return root;
+  }
 }
