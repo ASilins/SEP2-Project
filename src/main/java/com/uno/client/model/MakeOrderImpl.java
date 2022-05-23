@@ -4,6 +4,8 @@ import com.uno.client.networking.Client;
 import com.uno.client.networking.OrderClient;
 import com.uno.shared.transferobjects.Order;
 
+import java.util.ArrayList;
+
 public class MakeOrderImpl implements MakeOrder {
 
     private OrderClient orderClient;
@@ -24,6 +26,16 @@ public class MakeOrderImpl implements MakeOrder {
 
     public void createOrder(Order order){
         orderClient.createOrder(order);
+    }
+
+    /**
+     * A method that takes a list of order items from the
+     * server and returns them.
+     * @return A list of order objects.
+     */
+    @Override
+    public ArrayList<Order> getOrders() {
+        return orderClient.getOrders();
     }
 
 }
