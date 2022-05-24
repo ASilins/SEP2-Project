@@ -4,6 +4,12 @@ import com.uno.shared.transferobjects.MenuItem;
 
 import java.util.ArrayList;
 
+/**
+ * An interface for menu items client
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
+
 public interface MenuItemsClient {
 
     /**

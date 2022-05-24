@@ -6,6 +6,12 @@ import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/**
+ * A class that handles clients
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
+
 public class ClientImpl implements Client{
 
     private Server server;
