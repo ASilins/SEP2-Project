@@ -55,3 +55,29 @@ Created client side for handling an order
 ### RBS-17-49
 
 Created client side that handles retrieving menu items from the server
+
+### RBS-48
+
+Made server classes and wrote javadocs
+
+### RBS-47
+
+Added few classes in the server and wrote javadocs
+
+### RBS-46
+
+Created classes that send and take information from 
+the database.
+There is a singleton class that keeps information about the 
+connection to the database. Used state pattern for sending 
+and receiving information from the database. Using state 
+patterns allows the use of one interface and smaller code.
+
+### RBS-50
+
+Created server side for taking Order objects from the 
+Database to the client
+
+### RBS-52
+
+Added methods that take from the server a list of order items

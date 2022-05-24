@@ -7,6 +7,7 @@ import com.uno.shared.transferobjects.Order;
  * @author Ondrej Klimek
  * @version 0.1.0
  */
+import java.util.ArrayList;
 
 public class OrderClientImpl implements OrderClient{
 
@@ -29,5 +30,14 @@ public class OrderClientImpl implements OrderClient{
     @Override
     public void createOrder(Order order) {
         server.createOrder(order);
+    }
+
+    /**
+     * A method that takes from the server a list of order objects.
+     * @return A list of order objects.
+     */
+    @Override
+    public ArrayList<Order> getOrders() {
+        return server.getOrders();
     }
 }
