@@ -6,6 +6,12 @@ import com.uno.client.model.MenuItems;
 import com.uno.client.core.ClientFactory;
 import com.uno.client.model.MenuItemsImpl;
 
+/**
+ * A model factory class
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
+
 public class ModelFactory {
 
     private final ClientFactory clientFactory;

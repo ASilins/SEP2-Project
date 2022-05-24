@@ -4,6 +4,11 @@ import com.uno.client.networking.Client;
 import com.uno.client.networking.OrderClient;
 import com.uno.shared.transferobjects.Order;
 
+/**
+ * A class for making orders
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
 import java.util.ArrayList;
 
 public class MakeOrderImpl implements MakeOrder {

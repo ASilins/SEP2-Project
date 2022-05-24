@@ -2,6 +2,12 @@ package com.uno.client.model;
 
 import com.uno.shared.transferobjects.Order;
 
+/**
+ * An interface of a class for making orders
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
+
 import java.util.ArrayList;
 
 public interface MakeOrder {

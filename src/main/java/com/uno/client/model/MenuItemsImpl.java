@@ -6,6 +6,12 @@ import com.uno.shared.transferobjects.MenuItem;
 
 import java.util.ArrayList;
 
+/**
+ * A class for handling menu items
+ * @author Ondrej Klimek
+ * @version 0.1.0
+ */
+
 public class MenuItemsImpl implements MenuItems{
 
     private MenuItemsClient menuItemClient;
