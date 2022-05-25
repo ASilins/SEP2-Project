@@ -5,11 +5,13 @@ import com.uno.client.model.MakeOrderImpl;
 import com.uno.client.model.MenuItems;
 import com.uno.client.core.ClientFactory;
 import com.uno.client.model.MenuItemsImpl;
+import com.uno.client.model.Tables;
+import com.uno.client.model.TablesImpl;
 
 /**
  * A model factory class
- * @author Ondrej Klimek
- * @version 0.1.0
+ * @author Ondrej Klimek, Siddhartha Grasse
+ * @version 0.2.0
  */
 
 public class ModelFactory {
@@ -17,6 +19,7 @@ public class ModelFactory {
     private final ClientFactory clientFactory;
     private MakeOrder makeOrder;
     private MenuItems menuItems;
+    private Tables tables;
 
     /**
      * constructor for ModelFactory
@@ -52,5 +55,19 @@ public class ModelFactory {
 
         return menuItems;
     }
+
+    /**
+     * getter method for Tables
+     * @return returns an instance of Tables
+     */
+    public Tables getTables()
+    {
+        if(tables == null)
+        {
+            tables = new TablesImpl(clientFactory.getClient());
+        }
+        return tables;
+    }
+
 
 }

@@ -2,8 +2,8 @@ package com.uno.client.networking;
 
 /**
  * An interface of a class for handling clients
- * @author Ondrej Klimek
- * @version 0.1.0
+ * @author Ondrej Klimek, Siddhartha Grasse
+ * @version 0.2.0
  */
 
 public interface Client {
@@ -20,5 +20,12 @@ public interface Client {
      */
 
     MenuItemsClient getMenuItemsClient();
+
+    /**
+     * a method to retrieve table items from the server
+     * @return returns an arrayList of tables
+     */
+
+    TableClient getTableClient();
 
 }

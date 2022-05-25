@@ -8,8 +8,8 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  * A class that handles clients
- * @author Ondrej Klimek
- * @version 0.1.0
+ * @author Ondrej Klimek, Siddhartha Grasse
+ * @version 0.2.0
  */
 
 public class ClientImpl implements Client{
@@ -18,6 +18,7 @@ public class ClientImpl implements Client{
     private PropertyChangeSupport support;
     private MenuItemsClient mic;
     private OrderClient oc;
+    private TableClient tc;
 
     /**
      * constructor for ClientImpl
@@ -50,5 +51,15 @@ public class ClientImpl implements Client{
     @Override
     public MenuItemsClient getMenuItemsClient() {
         return this.mic;
+    }
+
+    /**
+     * get method to retrieve a TableClient
+     * @return a tableClient
+     */
+    @Override
+    public TableClient getTableClient() {
+
+        return this.tc;
     }
 }
