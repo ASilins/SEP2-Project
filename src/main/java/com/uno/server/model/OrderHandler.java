@@ -7,8 +7,8 @@ import java.util.ArrayList;
 /**
  * An interface that is used to send and receive Order objects
  * using these methods.
- * @author Arturs Silins
- * @version 0.1.0
+ * @author Arturs Silins, Maximillian Wallin
+ * @version 0.2.0
  */
 public interface OrderHandler {
 
@@ -23,4 +23,7 @@ public interface OrderHandler {
    * @return A list of Order Objects
    */
   ArrayList<Order> getOrders();
+
+  void editOrder(Order oldOrder, Order newOrder);
 }
+
