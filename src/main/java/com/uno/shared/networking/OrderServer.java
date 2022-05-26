@@ -26,4 +26,6 @@ public interface OrderServer extends Remote {
    * @throws RemoteException If it's not possible to call the method
    */
   ArrayList<Order> getOrders() throws RemoteException;
+
+  void editOrder(Order oldOrder, Order newOrder) throws RemoteException;
 }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 /**
  * This interface is for MenuItemsServer that handles only things associated with menu items
- * @author Arturs Silins
- * @version 0.1.0
+ * @author Arturs Silins, Maximillian Wallin
+ * @version 0.2.0
  */
 public interface MenuItemsServer extends Remote {
 
