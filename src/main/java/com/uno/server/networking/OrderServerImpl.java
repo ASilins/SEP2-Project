@@ -51,4 +51,8 @@ public class OrderServerImpl implements OrderServer {
   public ArrayList<Order> getOrders() throws RemoteException {
     return handler.getOrders();
   }
+
+  public void editOrder(Order oldOrder, Order newOrder) throws RemoteException{
+    handler.editOrder(oldOrder, newOrder);
+  }
 }
