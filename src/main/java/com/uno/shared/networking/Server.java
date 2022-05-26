@@ -5,7 +5,7 @@ import java.rmi.Remote;
 /**
  * Interface contains methods that is needed for the server.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 0.2.0
  */
 public interface Server extends Remote {
 
@@ -20,4 +20,10 @@ public interface Server extends Remote {
    * @return The server object.
    */
   OrderServer getOrderServer();
+
+  /**
+   * A method that return account server.
+   * @return A account server object.
+   */
+  AccountServer getAccountServer();
 }

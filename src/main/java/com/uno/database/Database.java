@@ -1,5 +1,6 @@
 package com.uno.database;
 
+import com.uno.shared.transferobjects.Account;
 import com.uno.shared.transferobjects.MenuItem;
 import com.uno.shared.transferobjects.Order;
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 /**
  * An interface that has all methods for getting items from and to the database.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 0.2.0
  */
 public interface Database {
 
@@ -23,4 +24,10 @@ public interface Database {
    * @param order The entry that will be inserted in the database.
    */
   void createOrder(Order order);
+
+  /**
+   * A method that takes account object and send it to the database.
+   * @param account An account object that will be sent.
+   */
+  void createAccount(Account account);
 }

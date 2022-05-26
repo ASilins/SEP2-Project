@@ -3,8 +3,10 @@ package com.uno.server.networking;
 import com.uno.database.Database;
 import com.uno.database.DatabaseHandler;
 import com.uno.database.DatabaseImpl;
+import com.uno.server.model.AccountHandlerImpl;
 import com.uno.server.model.MenuItemsHandlerImpl;
 import com.uno.server.model.OrderHandlerImpl;
+import com.uno.shared.networking.AccountServer;
 import com.uno.shared.networking.MenuItemsServer;
 import com.uno.shared.networking.OrderServer;
 import com.uno.shared.networking.Server;
@@ -19,7 +21,7 @@ import java.rmi.server.UnicastRemoteObject;
  * This is a class with server interface implementation that creates other
  * classes and is the main class for the server.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 0.2.0
  */
 public class ServerImpl implements Server {
 
@@ -59,5 +61,14 @@ public class ServerImpl implements Server {
   @Override
   public OrderServer getOrderServer() {
     return new OrderServerImpl(new OrderHandlerImpl(new DatabaseImpl()));
+  }
+
+  /**
+   * A method that creates and returns account server instance.
+   * @return An instance of account server object.
+   */
+  @Override
+  public AccountServer getAccountServer() {
+    return new AccountServerImpl(new AccountHandlerImpl(new DatabaseImpl()));
   }
 }

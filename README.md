@@ -81,3 +81,7 @@ Database to the client
 ### RBS-52
 
 Added methods that take from the server a list of order items
+
+### RBS-21
+
+Added classes for account creation and wrote javadocs
