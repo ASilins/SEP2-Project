@@ -1,5 +1,6 @@
 package com.uno.database;
 
+import com.uno.shared.transferobjects.Account;
 import com.uno.shared.transferobjects.MenuItem;
 import com.uno.shared.transferobjects.Order;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * A class that implements Database interface. The class handles sending the
  * objects from database to the server or back.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 0.2.0
  */
 public class DatabaseImpl implements Database {
 
@@ -41,6 +42,17 @@ public class DatabaseImpl implements Database {
   public void createOrder(Order order) {
     setState(new OrderState());
     currentState.sendToDatabase(order);
+  }
+
+  /**
+   * A method that changes database handler state and sends account
+   * object to the database.
+   * @param account An account object that will be sent.
+   */
+  @Override
+  public void createAccount(Account account) {
+    setState(new AccountState());
+    currentState.sendToDatabase(account);
   }
 
   /**

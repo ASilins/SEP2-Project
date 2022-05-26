@@ -1,5 +1,6 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Order;
 
 import java.beans.PropertyChangeSupport;
@@ -8,16 +9,17 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  * A class that handles clients
- * @author Ondrej Klimek
- * @version 0.1.0
+ * @author Ondrej Klimek, Arturs Silins
+ * @version 0.2.0
  */
 
-public class ClientImpl implements Client{
+public class ClientImpl implements Client {
 
     private Server server;
     private PropertyChangeSupport support;
     private MenuItemsClient mic;
     private OrderClient oc;
+    private AccountClient ac;
 
     /**
      * constructor for ClientImpl
@@ -50,5 +52,18 @@ public class ClientImpl implements Client{
     @Override
     public MenuItemsClient getMenuItemsClient() {
         return this.mic;
+    }
+
+    /**
+     * A method that returns and/or creates account client object.
+     * @return An account client object
+     */
+    @Override
+    public AccountClient getAccountClient() {
+        if (ac == null) {
+            ac = new AccountClientImpl(server);
+        }
+
+        return ac;
     }
 }
