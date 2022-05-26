@@ -9,9 +9,11 @@ import com.uno.shared.transferobjects.Order;
  */
 import java.util.ArrayList;
 
+
 public class OrderClientImpl implements OrderClient{
 
     private Order order;
+    private Order oldOrder;
 
     /**
      * constructor for OrderClientImpl
@@ -39,5 +41,16 @@ public class OrderClientImpl implements OrderClient{
     @Override
     public ArrayList<Order> getOrders() {
         return server.getOrders();
+    }
+
+    /**
+     * Method to edit the table order.
+     * @param oldOrder
+     * @param newOrder
+     */
+    @Override
+    public void editOrder(Order oldOrder, Order newOrder) {
+        this.oldOrder=oldOrder;
+        oldOrder=newOrder;
     }
 }

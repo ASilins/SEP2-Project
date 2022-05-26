@@ -1,4 +1,5 @@
 package com.uno.client.model;
+import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
 import java.rmi.RemoteException;
@@ -17,5 +18,8 @@ public interface Tables {
      */
 
     void bookTable(Table table) throws RemoteException;
+
+    void editOrder(Order oldOrder, Order newOrder);
+
 
 }

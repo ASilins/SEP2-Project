@@ -1,5 +1,6 @@
 package com.uno.server.model;
 
+<<<<<<< Updated upstream
 import com.uno.shared.transferobjects.Table;
 
 
@@ -21,4 +22,7 @@ public interface TableHandler {
     void bookTable(Table table);
 
 
+=======
+public class TableHandler {
+>>>>>>> Stashed changes
 }

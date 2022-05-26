@@ -1,20 +1,22 @@
 package com.uno.client.networking;
 
 import com.uno.shared.networking.TableServer;
+import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
 import java.rmi.RemoteException;
 
 /**
  * class for table client
- * @author Siddhartha Grasse
- * @version 0.2.0
+ * @author Siddhartha Grasse, Bhupas Gautam
+ * @version 0.3.0
  */
 
 public class TableClientImpl implements TableClient{
 
 
     private TableServer server;
+    private Table oldBooking;
 
     /**
      * constructor for OrderClientImpl
@@ -34,6 +36,19 @@ public class TableClientImpl implements TableClient{
     @Override
     public void bookTable(Table table) throws RemoteException {
         server.bookTable(table);
+
+    }
+
+    /**
+     * Method to edit the table booking
+     * @param oldBooking takes the information form old booking
+     * @param newBooking send out the information for new booking
+     */
+    @Override
+    public void editTableBooking(Table oldBooking, Table newBooking) {
+
+        this.oldBooking = oldBooking;
+        oldBooking = newBooking;
 
     }
 }

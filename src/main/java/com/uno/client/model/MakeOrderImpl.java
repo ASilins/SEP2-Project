@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MakeOrderImpl implements MakeOrder {
 
     private OrderClient orderClient;
+    private Order oldOrder;
 
     /**
      * constructor for MakeOrderImpl class
@@ -42,5 +43,10 @@ public class MakeOrderImpl implements MakeOrder {
     public ArrayList<Order> getOrders() {
         return orderClient.getOrders();
     }
+
+    public void editOrder(Order oldOrder, Order newOrder) {
+        this.oldOrder=oldOrder;
+        oldOrder=newOrder;
+
 
 }

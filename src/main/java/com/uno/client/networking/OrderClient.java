@@ -22,4 +22,12 @@ public interface OrderClient {
      * @return A list of order objects.
      */
     ArrayList<Order> getOrders();
+
+    void createPreOrder(int Order);
+
+    void editOrder( Order oldOrder, Order newOrder);
+
+
+
+
 }

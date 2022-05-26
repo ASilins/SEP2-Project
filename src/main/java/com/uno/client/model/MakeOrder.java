@@ -23,4 +23,6 @@ public interface MakeOrder {
      * @return A list of order objects
      */
     ArrayList<Order> getOrders();
+    void editOrder( Order oldOrder, Order newOrder);
+
 }

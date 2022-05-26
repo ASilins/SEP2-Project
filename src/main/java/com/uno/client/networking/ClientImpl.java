@@ -1,5 +1,6 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Order;
 
 import java.beans.PropertyChangeSupport;
@@ -23,7 +24,6 @@ public class ClientImpl implements Client{
     /**
      * constructor for ClientImpl
      */
-
     public ClientImpl(){
         try {
             UnicastRemoteObject.exportObject(this, 0);
@@ -62,4 +62,5 @@ public class ClientImpl implements Client{
 
         return this.tc;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.uno.server.model;
 
+<<<<<<< Updated upstream
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Table;
 
@@ -36,3 +37,7 @@ public class TableHandlerImpl implements TableHandler{
 
 }
 
+=======
+public class TableHandlerImpl {
+}
+>>>>>>> Stashed changes
