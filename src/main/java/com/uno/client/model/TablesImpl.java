@@ -3,6 +3,7 @@ package com.uno.client.model;
 
 import com.uno.client.networking.Client;
 import com.uno.client.networking.TableClient;
+import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
 import java.rmi.RemoteException;
@@ -10,8 +11,8 @@ import java.rmi.RemoteException;
 
 /**
  * A class for handling tables
- * @author Siddhartha Grasse
- * @version 0.1.0
+ * @author Siddhartha Grasse, Bhupas
+ * @version 0.2.0
  */
 
 public class TablesImpl implements Tables{
@@ -41,8 +42,20 @@ public class TablesImpl implements Tables{
 
     }
 
-    public void editTableBooking(Table oldBooking, Table newBooking) {
+    /**
+     * @param oldOrder
+     * @param newOrder
+     */
+    @Override
+    public void editOrder(Order oldOrder, Order newOrder) {
 
+    }
+    /**
+     * Method to edit the table booking
+     * @param oldBooking takes the information form old booking
+     * @param newBooking send out the information for new booking
+     */
+    public void editTableBooking(Table oldBooking, Table newBooking) {
         this.oldBooking = oldBooking;
         oldBooking = newBooking;
-}
+    }}

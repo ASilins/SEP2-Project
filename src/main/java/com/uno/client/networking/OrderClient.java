@@ -9,6 +9,11 @@ import com.uno.shared.transferobjects.Order;
  */
 import java.util.ArrayList;
 
+/**
+ * An interface for Order client
+ * @author Ondrej,Bhupas Gautam
+ * @version 0.2.0
+ */
 public interface OrderClient {
 
     /**
@@ -23,8 +28,11 @@ public interface OrderClient {
      */
     ArrayList<Order> getOrders();
 
-    void createPreOrder(int Order);
-
+    /**
+     * A method for editing order
+     * @param oldOrder takes the old order
+     * @param newOrder replaces the old order with the new one
+     */
     void editOrder( Order oldOrder, Order newOrder);
 
 

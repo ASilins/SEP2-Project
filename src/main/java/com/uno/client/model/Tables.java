@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 
 /**
  * An interface of a class for handling table items
- * @author Siddhartha Grasse
+ * @author Siddhartha Grasse, Bhupas Gautam
  * @version 0.2.0
  */
 
@@ -19,7 +19,13 @@ public interface Tables {
 
     void bookTable(Table table) throws RemoteException;
 
-    void editOrder(Order oldOrder, Order newOrder);
+    /**
+     * Method to edit table booking
+     * @param oldBooking takes the information from table booking
+     * @param newBooking sends the new information about table booking
+     */
+
+    void editTableBooking(Table oldBooking, Table newBooking);
 
 
 }

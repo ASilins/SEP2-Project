@@ -10,6 +10,12 @@ import com.uno.shared.transferobjects.Order;
 import java.util.ArrayList;
 
 
+/**
+ * class for Order client
+ * @author Ondrej,Bhupas Gautam
+ * @version 0.2.0
+ */
+
 public class OrderClientImpl implements OrderClient{
 
     private Order order;
@@ -44,9 +50,9 @@ public class OrderClientImpl implements OrderClient{
     }
 
     /**
-     * Method to edit the table order.
-     * @param oldOrder
-     * @param newOrder
+     * A method to edit order
+     * @param oldOrder takes the information from the old order
+     * @param newOrder replaces the old order with the new order
      */
     @Override
     public void editOrder(Order oldOrder, Order newOrder) {

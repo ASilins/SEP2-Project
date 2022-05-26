@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 /**
  * class for table client
  * @author Siddhartha Grasse, Bhupas Gautam
- * @version 0.3.0
+ * @version 0.2.0
  */
 
 public class TableClientImpl implements TableClient{
