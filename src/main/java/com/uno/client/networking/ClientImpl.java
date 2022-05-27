@@ -9,17 +9,18 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  * A class that handles clients
- * @author Ondrej Klimek, Siddhartha Grasse
+ * @author Ondrej Klimek, Siddhartha Grasse, Arturs Silins
  * @version 0.2.0
  */
 
-public class ClientImpl implements Client{
+public class ClientImpl implements Client {
 
     private Server server;
     private PropertyChangeSupport support;
     private MenuItemsClient mic;
     private OrderClient oc;
     private TableClient tc;
+    private AccountClient ac;
 
     /**
      * constructor for ClientImpl
@@ -37,7 +38,6 @@ public class ClientImpl implements Client{
      * get method to retrieve an OrderClient
      * @return
      */
-
     @Override
     public OrderClient getOrderClient() {
         return this.oc;
@@ -63,4 +63,15 @@ public class ClientImpl implements Client{
         return this.tc;
     }
 
+     * A method that returns and/or creates account client object.
+     * @return An account client object
+     */
+    @Override
+    public AccountClient getAccountClient() {
+        if (ac == null) {
+            ac = new AccountClientImpl(server);
+        }
+
+        return ac;
+    }
 }
