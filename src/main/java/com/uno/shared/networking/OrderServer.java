@@ -1,6 +1,7 @@
 package com.uno.shared.networking;
 
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.PreOrder;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -26,4 +27,13 @@ public interface OrderServer extends Remote {
    * @throws RemoteException If it's not possible to call the method
    */
   ArrayList<Order> getOrders() throws RemoteException;
+
+  /**
+   * Method that creates a PreOrder object in database.
+   * @param order takes order as the first of the two parameters
+   * @param reservation takes reservation as the second of the two parameters
+   * @throws RemoteException If it's not possible to receive the object
+   */
+
+  void createPreOrder(Order order, Reservation reservation) throws RemoteException;
 }

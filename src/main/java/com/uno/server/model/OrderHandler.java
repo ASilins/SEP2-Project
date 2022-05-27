@@ -1,6 +1,7 @@
 package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.PreOrder;
 
 import java.util.ArrayList;
 
@@ -23,4 +24,12 @@ public interface OrderHandler {
    * @return A list of Order Objects
    */
   ArrayList<Order> getOrders();
+
+  /**
+   * Send pre-order object to the database
+   * @param order takes order as the first of the two parameters
+   * @param reservation takes reservation as the second of the two parameters
+   */
+
+  void createPreOrder(Order order, Reservation reservation);
 }

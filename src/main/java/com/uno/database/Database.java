@@ -23,4 +23,12 @@ public interface Database {
    * @param order The entry that will be inserted in the database.
    */
   void createOrder(Order order);
+
+  /**
+   * a method for creating a pre-order
+   * @param orderNum number of the corresponding order
+   * @param reservationNum number of the corresponding reservation
+   */
+
+  void createPreOrder(int orderNum, int reservationNum);
 }

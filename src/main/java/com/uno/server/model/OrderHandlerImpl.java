@@ -2,6 +2,7 @@ package com.uno.server.model;
 
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.PreOrder;
 
 import java.util.ArrayList;
 
@@ -39,4 +40,16 @@ public class OrderHandlerImpl implements OrderHandler{
   public ArrayList<Order> getOrders() {
     return null;
   }
+
+  /**
+   * A method that sends PreOrder object to the database
+   * @param order to get its orderNumber
+   * @param reservation to get its reservationNumber
+   */
+
+  @Override
+  public void createPreOrder(Order order, Reservation reservation) {
+    database.createPreOrder(order.getOrderNumber(), reservation.getReservationNumber());
+  }
+
 }

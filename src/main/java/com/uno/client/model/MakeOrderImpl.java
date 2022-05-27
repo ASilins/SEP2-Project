@@ -9,6 +9,7 @@ import com.uno.shared.transferobjects.Order;
  * @author Ondrej Klimek
  * @version 0.1.0
  */
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class MakeOrderImpl implements MakeOrder {
@@ -41,6 +42,11 @@ public class MakeOrderImpl implements MakeOrder {
     @Override
     public ArrayList<Order> getOrders() {
         return orderClient.getOrders();
+    }
+
+    @Override
+    public void createPreOrder(Order order, Reservation reservation) {
+        orderClient.createPreOrder(order, reservation);
     }
 
 }

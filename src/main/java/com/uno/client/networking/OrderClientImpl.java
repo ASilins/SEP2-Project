@@ -1,5 +1,6 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.OrderServer;
 import com.uno.shared.transferobjects.Order;
 
 /**
@@ -7,11 +8,13 @@ import com.uno.shared.transferobjects.Order;
  * @author Ondrej Klimek
  * @version 0.1.0
  */
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class OrderClientImpl implements OrderClient{
 
     private Order order;
+    private OrderServer server;
 
     /**
      * constructor for OrderClientImpl
@@ -29,7 +32,11 @@ public class OrderClientImpl implements OrderClient{
 
     @Override
     public void createOrder(Order order) {
-        server.createOrder(order);
+        try {
+            server.createOrder(order);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -38,6 +45,23 @@ public class OrderClientImpl implements OrderClient{
      */
     @Override
     public ArrayList<Order> getOrders() {
-        return server.getOrders();
+        ArrayList<Order> list = new ArrayList<>();
+        try {
+            list = server.getOrders();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * a method to create a pre-order
+     * @param order takes order as the first of the two parameters
+     * @param reservation takes reservation as the second of the two parameters
+     */
+
+    @Override
+    public void createPreOrder(Order order, Reservation reservation){
+        server.createPreOrder(order, reservation);
     }
 }
