@@ -1,6 +1,7 @@
 package com.uno.client.networking;
 
 import com.uno.client.model.MenuItems;
+import com.uno.shared.networking.MenuItemsServer;
 import com.uno.shared.transferobjects.MenuItem;
 
 import java.util.ArrayList;
