@@ -15,7 +15,7 @@ public class ViewModelFactory {
 
   public MenuItemViewModel getMenuItemViewModel(){
     if(menuItemViewModel == null){
-      menuItemViewModel = new MenuItemViewModel(modelFactory.getmenuItem());
+      menuItemViewModel = new MenuItemViewModel(modelFactory.getMenuItem());
     }
     return menuItemViewModel;
   }

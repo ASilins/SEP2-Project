@@ -2,8 +2,6 @@ package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Table;
 
-
-
 /**
  * An interface that is used to send and receive Table objects
  * using these methods.

@@ -1,5 +1,6 @@
 package com.uno.database;
 
+import com.uno.shared.transferobjects.Account;
 import com.uno.shared.transferobjects.MenuItem;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
@@ -24,12 +25,27 @@ public interface Database {
    * @param order The entry that will be inserted in the database.
    */
   void createOrder(Order order);
+
   /**
-   * Method that creates a new Table entry in the database.
-   * @param table The entry that will be inserted in the database.
+   * a method for creating a pre-order
+   * @param orderNum number of the corresponding order
+   * @param reservationNum number of the corresponding reservation
    */
 
+  void createPreOrder(int orderNum, int reservationNum);
+  
+  
+   /** Method that creates a new Table entry in the database.
+   * @param table The entry that will be inserted in the database.
+   */
   void bookTable(Table table);
+
   void editTableBooking(Table oldBooking, Table newBooking);
 
+
+  /**
+   * A method that takes account object and send it to the database.
+   * @param account An account object that will be sent.
+   */
+  void createAccount(Account account);
 }

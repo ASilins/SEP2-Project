@@ -1,12 +1,7 @@
 package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Order;
-
-/**
- * An interface for order client
- * @author Ondrej Klimek
- * @version 0.1.0
- */
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 /**
@@ -29,13 +24,15 @@ public interface OrderClient {
     ArrayList<Order> getOrders();
 
     /**
-     * A method for editing order
+     * a method to create a pre-order
+     * @param order takes order as the first of the two parameters
+     * @param reservation takes reservation as the second of the two parameters
+     */
+    void createPreOrder(Order order, Reservation reservation);
+
+     /** A method for editing order
      * @param oldOrder takes the old order
      * @param newOrder replaces the old order with the new one
      */
     void editOrder( Order oldOrder, Order newOrder);
-
-
-
-
 }

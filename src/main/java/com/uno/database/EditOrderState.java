@@ -12,15 +12,13 @@ import java.sql.SQLException;
  * @version 0.1.0
  */
 
-public class EditOrderState implements DatabaseHandler
-{
+public class EditOrderState implements DatabaseHandler {
 
   /**
    * A method that creates an update in order table in the database.
    * @param object The updated object that will be inserted in to database.
    */
-  @Override public void sendToDatabase(Object object)
-  {
+  @Override public void sendToDatabase(Object object) {
     Order temp = (Order) object;
 
     try(Connection connection = DatabaseConnection.getInstance().getConnection()) {
@@ -35,6 +33,7 @@ public class EditOrderState implements DatabaseHandler
       e.printStackTrace();
     }
   }
+  
   /**
    * A method that creates and returns Order objects from order
    * table in the database
@@ -44,10 +43,12 @@ public class EditOrderState implements DatabaseHandler
     return null;
   }
 
-  @Override public void sendListToDatabase(Object list) {
+  @Override 
+  public void sendListToDatabase(Object list) {
   }
 
-  @Override public Object getListFromDatabase() {
+  @Override 
+  public Object getListFromDatabase() {
     return null;
   }
 }
