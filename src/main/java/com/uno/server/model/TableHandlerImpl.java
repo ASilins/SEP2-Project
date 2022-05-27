@@ -1,10 +1,7 @@
 package com.uno.server.model;
 
-<<<<<<< Updated upstream
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Table;
-
-
 
 /**
  * A class that handles Table objects from the database to the client.
@@ -31,13 +28,4 @@ public class TableHandlerImpl implements TableHandler{
     public void bookTable(Table table) {
         database.bookTable(table);
     }
-
-
-
-
 }
-
-=======
-public class TableHandlerImpl {
-}
->>>>>>> Stashed changes

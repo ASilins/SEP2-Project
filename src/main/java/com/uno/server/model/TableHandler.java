@@ -1,9 +1,6 @@
 package com.uno.server.model;
 
-<<<<<<< Updated upstream
 import com.uno.shared.transferobjects.Table;
-
-
 
 /**
  * An interface that is used to send and receive Table objects
@@ -13,16 +10,9 @@ import com.uno.shared.transferobjects.Table;
  */
 public interface TableHandler {
 
-
-
     /**
      * Send table object to the database.
      * @param table The object that will be sent to the database.
      */
     void bookTable(Table table);
-
-
-=======
-public class TableHandler {
->>>>>>> Stashed changes
 }
