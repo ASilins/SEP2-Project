@@ -30,4 +30,6 @@ public interface Database {
    */
 
   void bookTable(Table table);
+  void editTableBooking(Table oldBooking, Table newBooking);
+
 }

@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 
 /**
  * This interface is for Tables that handles only things associated with tables
- * @author Siddhartha Grasse
+ * @author Siddhartha Grasse, Maximillian Wallin
  * @version 0.2.0
  */
 public interface TableServer extends Remote {
@@ -18,5 +18,13 @@ public interface TableServer extends Remote {
      * @throws RemoteException If it is not possible to receive the object.
      */
     void bookTable(Table table) throws RemoteException;
+
+    /**
+     * Method that updates a TableBooking object in the database.
+     * @param oldBooking The table that will be updated in the database.
+     * @throws RemoteException If it is not possible to receive the object.
+     */
+    void editTableBooking(Table oldBooking, Table newBooking)
+        throws RemoteException;
 }
 
