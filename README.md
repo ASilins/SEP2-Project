@@ -48,6 +48,10 @@ added in project structure for the GUI to run
 
 This is dummy text
 
+### RBS-16
+
+Added all about pre-order (excluding reservation)
+
 ### RBS-17-45
 
 Created client side for handling an order
@@ -85,3 +89,8 @@ Added methods that take from the server a list of order items
 ### RBS-21
 
 Added classes for account creation and wrote javadocs
+
+### RBS-70
+
+Changed database instance creation server class. Testing is required 
+to see the performance and to see if there is problems.

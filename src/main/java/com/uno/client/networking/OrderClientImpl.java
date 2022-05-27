@@ -9,6 +9,7 @@ import com.uno.shared.transferobjects.Order;
  * @author Ondrej Klimek
  * @version 0.1.0
  */
+import com.uno.shared.transferobjects.Order;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -18,12 +19,12 @@ import java.util.ArrayList;
  * @author Ondrej,Bhupas Gautam
  * @version 0.2.0
  */
-
 public class OrderClientImpl implements OrderClient{
 
     private OrderServer server;
 //    ?
     private Order order;
+    private OrderServer server;
     private Order oldOrder;
 
     /**
@@ -33,13 +34,11 @@ public class OrderClientImpl implements OrderClient{
 
     public OrderClientImpl(Server server){
         this.server = server.getOrderServer();
-    }
 
     /**
      * method to create an order
      * @param order takes an order as a parameter
      */
-
     @Override
     public void createOrder(Order order) {
         try {
@@ -55,13 +54,23 @@ public class OrderClientImpl implements OrderClient{
      */
     @Override
     public ArrayList<Order> getOrders() {
+        ArrayList<Order> list = new ArrayList<>();
         try {
-            return server.getOrders();
+            list = server.getOrders();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+        return list;
+    }
 
-        return null;
+    /**
+     * a method to create a pre-order
+     * @param order takes order as the first of the two parameters
+     * @param reservation takes reservation as the second of the two parameters
+     */
+    @Override
+    public void createPreOrder(Order order, Reservation reservation){
+        server.createPreOrder(order, reservation);
     }
 
     /**
