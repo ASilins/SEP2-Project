@@ -25,12 +25,15 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class ServerImpl implements Server {
 
+  private Database database;
+
   /**
    * This is a no-argument constructor.
    * @throws RemoteException If it is not possible to export object.
    */
   public ServerImpl() throws RemoteException {
     UnicastRemoteObject.exportObject(this, 0);
+    database = new DatabaseImpl();
   }
 
   /**
@@ -51,7 +54,7 @@ public class ServerImpl implements Server {
    */
   @Override
   public MenuItemsServer getMenuItemsServer() {
-    return new MenuItemsServerImpl(new MenuItemsHandlerImpl(new DatabaseImpl()));
+    return new MenuItemsServerImpl(new MenuItemsHandlerImpl(database));
   }
 
   /**
@@ -60,7 +63,7 @@ public class ServerImpl implements Server {
    */
   @Override
   public OrderServer getOrderServer() {
-    return new OrderServerImpl(new OrderHandlerImpl(new DatabaseImpl()));
+    return new OrderServerImpl(new OrderHandlerImpl(database));
   }
 
   /**
@@ -69,6 +72,6 @@ public class ServerImpl implements Server {
    */
   @Override
   public AccountServer getAccountServer() {
-    return new AccountServerImpl(new AccountHandlerImpl(new DatabaseImpl()));
+    return new AccountServerImpl(new AccountHandlerImpl(database));
   }
 }
