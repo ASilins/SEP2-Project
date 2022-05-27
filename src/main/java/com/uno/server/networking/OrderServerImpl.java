@@ -59,10 +59,12 @@ public class OrderServerImpl implements OrderServer {
    * @param reservation takes reservation as the second of the two parameters
    * @throws RemoteException If it's not possible to receive from the client
    */
-
   @Override
   public void createPreOrder(Order order, Reservation reservation) throws RemoteException {
     handler.createPreOrder(order, reservation);
   }
 
+  public void editOrder(Order oldOrder, Order newOrder) throws RemoteException{
+    handler.editOrder(oldOrder, newOrder);
+  }
 }

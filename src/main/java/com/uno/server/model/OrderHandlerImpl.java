@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class OrderHandlerImpl implements OrderHandler{
 
   private Database database;
+  private Order oldOrder;
+
 
   /**
    * A constructor that takes database object and sets it to the instance.
@@ -46,10 +48,15 @@ public class OrderHandlerImpl implements OrderHandler{
    * @param order to get its orderNumber
    * @param reservation to get its reservationNumber
    */
-
   @Override
   public void createPreOrder(Order order, Reservation reservation) {
     database.createPreOrder(order.getOrderNumber(), reservation.getReservationNumber());
   }
 
+  @Override
+  public void editOrder(Order oldOrder, Order newOrder)
+  {
+    this.oldOrder = oldOrder;
+    oldOrder = newOrder;
+  }
 }
