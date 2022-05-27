@@ -23,7 +23,13 @@ public interface Server extends Remote {
 
   /**
    * A method that return account server.
-   * @return A account server object.
+   * @return An account server object.
    */
   AccountServer getAccountServer();
+
+  /**
+   * A method that returns table server
+   * @return A table server object
+   */
+  TableServer getTableServer();
 }

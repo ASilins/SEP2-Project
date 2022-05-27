@@ -6,10 +6,8 @@ import com.uno.database.DatabaseImpl;
 import com.uno.server.model.AccountHandlerImpl;
 import com.uno.server.model.MenuItemsHandlerImpl;
 import com.uno.server.model.OrderHandlerImpl;
-import com.uno.shared.networking.AccountServer;
-import com.uno.shared.networking.MenuItemsServer;
-import com.uno.shared.networking.OrderServer;
-import com.uno.shared.networking.Server;
+import com.uno.server.model.TableHandlerImpl;
+import com.uno.shared.networking.*;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
@@ -70,5 +68,14 @@ public class ServerImpl implements Server {
   @Override
   public AccountServer getAccountServer() {
     return new AccountServerImpl(new AccountHandlerImpl(new DatabaseImpl()));
+  }
+
+  /**
+   * A method that returns new instance of table server
+   * @return An table server object
+   */
+  @Override
+  public TableServer getTableServer() {
+    return new TableServerImpl(new TableHandlerImpl(database));
   }
 }

@@ -1,5 +1,7 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.OrderServer;
+import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Order;
 
 /**
@@ -7,6 +9,7 @@ import com.uno.shared.transferobjects.Order;
  * @author Ondrej Klimek
  * @version 0.1.0
  */
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 
@@ -18,16 +21,18 @@ import java.util.ArrayList;
 
 public class OrderClientImpl implements OrderClient{
 
+    private OrderServer server;
+//    ?
     private Order order;
     private Order oldOrder;
 
     /**
-     * constructor for OrderClientImpl
-     * @param order takes an order as a parameter
+     * Constructor for OrderClientImpl
+     * @param server takes a server as a parameter
      */
 
-    public OrderClientImpl(Order order){
-        this.order = order;
+    public OrderClientImpl(Server server){
+        this.server = server.getOrderServer();
     }
 
     /**
@@ -37,7 +42,11 @@ public class OrderClientImpl implements OrderClient{
 
     @Override
     public void createOrder(Order order) {
-        server.createOrder(order);
+        try {
+            server.createOrder(order);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -46,7 +55,13 @@ public class OrderClientImpl implements OrderClient{
      */
     @Override
     public ArrayList<Order> getOrders() {
-        return server.getOrders();
+        try {
+            return server.getOrders();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     /**
@@ -56,7 +71,10 @@ public class OrderClientImpl implements OrderClient{
      */
     @Override
     public void editOrder(Order oldOrder, Order newOrder) {
-        this.oldOrder=oldOrder;
-        oldOrder=newOrder;
+        try {
+            server.editOrder(oldOrder, newOrder);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }
