@@ -48,6 +48,10 @@ added in project structure for the GUI to run
 
 This is dummy text
 
+### RBS-16
+
+Added all about pre-order (excluding reservation)
+
 ### RBS-17-45
 
 Created client side for handling an order
