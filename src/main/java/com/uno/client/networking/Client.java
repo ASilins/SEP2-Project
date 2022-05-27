@@ -4,7 +4,7 @@ import java.rmi.Remote;
 
 /**
  * An interface of a class for handling clients
- * @author Ondrej Klimek, Arturs Silins
+ * @author Ondrej Klimek, Siddhartha Grasse, Arturs Silins
  * @version 0.2.0
  */
 
@@ -23,6 +23,11 @@ public interface Client extends Remote {
     MenuItemsClient getMenuItemsClient();
 
     /**
+     * a method to retrieve table items from the server
+     * @return returns an arrayList of tables
+     */
+    TableClient getTableClient();
+
      * A method that returns and/or creates account client instance.
      * @return An account client object
      */

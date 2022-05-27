@@ -9,9 +9,17 @@ import com.uno.shared.transferobjects.Order;
  */
 import java.util.ArrayList;
 
+
+/**
+ * class for Order client
+ * @author Ondrej,Bhupas Gautam
+ * @version 0.2.0
+ */
+
 public class OrderClientImpl implements OrderClient{
 
     private Order order;
+    private Order oldOrder;
 
     /**
      * constructor for OrderClientImpl
@@ -39,5 +47,16 @@ public class OrderClientImpl implements OrderClient{
     @Override
     public ArrayList<Order> getOrders() {
         return server.getOrders();
+    }
+
+    /**
+     * A method to edit order
+     * @param oldOrder takes the information from the old order
+     * @param newOrder replaces the old order with the new order
+     */
+    @Override
+    public void editOrder(Order oldOrder, Order newOrder) {
+        this.oldOrder=oldOrder;
+        oldOrder=newOrder;
     }
 }

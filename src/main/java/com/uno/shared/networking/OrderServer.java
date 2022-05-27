@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * An interface that creates order object in database.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 0.2.0
  */
 public interface OrderServer extends Remote {
 
@@ -27,5 +27,11 @@ public interface OrderServer extends Remote {
    */
   ArrayList<Order> getOrders() throws RemoteException;
 
+
+  /**
+  * A method that send order that has to be eddited and the new information.
+  * @param oldOrder The object that will be changed in the database.
+  * @param newOrder The information that will be set in the old object.
+  */
   void editOrder(Order oldOrder, Order newOrder) throws RemoteException;
 }
