@@ -16,7 +16,6 @@ public class TableClientImpl implements TableClient{
 
 
     private TableServer server;
-    private Table oldBooking;
 
     /**
      * constructor for OrderClientImpl
@@ -41,14 +40,12 @@ public class TableClientImpl implements TableClient{
 
     /**
      * Method to edit the table booking
-     * @param oldBooking takes the information form old booking
      * @param newBooking send out the information for new booking
      */
     @Override
-    public void editTableBooking(Table oldBooking, Table newBooking) {
+    public void editTableBooking(Table newBooking) {
 
-        this.oldBooking = oldBooking;
-        oldBooking = newBooking;
+        server.editTableBooking(newBooking);
 
     }
 }

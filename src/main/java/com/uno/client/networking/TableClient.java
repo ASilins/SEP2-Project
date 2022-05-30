@@ -25,7 +25,7 @@ public interface TableClient {
      * @param newBooking sends the new information about table booking
      */
 
-    void editTableBooking(Table oldBooking, Table newBooking);
+    void editTableBooking(Table newBooking);
 
 
 }

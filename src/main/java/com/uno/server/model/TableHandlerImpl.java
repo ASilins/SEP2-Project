@@ -32,12 +32,9 @@ public class TableHandlerImpl implements TableHandler{
         database.bookTable(table);
     }
 
-
-
+    @Override
+    public void editTableBooking(Table newBooking) {
+        database.
+    }
 
 }
-
-=======
-public class TableHandlerImpl {
-}
->>>>>>> Stashed changes

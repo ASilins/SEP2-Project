@@ -18,5 +18,7 @@ public interface TableServer extends Remote {
      * @throws RemoteException If it is not possible to receive the object.
      */
     void bookTable(Table table) throws RemoteException;
+
+    void editTableBooking(Table newBooking);
 }
 
