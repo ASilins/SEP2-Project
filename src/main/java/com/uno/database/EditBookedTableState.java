@@ -29,7 +29,7 @@ public class EditBookedTableState implements DatabaseHandler
           connection.prepareStatement("UPDATE Reservation SET TableNumber = ?, Date = ?, TableCapacity = ? WHERE ReservationNumber = ?");
       statement.setInt(1, temp.getTableNumber());
       statement.setInt(2, temp.getDate());
-      statement.setInt(3, temp.getTableCapacity());
+      statement.setInt(3, temp.getCapacity());
       statement.setInt(4, temp.getReservationNumber());
 
       statement.executeUpdate();
