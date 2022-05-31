@@ -3,6 +3,7 @@ package com.uno.server.networking;
 import com.uno.server.model.OrderHandler;
 import com.uno.shared.networking.OrderServer;
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.PreOrder;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -50,6 +51,17 @@ public class OrderServerImpl implements OrderServer {
   @Override
   public ArrayList<Order> getOrders() throws RemoteException {
     return handler.getOrders();
+  }
+
+  /**
+   * A method that creates pre-order in a database
+   * @param order takes order as the first of the two parameters
+   * @param reservation takes reservation as the second of the two parameters
+   * @throws RemoteException If it's not possible to receive from the client
+   */
+  @Override
+  public void createPreOrder(Order order, Reservation reservation) throws RemoteException {
+    handler.createPreOrder(order, reservation);
   }
 
   public void editOrder(Order oldOrder, Order newOrder) throws RemoteException{

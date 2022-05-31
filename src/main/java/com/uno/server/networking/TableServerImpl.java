@@ -43,6 +43,7 @@ public class TableServerImpl implements TableServer {
         handler.bookTable(table);
     }
 
+
     @Override
     public void editTableBooking(Table newBooking) {
         handler.editTableBooking(newBooking);

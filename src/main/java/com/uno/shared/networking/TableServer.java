@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 
 /**
  * This interface is for Tables that handles only things associated with tables
- * @author Siddhartha Grasse
+ * @author Siddhartha Grasse, Maximillian Wallin
  * @version 0.2.0
  */
 public interface TableServer extends Remote {
@@ -21,4 +21,3 @@ public interface TableServer extends Remote {
 
     void editTableBooking(Table newBooking);
 }
-
