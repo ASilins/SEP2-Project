@@ -15,4 +15,6 @@ public interface AccountClient {
    * @param account The object that will be sent to the server.
    */
   void createAccount(Account account);
+
+  Account login(String phoneNumber, String password);
 }

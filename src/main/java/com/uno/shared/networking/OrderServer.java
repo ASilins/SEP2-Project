@@ -2,6 +2,7 @@ package com.uno.shared.networking;
 
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.PreOrder;
+import com.uno.shared.transferobjects.Reservation;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -38,8 +39,7 @@ public interface OrderServer extends Remote {
 
   /**
   * A method that send order that has to be eddited and the new information.
-  * @param oldOrder The object that will be changed in the database.
   * @param newOrder The information that will be set in the old object.
   */
-  void editOrder(Order oldOrder, Order newOrder) throws RemoteException;
+  void editOrder(Order newOrder) throws RemoteException;
 }

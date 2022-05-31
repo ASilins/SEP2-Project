@@ -4,6 +4,7 @@ import com.uno.server.model.OrderHandler;
 import com.uno.shared.networking.OrderServer;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.PreOrder;
+import com.uno.shared.transferobjects.Reservation;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -24,12 +25,8 @@ public class OrderServerImpl implements OrderServer {
    * that handles Order Objects in the server.
    * @param handler
    */
-  public OrderServerImpl(OrderHandler handler) {
-    try {
+  public OrderServerImpl(OrderHandler handler) throws RemoteException {
       UnicastRemoteObject.exportObject(this, 0);
-    } catch (RemoteException e) {
-      e.printStackTrace();
-    }
     this.handler = handler;
   }
 
@@ -64,7 +61,8 @@ public class OrderServerImpl implements OrderServer {
     handler.createPreOrder(order, reservation);
   }
 
-  public void editOrder(Order oldOrder, Order newOrder) throws RemoteException{
-    handler.editOrder(oldOrder, newOrder);
+  @Override
+  public void editOrder(Order newOrder) throws RemoteException{
+    handler.editOrder(newOrder);
   }
 }

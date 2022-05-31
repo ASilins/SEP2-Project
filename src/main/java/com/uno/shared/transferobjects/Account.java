@@ -1,12 +1,14 @@
 package com.uno.shared.transferobjects;
 
+import java.io.Serializable;
+
 /**
  * A class that is used to send account objects from the client to the server
  * and database and back.
  * @author Arturs Silins
  * @version 0.2.0
  */
-public class Account {
+public class Account implements Serializable {
 
   private String phoneNumber;
   private String name;
