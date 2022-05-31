@@ -2,8 +2,10 @@ package com.uno.client.networking;
 
 import com.uno.client.model.MenuItems;
 import com.uno.shared.networking.MenuItemsServer;
+import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.MenuItem;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 /**
@@ -22,8 +24,8 @@ public class MenuItemsClientImpl implements MenuItemsClient{
      * @param server
      */
 
-    public MenuItemsClientImpl(MenuItemsServer server){
-        this.server = server;
+    public MenuItemsClientImpl(Server server){
+        this.server = server.getMenuItemsServer();
     }
 
     /**
@@ -33,6 +35,12 @@ public class MenuItemsClientImpl implements MenuItemsClient{
 
     @Override
     public ArrayList<MenuItem> getMenuItems() {
-        return server.getMenuItems();
+        try {
+            return server.getMenuItems();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

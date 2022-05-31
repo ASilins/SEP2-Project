@@ -3,6 +3,7 @@ package com.uno.database;
 import com.uno.shared.transferobjects.Account;
 import com.uno.shared.transferobjects.MenuItem;
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.Table;
 import com.uno.shared.transferobjects.PreOrder;
 
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ public class DatabaseImpl implements Database {
   public void createOrder(Order order) {
     setState(new OrderState());
     currentState.sendToDatabase(order);
+  }
+
+  @Override public void bookTable(Table table)
+  {
+
   }
 
   /**

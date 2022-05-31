@@ -40,6 +40,9 @@ public interface Database {
    */
   void bookTable(Table table);
 
+  void editTableBooking(Table oldBooking, Table newBooking);
+
+
   /**
    * A method that takes account object and send it to the database.
    * @param account An account object that will be sent.

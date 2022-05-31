@@ -28,7 +28,7 @@ public interface Client extends Remote {
      */
     TableClient getTableClient();
 
-     * A method that returns and/or creates account client instance.
+     /** A method that returns and/or creates account client instance.
      * @return An account client object
      */
     AccountClient getAccountClient();

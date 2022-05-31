@@ -13,7 +13,7 @@ import java.rmi.RemoteException;
 public interface Tables {
 
     /**
-     * a method to book tables
+     * a method for booking tables
      * @throws RemoteException If it is not possible to receive the object.
      */
 
@@ -21,11 +21,10 @@ public interface Tables {
 
     /**
      * Method to edit table booking
-     * @param oldBooking takes the information from table booking
      * @param newBooking sends the new information about table booking
      */
 
-    void editTableBooking(Table oldBooking, Table newBooking);
+    void editTableBooking(Table newBooking);
 
 
 }

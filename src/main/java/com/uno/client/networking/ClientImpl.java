@@ -40,7 +40,11 @@ public class ClientImpl implements Client {
      */
     @Override
     public OrderClient getOrderClient() {
-        return this.oc;
+        if (oc == null) {
+            oc = new OrderClientImpl(server);
+        }
+        
+        return oc;
     }
 
     /**
@@ -50,7 +54,11 @@ public class ClientImpl implements Client {
 
     @Override
     public MenuItemsClient getMenuItemsClient() {
-        return this.mic;
+        if (mic == null) {
+            mic = new MenuItemsClientImpl(server);
+        }
+
+        return mic;
     }
 
     /**
@@ -59,11 +67,14 @@ public class ClientImpl implements Client {
      */
     @Override
     public TableClient getTableClient() {
+        if (tc == null) {
+            tc = new TableClientImpl(server);
+        }
 
-        return this.tc;
+        return tc;
     }
 
-     * A method that returns and/or creates account client object.
+     /** A method that returns and/or creates account client object.
      * @return An account client object
      */
     @Override

@@ -42,4 +42,10 @@ public class TableServerImpl implements TableServer {
     public void bookTable(Table table) throws RemoteException {
         handler.bookTable(table);
     }
+
+
+    @Override
+    public void editTableBooking(Table newBooking) {
+        handler.editTableBooking(newBooking);
+    }
 }
