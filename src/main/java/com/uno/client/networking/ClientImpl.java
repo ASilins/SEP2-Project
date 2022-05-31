@@ -2,9 +2,13 @@ package com.uno.client.networking;
 
 import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.Reservation;
 
 import java.beans.PropertyChangeSupport;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
@@ -17,10 +21,12 @@ public class ClientImpl implements Client {
 
     private Server server;
     private PropertyChangeSupport support;
+
     private MenuItemsClient mic;
     private OrderClient oc;
     private TableClient tc;
     private AccountClient ac;
+    private ReservationClient rc;
 
     /**
      * constructor for ClientImpl
@@ -28,8 +34,18 @@ public class ClientImpl implements Client {
     public ClientImpl(){
         try {
             UnicastRemoteObject.exportObject(this, 0);
+            startClient();
             support = new PropertyChangeSupport(this);
         } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void startClient() {
+        try {
+            Registry registry = LocateRegistry.getRegistry("localhost", 22222);
+            server = (Server) registry.lookup("Server");
+        } catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
         }
     }
@@ -84,5 +100,14 @@ public class ClientImpl implements Client {
         }
 
         return ac;
+    }
+
+    @Override
+    public ReservationClient getReservationClient() {
+        if (rc == null) {
+            rc = new ReservationClientImpl(server);
+        }
+
+        return rc;
     }
 }

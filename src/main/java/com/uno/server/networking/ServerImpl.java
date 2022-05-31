@@ -3,10 +3,7 @@ package com.uno.server.networking;
 import com.uno.database.Database;
 import com.uno.database.DatabaseHandler;
 import com.uno.database.DatabaseImpl;
-import com.uno.server.model.AccountHandlerImpl;
-import com.uno.server.model.MenuItemsHandlerImpl;
-import com.uno.server.model.OrderHandlerImpl;
-import com.uno.server.model.TableHandlerImpl;
+import com.uno.server.model.*;
 import com.uno.shared.networking.*;
 
 import java.rmi.AlreadyBoundException;
@@ -23,7 +20,12 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class ServerImpl implements Server {
 
-  private Database database;
+  private ReservationServer rs;
+  private MenuItemsServer mis;
+  private OrderServer os;
+  private AccountServer as;
+  private TableServer ts;
+
 
   /**
    * This is a no-argument constructor.
@@ -31,7 +33,6 @@ public class ServerImpl implements Server {
    */
   public ServerImpl() throws RemoteException {
     UnicastRemoteObject.exportObject(this, 0);
-    database = new DatabaseImpl();
   }
 
   /**
@@ -52,7 +53,11 @@ public class ServerImpl implements Server {
    */
   @Override
   public MenuItemsServer getMenuItemsServer() {
-    return new MenuItemsServerImpl(new MenuItemsHandlerImpl(database));
+    if (mis == null) {
+      mis = new MenuItemsServerImpl(new MenuItemsHandlerImpl(new DatabaseImpl()));
+    }
+
+    return mis;
   }
 
   /**
@@ -60,8 +65,16 @@ public class ServerImpl implements Server {
    * @return OrderServer object.
    */
   @Override
-  public OrderServer getOrderServer() {
-    return new OrderServerImpl(new OrderHandlerImpl(database));
+  public OrderServer getOrderServer(){
+    if (os == null) {
+      try {
+        os = new OrderServerImpl(new OrderHandlerImpl(new DatabaseImpl()));
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
+    return os;
   }
 
   /**
@@ -70,7 +83,11 @@ public class ServerImpl implements Server {
    */
   @Override
   public AccountServer getAccountServer() {
-    return new AccountServerImpl(new AccountHandlerImpl(database));
+    if (as == null) {
+      as = new AccountServerImpl(new AccountHandlerImpl(new DatabaseImpl()));
+    }
+
+    return as;
   }
 
   /**
@@ -79,6 +96,22 @@ public class ServerImpl implements Server {
    */
   @Override
   public TableServer getTableServer() {
-    return new TableServerImpl(new TableHandlerImpl(database));
+    if (ts == null) {
+      ts = new TableServerImpl(new TableHandlerImpl(new DatabaseImpl()));
+    }
+    return ts;
+  }
+
+  @Override
+  public ReservationServer getReservationServer() {
+    if (rs == null) {
+      try {
+        rs = new ReservationServerImpl(new ReservationHandlerImpl(new DatabaseImpl()));
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
+    return rs;
   }
 }

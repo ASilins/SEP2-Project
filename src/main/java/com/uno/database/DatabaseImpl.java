@@ -1,10 +1,10 @@
 package com.uno.database;
 
-import com.uno.shared.transferobjects.Account;
-import com.uno.shared.transferobjects.MenuItem;
-import com.uno.shared.transferobjects.Order;
-import com.uno.shared.transferobjects.Table;
-import com.uno.shared.transferobjects.PreOrder;
+import com.uno.database.states.*;
+import com.uno.database.states.ordersstates.EditOrderState;
+import com.uno.database.states.ordersstates.OrderState;
+import com.uno.database.states.ordersstates.PreOrderState;
+import com.uno.shared.transferobjects.*;
 
 import java.util.ArrayList;
 
@@ -51,6 +51,16 @@ public class DatabaseImpl implements Database {
 
   }
 
+  @Override
+  public void editTableBooking(Table oldBooking, Table newBooking) {
+
+  }
+
+  @Override
+  public void editOrder(Order newOrder) {
+    setState(new EditOrderState());
+  }
+
   /**
    *a method for creating a pre-order
    * @param orderNumber number of the corresponding order
@@ -74,6 +84,17 @@ public class DatabaseImpl implements Database {
   public void createAccount(Account account) {
     setState(new AccountState());
     currentState.sendToDatabase(account);
+  }
+
+  @Override
+  public void createReservation(Reservation reservation) {
+    setState(new ReservationState());
+    currentState.sendToDatabase(reservation);
+  }
+
+  @Override
+  public Account login(String phoneNumber, String password) {
+    return null;
   }
 
   /**

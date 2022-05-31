@@ -1,12 +1,14 @@
 package com.uno.shared.transferobjects;
 
+import java.io.Serializable;
+
 /**
  * transferobject to use in the system
  * @author Siddhartha Grasse
  * @version 0.2.0
  */
 
-public class Table {
+public class Table implements Serializable {
 
     private int tableNumber;
     private int capacity;

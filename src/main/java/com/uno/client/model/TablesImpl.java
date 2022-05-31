@@ -25,7 +25,11 @@ public class TablesImpl implements Tables{
      */
 
     public TablesImpl(Client client) {
-        this.tableClient = client.getTableClient();
+        try {
+            this.tableClient = client.getTableClient();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
