@@ -16,10 +16,5 @@ public interface TableHandler {
      */
     void bookTable(Table table);
 
-    /**
-     * Update oldBooking object from database.
-     * @param oldBooking The object that will be updated from the database.
-     */
-
-    void editTableBooking(Table oldBooking, Table newBooking);
+    void editTableBooking(Table newBooking);
 }

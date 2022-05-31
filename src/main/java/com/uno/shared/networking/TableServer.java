@@ -19,12 +19,5 @@ public interface TableServer extends Remote {
      */
     void bookTable(Table table) throws RemoteException;
 
-    /**
-     * Method that updates a TableBooking object in the database.
-     * @param oldBooking The table that will be updated in the database.
-     * @throws RemoteException If it is not possible to receive the object.
-     */
-    void editTableBooking(Table oldBooking, Table newBooking)
-        throws RemoteException;
+    void editTableBooking(Table newBooking);
 }
-

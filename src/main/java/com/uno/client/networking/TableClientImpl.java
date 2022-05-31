@@ -41,12 +41,10 @@ public class TableClientImpl implements TableClient{
 
     /**
      * Method to edit the table booking
-     * @param oldBooking takes the information form old booking
      * @param newBooking send out the information for new booking
      */
     @Override
-    public void editTableBooking(Table oldBooking, Table newBooking) {
-//        The fuk is this???
-
+    public void editTableBooking(Table newBooking) {
+        server.editTableBooking(newBooking);
     }
 }
