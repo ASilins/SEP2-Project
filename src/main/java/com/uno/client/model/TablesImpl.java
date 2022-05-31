@@ -46,4 +46,5 @@ public class TablesImpl implements Tables{
      */
     public void editTableBooking(Table newBooking) {
         tableClient.editTableBooking(newBooking);
-    }}
+    }
+}
