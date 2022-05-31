@@ -43,14 +43,9 @@ public class TableServerImpl implements TableServer {
         handler.bookTable(table);
     }
 
-    /**
-     * A method that updates the table in a database.
-     *
-     * @param oldBooking The table that will be updated in the database.
-     * @throws RemoteException If it is not possible to receive from client.
-     */
-    @Override public void editTableBooking(Table oldBooking, Table newBooking) throws RemoteException
-    {
-        handler.editTableBooking(oldBooking, newBooking);
+
+    @Override
+    public void editTableBooking(Table newBooking) {
+        handler.editTableBooking(newBooking);
     }
 }

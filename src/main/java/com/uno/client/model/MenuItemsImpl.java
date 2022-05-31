@@ -4,6 +4,7 @@ import com.uno.client.networking.Client;
 import com.uno.client.networking.MenuItemsClient;
 import com.uno.shared.transferobjects.MenuItem;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +23,11 @@ public class MenuItemsImpl implements MenuItems{
      */
 
     public MenuItemsImpl(Client client) {
-        this.menuItemClient = client.getMenuItemsClient();
+        try {
+            this.menuItemClient = client.getMenuItemsClient();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -19,4 +19,6 @@ public interface AccountServer extends Remote {
    * @throws RemoteException If not possible to send from the client.
    */
   void createAccount(Account account) throws RemoteException;
+
+  Account login(String phoneNumber, String password) throws RemoteException;
 }

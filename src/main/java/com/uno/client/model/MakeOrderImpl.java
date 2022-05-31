@@ -3,6 +3,8 @@ package com.uno.client.model;
 import com.uno.client.networking.Client;
 import com.uno.client.networking.OrderClient;
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.Reservation;
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -14,14 +16,17 @@ import java.util.ArrayList;
 public class MakeOrderImpl implements MakeOrder {
 
     private OrderClient orderClient;
-    private Order oldOrder;
 
     /**
      * constructor for MakeOrderImpl class
      * @param client takes client as a parameter
      */
     public MakeOrderImpl(Client client) {
-        this.orderClient = client.getOrderClient();
+        try {
+            this.orderClient = client.getOrderClient();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -49,12 +54,11 @@ public class MakeOrderImpl implements MakeOrder {
   
     /**
      * A method to edit order
-     * @param oldOrder takes the information from the old order
      * @param newOrder replaces the old order with the new order
      */
-    public void editOrder(Order oldOrder, Order newOrder) {
-        this.oldOrder=oldOrder;
-        oldOrder=newOrder;
+    @Override
+    public void editOrder(Order newOrder) {
+        orderClient.editOrder(newOrder);
     }
 }
 

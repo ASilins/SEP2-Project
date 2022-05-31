@@ -1,6 +1,8 @@
 package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Order;
+import com.uno.shared.transferobjects.Reservation;
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
@@ -31,8 +33,7 @@ public interface OrderClient {
     void createPreOrder(Order order, Reservation reservation);
 
      /** A method for editing order
-     * @param oldOrder takes the old order
      * @param newOrder replaces the old order with the new one
      */
-    void editOrder( Order oldOrder, Order newOrder);
+    void editOrder(Order newOrder);
 }

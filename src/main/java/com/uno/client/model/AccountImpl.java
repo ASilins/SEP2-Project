@@ -4,6 +4,8 @@ import com.uno.client.networking.AccountClient;
 import com.uno.client.networking.Client;
 import com.uno.shared.transferobjects.Account;
 
+import java.rmi.RemoteException;
+
 /**
  * A class that handles creating and logging in account.
  * @author Arturs Silins
@@ -18,7 +20,11 @@ public class AccountImpl implements AccountModel {
    * @param client The object that will provide the instance.
    */
   public AccountImpl(Client client) {
-    this.client = client.getAccountClient();
+    try {
+      this.client = client.getAccountClient();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -28,5 +34,10 @@ public class AccountImpl implements AccountModel {
   @Override
   public void createAccount(Account account) {
     client.createAccount(account);
+  }
+
+  @Override
+  public Account login(String phoneNumber, String password) {
+    return client.login(phoneNumber, password);
   }
 }

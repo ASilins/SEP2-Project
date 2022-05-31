@@ -12,51 +12,89 @@ public class ViewHandler {
 
   private Scene menuScene;
   private Scene orderScene;
+  private Scene createAccountScene;
+  private Scene loginScene;
+
   private Stage stage;
   private ViewModelFactory vmf;
 
-  public ViewHandler(ViewModelFactory vmf) {this.vmf = vmf;}
+  public ViewHandler(ViewModelFactory vmf) {
+    this.vmf = vmf;
+  }
 
   public void start() {
     stage = new Stage();
-    openMenuScene();
+    openCreateAccountScene();
   }
 
-public void openMenuScene(){
-    if(menuScene == null){
-      try{
-        Parent root = loadFXML("src/main/java/com/uno/client/view/menuItem/menu.fxml");
+  public void openMenuScene() {
+    if (menuScene == null) {
+      try {
+        Parent root = loadFXML("../view/menuItem/menu.fxml");
 
         menuScene = new Scene(root);
         stage.setTitle("Menu");
-      } catch(Exception e){
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
-  stage.setScene(menuScene);
-  stage.show();
-}
+    stage.setScene(menuScene);
+    stage.show();
+  }
 
-  public void openOrderScene(){
-    if(orderScene == null){
-      try{
-        Parent root = loadFXML("src/main/java/com/uno/client/view/order/order.fxml");
+  public void openOrderScene() {
+    if (orderScene == null) {
+      try {
+        Parent root = loadFXML("../view/order/order.fxml");
 
         orderScene = new Scene(root);
         stage.setTitle("Order");
-      } catch(Exception e){
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
     stage.setScene(orderScene);
     stage.show();
+  }
+
+  public void openCreateAccountScene() {
+    if (createAccountScene == null) {
+      try {
+        Parent root = loadFXML("../view/createaccount/CreateAccount.fxml");
+
+        createAccountScene = new Scene(root);
+        stage.setTitle("Create Account");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
-private Parent loadFXML (String path) throws IOException{
+
+    stage.setScene(createAccountScene);
+    stage.show();
+  }
+
+  public void openLoginScene() {
+    if (loginScene == null) {
+      try {
+        Parent root = loadFXML("../view/login/Login.fxml");
+
+        loginScene = new Scene(root);
+        stage.setTitle("Login");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(loginScene);
+    stage.show();
+  }
+
+  private Parent loadFXML(String path) throws IOException {
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource(path));
     Parent root = loader.load();
 
-    ViewController ctrl =loader.getController();
+    ViewController ctrl = loader.getController();
     ctrl.init(this, vmf);
     return root;
   }

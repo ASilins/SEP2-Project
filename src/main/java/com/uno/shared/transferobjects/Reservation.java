@@ -1,29 +1,53 @@
 package com.uno.shared.transferobjects;
 
-public class Reservation {
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-    private int name;
-    private int capacity;
+public class Reservation implements Serializable {
 
-    public Reservation(int name, int capacity){
-        this.name = name;
-        this.capacity = capacity;
-    }
+  private int reservationNumber;
+  private String customerNumber;
+  private Timestamp date;
+  private int amountOfPeople;
+  private String comment;
+  private String dietaryNeeds;
+  private Table table;
 
-    public int getName(){
-        return name;
-    }
+  public Reservation(int reservationNumber, String customerNumber, Timestamp date, int amountOfPeople, String comment, String dietaryNeeds, Table table) {
+    this.reservationNumber = reservationNumber;
+    this.customerNumber = customerNumber;
+    this.date = date;
+    this.amountOfPeople = amountOfPeople;
+    this.comment = comment;
+    this.dietaryNeeds = dietaryNeeds;
+    this.table = table;
+  }
 
-    public int getCapacity() {
-        return capacity;
-    }
+  public int getReservationNumber() {
+    return reservationNumber;
+  }
 
-    public void setName(int name) {
-        this.name = name;
-    }
+  public String getCustomerNumber() {
+    return customerNumber;
+  }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
+  public Timestamp getDate() {
+    return date;
+  }
 
+  public int getAmountOfPeople() {
+    return amountOfPeople;
+  }
+
+  public String getComment() {
+    return comment;
+  }
+
+  public String getDietaryNeeds() {
+    return dietaryNeeds;
+  }
+
+  public Table getTable() {
+    return table;
+  }
 }

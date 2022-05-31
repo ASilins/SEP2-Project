@@ -18,7 +18,6 @@ import java.rmi.RemoteException;
 public class TablesImpl implements Tables{
 
     private TableClient tableClient;
-    private Table oldBooking;
 
     /**
      * a constructor for MenuItemsImpl
@@ -26,7 +25,11 @@ public class TablesImpl implements Tables{
      */
 
     public TablesImpl(Client client) {
-        this.tableClient = client.getTableClient();
+        try {
+            this.tableClient = client.getTableClient();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -39,23 +42,12 @@ public class TablesImpl implements Tables{
     @Override
     public void bookTable(Table table) throws RemoteException {
         tableClient.bookTable(table);
-
     }
 
-    /**
-     * @param oldOrder
-     * @param newOrder
-     */
-    @Override
-    public void editOrder(Order oldOrder, Order newOrder) {
-
-    }
     /**
      * Method to edit the table booking
-     * @param oldBooking takes the information form old booking
      * @param newBooking send out the information for new booking
      */
-    public void editTableBooking(Table oldBooking, Table newBooking) {
-        this.oldBooking = oldBooking;
-        oldBooking = newBooking;
+    public void editTableBooking(Table newBooking) {
+        tableClient.editTableBooking(newBooking);
     }}

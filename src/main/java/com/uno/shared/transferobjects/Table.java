@@ -1,12 +1,14 @@
 package com.uno.shared.transferobjects;
 
+import java.io.Serializable;
+
 /**
  * transferobject to use in the system
  * @author Siddhartha Grasse
  * @version 0.2.0
  */
 
-public class Table {
+public class Table implements Serializable {
 
     private int tableNumber;
     private int capacity;
@@ -29,8 +31,8 @@ public class Table {
     }
 
     /**
-     * method that returns the table number
-     * @return tablenumber
+     * method for retrieving the table number
+     * @return tableNumber returns table number
      */
     public int getTableNumber()
     {
@@ -38,8 +40,8 @@ public class Table {
     }
 
     /**
-     * method that returns the capacity of that table
-     * @return capacity of that table
+     * method for retrieving the capacity of the table
+     * @return capacity returns the capacity of the table
      */
 
     public int getCapacity()
@@ -48,7 +50,7 @@ public class Table {
     }
 
     /**
-     * returns availability of that table
+     * method for retrieving the availability of the table
      * @return availability of that table
      */
     public boolean getAvailability()
