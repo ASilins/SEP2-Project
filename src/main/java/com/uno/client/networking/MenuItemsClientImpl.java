@@ -25,7 +25,11 @@ public class MenuItemsClientImpl implements MenuItemsClient{
      */
 
     public MenuItemsClientImpl(Server server){
-        this.server = server.getMenuItemsServer();
+        try {
+            this.server = server.getMenuItemsServer();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

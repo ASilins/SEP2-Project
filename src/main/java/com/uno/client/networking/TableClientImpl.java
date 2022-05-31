@@ -22,7 +22,11 @@ public class TableClientImpl implements TableClient{
      * @param server takes an order as a parameter
      */
     public TableClientImpl(Server server){
-        this.server = server.getTableServer();
+        try {
+            this.server = server.getTableServer();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -43,7 +47,6 @@ public class TableClientImpl implements TableClient{
     @Override
     public void editTableBooking(Table oldBooking, Table newBooking) {
 //        The fuk is this???
-        this.oldBooking = oldBooking;
-        oldBooking = newBooking;
+
     }
 }

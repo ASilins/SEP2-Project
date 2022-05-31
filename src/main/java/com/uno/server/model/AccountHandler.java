@@ -14,4 +14,6 @@ public interface AccountHandler {
    * @param account The object that will be sent to the database.
    */
   void createAccount(Account account);
+
+  Account login(String phoneNumber, String password);
 }

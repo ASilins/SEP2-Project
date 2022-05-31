@@ -18,6 +18,7 @@ public class PasswordHasher {
    */
   public static String hashPassword(String password) {
     StringBuilder sb;
+
     try {
       MessageDigest messageDigest = MessageDigest.getInstance("MD5");
       messageDigest.update(password.getBytes());

@@ -28,4 +28,9 @@ public class AccountHandlerImpl implements AccountHandler {
   public void createAccount(Account account) {
     database.createAccount(account);
   }
+
+  @Override
+  public Account login(String phoneNumber, String password) {
+    return database.login(phoneNumber, password);
+  }
 }

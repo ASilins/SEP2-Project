@@ -1,9 +1,6 @@
 package com.uno.database;
 
-import com.uno.shared.transferobjects.Account;
-import com.uno.shared.transferobjects.MenuItem;
-import com.uno.shared.transferobjects.Order;
-import com.uno.shared.transferobjects.Table;
+import com.uno.shared.transferobjects.*;
 
 import java.util.ArrayList;
 
@@ -42,10 +39,15 @@ public interface Database {
 
   void editTableBooking(Table oldBooking, Table newBooking);
 
+  void editOrder(Order newOrder);
 
   /**
    * A method that takes account object and send it to the database.
    * @param account An account object that will be sent.
    */
   void createAccount(Account account);
+
+  void createReservation(Reservation reservation);
+
+  Account login(String phoneNumber, String password);
 }

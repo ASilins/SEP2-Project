@@ -1,6 +1,8 @@
 package com.uno.shared.transferobjects;
 
-public class MenuItem {
+import java.io.Serializable;
+
+public class MenuItem implements Serializable {
 
     private int itemID;
     private String name;

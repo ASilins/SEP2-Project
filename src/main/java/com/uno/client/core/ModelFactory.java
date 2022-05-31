@@ -1,12 +1,7 @@
 package com.uno.client.core;
 
-import com.uno.client.model.MakeOrder;
-import com.uno.client.model.MakeOrderImpl;
-import com.uno.client.model.MenuItems;
+import com.uno.client.model.*;
 import com.uno.client.core.ClientFactory;
-import com.uno.client.model.MenuItemsImpl;
-import com.uno.client.model.Tables;
-import com.uno.client.model.TablesImpl;
 
 /**
  * A model factory class
@@ -20,6 +15,7 @@ public class ModelFactory {
     private MakeOrder makeOrder;
     private MenuItems menuItems;
     private Tables tables;
+    private AccountModel accountModel;
 
     /**
      * constructor for ModelFactory
@@ -69,5 +65,11 @@ public class ModelFactory {
         return tables;
     }
 
+    public AccountModel getAccountModel() {
+        if (accountModel == null) {
+            accountModel = new AccountImpl(clientFactory.getClient());
+        }
 
+        return accountModel;
+    }
 }

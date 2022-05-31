@@ -26,6 +26,4 @@ public interface Tables {
      */
 
     void editTableBooking(Table oldBooking, Table newBooking);
-
-
 }

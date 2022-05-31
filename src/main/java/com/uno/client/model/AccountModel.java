@@ -14,4 +14,6 @@ public interface AccountModel {
    * @param account The object that will be sent.
    */
   void createAccount(Account account);
+
+  Account login(String phoneNumber, String password);
 }
