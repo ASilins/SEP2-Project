@@ -18,20 +18,20 @@
          </font>
       </Label>
       <TableView layoutX="149.0" layoutY="118.0" prefHeight="274.0" prefWidth="301.0">
-        <columns>
-          <TableColumn prefWidth="152.0" text="Item" />
-          <TableColumn minWidth="0.0" prefWidth="152.0" text="Price" />
-        </columns>
+         <columns>
+            <TableColumn prefWidth="152.0" text="Item" />
+            <TableColumn minWidth="0.0" prefWidth="152.0" text="Price" />
+         </columns>
       </TableView>
       <MenuBar layoutX="1.0" layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
-        <menus>
+         <menus>
             <Menu mnemonicParsing="false" text="Account">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Log out" />
-              </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Log out" />
+               </items>
             </Menu>
-        </menus>
+         </menus>
       </MenuBar>
-      <Button layoutX="46.0" layoutY="367.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="44.0" layoutY="367.0" mnemonicParsing="false" text="Back" />
    </children>
 </AnchorPane>
