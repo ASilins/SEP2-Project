@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS "Table"(
 CREATE TABLE IF NOT EXISTS "Reservation"(
     ReservationNumber SERIAL PRIMARY KEY,
     CustomerNumber varchar(15) NOT NULL,
-    Date timestamp,
+    Date time,
     AmountOfPeople smallint,
     Comment varchar(250),
     DietaryNeeds varchar(250),
@@ -66,6 +66,3 @@ CREATE TABLE IF NOT EXISTS "Take_Out_Order"(
     OrderNumber int REFERENCES "Order"(OrderNumber),
     TakeOutNumber int REFERENCES "Take_out"(TakeOutNumber)
 );
-
-ALTER TABLE "Reservation"
-ALTER COLUMN Date datetime;
