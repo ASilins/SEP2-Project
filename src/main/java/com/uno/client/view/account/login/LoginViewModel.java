@@ -1,4 +1,4 @@
-package com.uno.client.view.login;
+package com.uno.client.view.account.login;
 
 import com.uno.client.model.AccountModel;
 import com.uno.shared.transferobjects.Account;
@@ -21,14 +21,15 @@ public class LoginViewModel {
     errorText = new SimpleStringProperty();
   }
 
-  public boolean login() {
+  public Account login() {
     Account account = model.login(phoneNumber.get(), PasswordHasher.hashPassword(password.get()));
-
+    
     if (account == null) {
-      
+      errorText.set("Password and/or phone number is incorrect");
+      return null;
     }
-
-    return false;
+    
+    return account;
   }
 
   public StringProperty phoneNumberProperty() {

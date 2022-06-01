@@ -14,6 +14,11 @@ public class ViewHandler {
   private Scene orderScene;
   private Scene createAccountScene;
   private Scene loginScene;
+  private Scene mainMenuScene;
+  private Scene staffMainMenuScene;
+  private Scene managerMainMenuScene;
+  private Scene managerViewOrdersScene;
+  private Scene editOrderScene;
 
   private Stage stage;
   private ViewModelFactory vmf;
@@ -24,7 +29,7 @@ public class ViewHandler {
 
   public void start() {
     stage = new Stage();
-    openCreateAccountScene();
+    openLoginScene();
   }
 
   public void openMenuScene() {
@@ -86,6 +91,86 @@ public class ViewHandler {
     }
 
     stage.setScene(loginScene);
+    stage.show();
+  }
+
+  public void openMainMenu() {
+    if (mainMenuScene == null) {
+      try {
+        Parent root = loadFXML("../view/mainMenu/guestview.fxml");
+
+        mainMenuScene = new Scene(root);
+        stage.setTitle("Main Menu");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(mainMenuScene);
+    stage.show();
+  }
+
+  public void openStaffMainMenu() {
+    if (staffMainMenuScene == null) {
+      try {
+        Parent root = loadFXML("../view/mainMenu/staffView.fxml");
+
+        staffMainMenuScene = new Scene(root);
+        stage.setTitle("Main Menu");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(staffMainMenuScene);
+    stage.show();
+  }
+
+  public void openManagerMainMenu() {
+    if (managerMainMenuScene == null) {
+      try {
+        Parent root = loadFXML("../view/mainMenu/managerView.fxml");
+
+        managerMainMenuScene = new Scene(root);
+        stage.setTitle("Main Menu");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(managerMainMenuScene);
+    stage.show();
+  }
+
+  public void openManagerViewOrders() {
+    if (managerViewOrdersScene == null) {
+      try {
+        Parent root = loadFXML("../view/viewOrders/viewOrders.fxml");
+
+        managerViewOrdersScene = new Scene(root);
+        stage.setTitle("Orders");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(managerViewOrdersScene);
+    stage.show();
+  }
+
+  public void openEditOrder() {
+    if (editOrderScene == null) {
+      try {
+        Parent root = loadFXML("../view/editOrder/editOrder.fxml");
+
+        editOrderScene = new Scene(root);
+        stage.setTitle("Edit Order");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(editOrderScene);
     stage.show();
   }
 

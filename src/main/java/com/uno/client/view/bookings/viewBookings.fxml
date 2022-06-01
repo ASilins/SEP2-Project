@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.bookings.ViewBookingsController">
+   <children>
+      <Label layoutX="264.0" layoutY="48.0" text="Bookings">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="14.0" layoutY="100.0" prefHeight="233.0" prefWidth="575.0">
+        <columns>
+          <TableColumn fx:id="bookingNr" prefWidth="87.11111450195312" text="Booking Nr" />
+          <TableColumn fx:id="customerNr" prefWidth="65.44441986083984" text="Customer" />
+            <TableColumn fx:id="date" prefWidth="89.22224426269531" text="Date" />
+            <TableColumn fx:id="guests" prefWidth="56.33331298828125" text="Guests" />
+            <TableColumn fx:id="comment" prefWidth="112.44439697265625" text="Comment" />
+            <TableColumn fx:id="dietaryNeeds" prefWidth="94.55557250976562" text="Dietary Needs" />
+            <TableColumn fx:id="tableNr" prefWidth="67.4444580078125" text="Table" />
+        </columns>
+      </TableView>
+      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="486.0" layoutY="350.0" mnemonicParsing="false" onAction="#editBooking" text="Edit Booking" />
+   </children>
+</AnchorPane>

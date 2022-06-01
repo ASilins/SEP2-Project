@@ -19,7 +19,7 @@ public interface DatabaseHandler {
    * A method that returns one object from the database.
    * @return The object from the database.
    */
-  Object getFromDatabase();
+  Object getFromDatabase(Object searchParameter);
 
   /**
    * A method that inserts a list of objects into a database table.
