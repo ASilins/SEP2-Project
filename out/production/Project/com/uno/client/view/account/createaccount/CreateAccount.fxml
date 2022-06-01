@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.createaccount.CreateAccountController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.account.createaccount.CreateAccountController">
    <children>
       <Button layoutX="486.0" layoutY="340.0" mnemonicParsing="false" onAction="#createAccount" text="Create" />
       <Button layoutX="62.0" layoutY="340.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />

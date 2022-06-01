@@ -65,7 +65,7 @@ public class ViewHandler {
   public void openCreateAccountScene() {
     if (createAccountScene == null) {
       try {
-        Parent root = loadFXML("../view/createaccount/CreateAccount.fxml");
+        Parent root = loadFXML("../view/account/createaccount/CreateAccount.fxml");
 
         createAccountScene = new Scene(root);
         stage.setTitle("Create Account");
@@ -81,7 +81,7 @@ public class ViewHandler {
   public void openLoginScene() {
     if (loginScene == null) {
       try {
-        Parent root = loadFXML("../view/login/Login.fxml");
+        Parent root = loadFXML("../view/account/login/Login.fxml");
 
         loginScene = new Scene(root);
         stage.setTitle("Login");
