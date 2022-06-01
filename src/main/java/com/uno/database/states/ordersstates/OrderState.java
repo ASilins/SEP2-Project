@@ -39,7 +39,7 @@ public class OrderState implements DatabaseHandler {
   }
 
   @Override
-  public Object getFromDatabase() {
+  public Object getFromDatabase(Object searchParameter) {
     return null;
   }
 
@@ -58,9 +58,9 @@ public class OrderState implements DatabaseHandler {
     List<Order> list = new ArrayList<>();
     try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
       PreparedStatement statement =
-          connection.prepareStatement("SELECT * FROM Order");
+          connection.prepareStatement("SELECT * FROM \"Order\"");
       ResultSet result = statement.executeQuery();
-      if (result.next()) {
+      while (result.next()) {
         list.add(new Order(result.getInt(1), result.getInt(2), result.getString(3), result.getString(4)));
       }
     } catch (SQLException e) {

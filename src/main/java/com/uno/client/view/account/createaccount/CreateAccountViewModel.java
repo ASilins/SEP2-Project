@@ -1,4 +1,4 @@
-package com.uno.client.view.createaccount;
+package com.uno.client.view.account.createaccount;
 
 import com.uno.client.model.AccountModel;
 import com.uno.shared.transferobjects.Account;

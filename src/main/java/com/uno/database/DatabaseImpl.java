@@ -94,7 +94,24 @@ public class DatabaseImpl implements Database {
 
   @Override
   public Account login(String phoneNumber, String password) {
-    return null;
+    setState(new AccountState());
+
+    if (currentState.getFromDatabase(phoneNumber) == null) {
+      return null;
+    }
+    Account account = (Account) currentState.getFromDatabase(phoneNumber);
+
+    if (!account.getPassword().equals(password)) {
+      return null;
+    }
+
+    return account;
+  }
+
+  @Override
+  public ArrayList<Order> getOrders() {
+    setState(new OrderState());
+    return (ArrayList<Order>) currentState.getListFromDatabase();
   }
 
   /**

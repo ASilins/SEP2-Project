@@ -45,6 +45,7 @@ public class ServerImpl implements Server {
   public void startServer() throws RemoteException, AlreadyBoundException {
     Registry registry = LocateRegistry.createRegistry(22222);
     registry.bind("Server", this);
+    System.out.println("\nServer started");
   }
 
   /**

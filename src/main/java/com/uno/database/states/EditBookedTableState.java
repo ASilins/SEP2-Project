@@ -40,7 +40,7 @@ public class EditBookedTableState implements DatabaseHandler
     }
   }
 
-  @Override public Object getFromDatabase()
+  @Override public Object getFromDatabase(Object searchParameter)
   {
     return null;
   }

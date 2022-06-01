@@ -16,6 +16,7 @@ public class ModelFactory {
     private MenuItems menuItems;
     private Tables tables;
     private AccountModel accountModel;
+    private ReservationModel reservationModel;
 
     /**
      * constructor for ModelFactory
@@ -71,5 +72,13 @@ public class ModelFactory {
         }
 
         return accountModel;
+    }
+
+    public ReservationModel getReservationModel() {
+        if (reservationModel == null) {
+            reservationModel = new ReservationModelImpl(clientFactory.getClient());
+        }
+
+        return reservationModel;
     }
 }

@@ -50,4 +50,6 @@ public interface Database {
   void createReservation(Reservation reservation);
 
   Account login(String phoneNumber, String password);
+
+  ArrayList<Order> getOrders();
 }
