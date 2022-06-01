@@ -35,13 +35,13 @@ public class EditOrderState implements DatabaseHandler {
       e.printStackTrace();
     }
   }
-  
+
   /**
    * A method that creates and returns Order objects from order
    * table in the database
    * @return null
    */
-  @Override public Object getFromDatabase() {
+  @Override public Object getFromDatabase(Object searchParameter) {
     return null;
   }
 

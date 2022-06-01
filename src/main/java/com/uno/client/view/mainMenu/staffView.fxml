@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.mainMenu.MainMenuController">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Account">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Log out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="209.0" layoutY="40.0" text="Our Restaurant" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font>
+            </Label>
+            <ToolBar layoutX="139.0" layoutY="123.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="86.0" prefWidth="362.0">
+               <items>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#bookTable" prefHeight="50.0" prefWidth="80.0" text=" Book a Table" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#takeAway" prefHeight="50.0" prefWidth="80.0" text="Take Away Order" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#openMenu" prefHeight="50.0" prefWidth="80.0" text="View Our Menu" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#dineIn" prefHeight="50.0" prefWidth="80.0" text="Dine In Order" textAlignment="CENTER" wrapText="true" />
+               </items>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </ToolBar>
+            <ToolBar layoutX="139.0" layoutY="220.0" prefHeight="86.0" prefWidth="362.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#viewOrders" prefHeight="50.0" prefWidth="80.0" text="View Orders" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#viewBookings" prefHeight="50.0" prefWidth="80.0" text="View Bookings" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#viewTables" prefHeight="50.0" prefWidth="80.0" text="View Tables" textAlignment="CENTER" wrapText="true" />
+                  <Button disable="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" text="View Users" textAlignment="CENTER" wrapText="true" />
+               </items>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </ToolBar>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

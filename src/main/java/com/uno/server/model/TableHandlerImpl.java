@@ -31,6 +31,6 @@ public class TableHandlerImpl implements TableHandler{
 
     @Override
     public void editTableBooking(Table newBooking) {
-        database.
+
     }
 }

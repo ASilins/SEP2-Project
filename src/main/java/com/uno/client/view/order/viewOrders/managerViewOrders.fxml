@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.order.viewOrders.ViewOrdersController">
+   <children>
+      <Label layoutX="264.0" layoutY="48.0" text="Orders">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="49.0" layoutY="100.0" prefHeight="233.0" prefWidth="509.0">
+        <columns>
+          <TableColumn fx:id="orderNumber" prefWidth="87.11111450195312" text="Order Nr" />
+          <TableColumn fx:id="menuItem" prefWidth="75.111083984375" text="Menu Item" />
+            <TableColumn fx:id="comment" prefWidth="168.55552673339844" text="Comment" />
+            <TableColumn fx:id="dietaryNeeds" prefWidth="176.77777099609375" text="Dietary Needs" />
+        </columns>
+      </TableView>
+      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="498.0" layoutY="350.0" mnemonicParsing="false" onAction="#editOrder" text="Edit Order" />
+   </children>
+</AnchorPane>

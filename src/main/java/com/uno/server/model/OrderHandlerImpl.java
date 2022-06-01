@@ -39,7 +39,7 @@ public class OrderHandlerImpl implements OrderHandler{
    */
   @Override
   public ArrayList<Order> getOrders() {
-    return null;
+    return database.getOrders();
   }
 
   /**

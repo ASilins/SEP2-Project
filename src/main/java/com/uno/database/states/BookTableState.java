@@ -34,7 +34,7 @@ public class BookTableState implements DatabaseHandler {
      */
 
     @Override
-    public Object getFromDatabase() {
+    public Object getFromDatabase(Object searchParameter) {
         return null;
     }
 
