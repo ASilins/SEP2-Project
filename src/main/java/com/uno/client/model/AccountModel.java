@@ -2,6 +2,8 @@ package com.uno.client.model;
 
 import com.uno.shared.transferobjects.Account;
 
+import java.util.List;
+
 /**
  * An interface that is used to interact from the gui with the model.
  * @author Arturs Silins
@@ -16,4 +18,8 @@ public interface AccountModel {
   void createAccount(Account account);
 
   Account login(String phoneNumber, String password);
+
+  List<Account> getUsers();
+
+  void editUser(Account account);
 }

@@ -6,6 +6,7 @@ import com.uno.shared.transferobjects.Reservation;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class ReservationServerImpl implements ReservationServer {
 
@@ -19,5 +20,15 @@ public class ReservationServerImpl implements ReservationServer {
   @Override
   public void createReservation(Reservation reservation) throws RemoteException {
 
+  }
+
+  @Override
+  public void updateReservation(Reservation reservation) throws RemoteException {
+    handler.updateReservation(reservation);
+  }
+
+  @Override
+  public List<Reservation> getReservations() throws RemoteException {
+    return handler.getReservations();
   }
 }

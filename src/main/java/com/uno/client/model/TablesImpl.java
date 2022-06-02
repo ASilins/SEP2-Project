@@ -6,8 +6,10 @@ import com.uno.client.networking.TableClient;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
-
+import java.util.List;
 
 /**
  * A class for handling tables
@@ -18,6 +20,8 @@ import java.rmi.RemoteException;
 public class TablesImpl implements Tables{
 
     private TableClient tableClient;
+
+    private PropertyChangeSupport support;
 
     /**
      * a constructor for MenuItemsImpl
@@ -30,6 +34,16 @@ public class TablesImpl implements Tables{
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void createTable(Table table) {
+        tableClient.createTable(table);
+    }
+
+    @Override
+    public void updateTable(Table table) {
+        tableClient.updateTable(table);
     }
 
     /**
@@ -50,4 +64,32 @@ public class TablesImpl implements Tables{
      */
     public void editTableBooking(Table newBooking) {
         tableClient.editTableBooking(newBooking);
-    }}
+    }
+
+    @Override
+    public List<Table> getTables() {
+        return tableClient.getTables();
+    }
+
+    @Override
+    public void tableToEdit(Table table) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(250);
+                support.firePropertyChange("TableToUpdate", null, table);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    @Override
+    public void addListener(String evtName, PropertyChangeListener lstnr) {
+        support.addPropertyChangeListener(evtName, lstnr);
+    }
+
+    @Override
+    public void removeListener(String evtName, PropertyChangeListener lstnr) {
+        support.removePropertyChangeListener(evtName, lstnr);
+    }
+}

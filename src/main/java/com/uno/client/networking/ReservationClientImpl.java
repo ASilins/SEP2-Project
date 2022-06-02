@@ -5,6 +5,7 @@ import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Reservation;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class ReservationClientImpl implements ReservationClient {
 
@@ -25,5 +26,27 @@ public class ReservationClientImpl implements ReservationClient {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  @Override
+  public void updateReservation(Reservation reservation) {
+    try {
+      server.updateReservation(reservation);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public List<Reservation> getReservations() {
+    List<Reservation> list;
+
+    try {
+      return server.getReservations();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+
+    return null;
   }
 }

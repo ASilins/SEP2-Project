@@ -6,6 +6,7 @@ import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 /**
  * class for table client
@@ -29,6 +30,24 @@ public class TableClientImpl implements TableClient{
         }
     }
 
+    @Override
+    public void createTable(Table table) {
+        try {
+            server.createTable(table);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateTable(Table table) {
+        try {
+            server.updateTable(table);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Method to create a table booking
      * @param table takes a table as a parameter
@@ -46,5 +65,16 @@ public class TableClientImpl implements TableClient{
     @Override
     public void editTableBooking(Table newBooking) {
         server.editTableBooking(newBooking);
+    }
+
+    @Override
+    public List<Table> getTables() {
+        try {
+            return server.getTables();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

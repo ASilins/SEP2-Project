@@ -3,6 +3,8 @@ package com.uno.server.model;
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Reservation;
 
+import java.util.List;
+
 public class ReservationHandlerImpl implements ReservationHandler {
 
   private Database database;
@@ -14,5 +16,15 @@ public class ReservationHandlerImpl implements ReservationHandler {
   @Override
   public void createReservation(Reservation reservation) {
     database.createReservation(reservation);
+  }
+
+  @Override
+  public void updateReservation(Reservation reservation) {
+    database.updateReservation(reservation);
+  }
+
+  @Override
+  public List<Reservation> getReservations() {
+    return database.getReservations();
   }
 }

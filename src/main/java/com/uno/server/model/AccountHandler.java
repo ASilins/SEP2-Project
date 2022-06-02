@@ -2,6 +2,8 @@ package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Account;
 
+import java.util.List;
+
 /**
  * Interface that lets server interact with database for the client account
  * @author Arturs Silins
@@ -16,4 +18,6 @@ public interface AccountHandler {
   void createAccount(Account account);
 
   Account login(String phoneNumber, String password);
+
+  List<Account> getUsers();
 }

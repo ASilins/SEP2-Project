@@ -19,6 +19,16 @@ public class ViewHandler {
   private Scene managerMainMenuScene;
   private Scene managerViewOrdersScene;
   private Scene editOrderScene;
+  private Scene editBookingScene;
+  private Scene managerEditBookingScene;
+  private Scene viewBookingScene;
+  private Scene managerViewBookingScene;
+  private Scene viewTablesScene;
+  private Scene managerViewTablesScene;
+  private Scene editTableScene;
+  private Scene createTableScene;
+  private Scene viewUsersScene;
+  private Scene editUsersScene;
 
   private Stage stage;
   private ViewModelFactory vmf;
@@ -171,6 +181,166 @@ public class ViewHandler {
     }
 
     stage.setScene(editOrderScene);
+    stage.show();
+  }
+
+  public void openEditBooking() {
+    if (editBookingScene == null) {
+      try {
+        Parent root = loadFXML("../view/bookings/editBookings/editBooking.fxml");
+
+        editBookingScene = new Scene(root);
+        stage.setTitle("Edit Booking");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(editBookingScene);
+    stage.show();
+  }
+
+  public void openManagerEditBooking() {
+    if (managerEditBookingScene == null) {
+      try {
+        Parent root = loadFXML("../view/bookings/editBookings/managerEditBooking.fxml");
+
+        managerEditBookingScene = new Scene(root);
+        stage.setTitle("Edit Booking");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(managerEditBookingScene);
+    stage.show();
+  }
+
+  public void openViewBooking() {
+    if (viewBookingScene == null) {
+      try {
+        Parent root = loadFXML("../view/bookings/viewBookings.fxml");
+
+        viewBookingScene = new Scene(root);
+        stage.setTitle("Bookings");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(viewBookingScene);
+    stage.show();
+  }
+
+  public void openManagerViewBooking() {
+    if (managerViewBookingScene == null) {
+      try {
+        Parent root = loadFXML("../view/bookings/managerViewBookings.fxml");
+
+        managerViewBookingScene = new Scene(root);
+        stage.setTitle("Bookings");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(managerViewBookingScene);
+    stage.show();
+  }
+
+  public void openViewTables() {
+    if (viewTablesScene == null) {
+      try {
+        Parent root = loadFXML("../view/tables/viewTables/viewTables.fxml");
+
+        viewTablesScene = new Scene(root);
+        stage.setTitle("Tables");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(viewTablesScene);
+    stage.show();
+  }
+
+  public void openManagerViewTables() {
+    if (managerViewTablesScene == null) {
+      try {
+        Parent root = loadFXML("../view/tables/viewTables/managerViewTables.fxml");
+
+        managerViewTablesScene = new Scene(root);
+        stage.setTitle("Tables");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(managerViewTablesScene);
+    stage.show();
+  }
+
+  public void openEditTable() {
+    if (editTableScene == null) {
+      try {
+        Parent root = loadFXML("../view/tables/editTable/editTable.fxml");
+
+        editTableScene = new Scene(root);
+        stage.setTitle("Edit Table");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(editTableScene);
+    stage.show();
+  }
+
+  public void openCreateTable() {
+    if (createTableScene == null) {
+      try {
+        Parent root = loadFXML("../view/tables/createTable/createTable.fxml");
+
+        createTableScene = new Scene(root);
+        stage.setTitle("Create Table");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(createTableScene);
+    stage.show();
+  }
+
+  public void openViewUsers() {
+    if (viewUsersScene == null) {
+      try {
+        Parent root = loadFXML("../view/account/viewUsers/viewUsers.fxml");
+
+        viewUsersScene = new Scene(root);
+        stage.setTitle("Users");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(viewUsersScene);
+    stage.show();
+  }
+
+  public void openEditUser() {
+    if (viewUsersScene == null) {
+      try {
+        Parent root = loadFXML("../view/account/viewUsers/viewUsers.fxml");
+
+        viewUsersScene = new Scene(root);
+        stage.setTitle("Users");
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+
+    stage.setScene(viewUsersScene);
     stage.show();
   }
 

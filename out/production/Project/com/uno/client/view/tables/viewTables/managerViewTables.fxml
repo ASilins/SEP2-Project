@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.tables.viewTables.ViewTablesController">
+   <children>
+      <Label layoutX="264.0" layoutY="48.0" text="Tables">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="133.0" layoutY="100.0" prefHeight="233.0" prefWidth="334.0">
+        <columns>
+          <TableColumn fx:id="tableNr" prefWidth="103.66665649414062" text="Table Nr" />
+          <TableColumn fx:id="capacity" prefWidth="113.11111450195312" text="Capacity" />
+            <TableColumn fx:id="availability" prefWidth="116.22222900390625" text="Availability" />
+        </columns>
+      </TableView>
+      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#managerBack" text="Back" />
+      <Button layoutX="498.0" layoutY="350.0" mnemonicParsing="false" onAction="#editTable" text="Edit Table" />
+      <Button layoutX="396.0" layoutY="350.0" mnemonicParsing="false" onAction="#createTable" text="Create Table" />
+   </children>
+</AnchorPane>

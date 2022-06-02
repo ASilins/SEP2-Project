@@ -6,7 +6,7 @@ import com.uno.shared.transferobjects.Table;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-
+import java.util.List;
 
 /**
  * This class implements TableServer Interface. This server object handles
@@ -23,13 +23,23 @@ public class TableServerImpl implements TableServer {
      * that handles Table Objects in the server.
      * @param handler the Tablehandler
      */
-    public TableServerImpl(TableHandler handler) {
+    public TableServerImpl(TableHandler handler) throws RemoteException{
         try {
             UnicastRemoteObject.exportObject(this, 0);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
         this.handler = handler;
+    }
+
+    @Override
+    public void createTable(Table table) throws RemoteException {
+        handler.createTable(table);
+    }
+
+    @Override
+    public void updateTable(Table table) throws RemoteException {
+        handler.updateTable(table);
     }
 
     /**
@@ -47,5 +57,10 @@ public class TableServerImpl implements TableServer {
     @Override
     public void editTableBooking(Table newBooking) {
         handler.editTableBooking(newBooking);
+    }
+
+    @Override
+    public List<Table> getTables() throws RemoteException {
+        return handler.getTables();
     }
 }

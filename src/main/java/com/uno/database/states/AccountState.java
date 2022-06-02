@@ -3,11 +3,14 @@ package com.uno.database.states;
 import com.uno.database.DatabaseConnection;
 import com.uno.database.DatabaseHandler;
 import com.uno.shared.transferobjects.Account;
+import com.uno.shared.transferobjects.Table;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A class that interacts with the database account table.
@@ -65,6 +68,19 @@ public class AccountState implements DatabaseHandler {
 
   @Override
   public Object getListFromDatabase() {
-    return null;
+    List<Account> list = new ArrayList<>();
+
+    try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
+      PreparedStatement statement =
+          connection.prepareStatement("SELECT * FROM \"User\"");
+      ResultSet result = statement.executeQuery();
+      while (result.next()) {
+        list.add(new Account(result.getString(1), result.getString(2), result.getString(3), null));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+    return list;
   }
 }

@@ -4,6 +4,7 @@ import com.uno.shared.transferobjects.Account;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 /**
  * An interface that extends remote. Handles receiving and sending account
@@ -21,4 +22,6 @@ public interface AccountServer extends Remote {
   void createAccount(Account account) throws RemoteException;
 
   Account login(String phoneNumber, String password) throws RemoteException;
+
+  List<Account> getUsers() throws RemoteException;
 }
