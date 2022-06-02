@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.dineIn.DineInController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
@@ -29,25 +28,25 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
+      <TableView fx:id="menuTable" layoutX="14.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
         <columns>
-          <TableColumn prefWidth="114.0" text="C1" />
-          <TableColumn prefWidth="60.0" text="C2" />
+          <TableColumn fx:id="itemNameMenu" prefWidth="114.0" text="Item" />
+          <TableColumn fx:id="priceMenu" prefWidth="60.0" text="Price" />
         </columns>
       </TableView>
-      <TableView layoutX="244.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
+      <TableView fx:id="orderTable" layoutX="244.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
         <columns>
-          <TableColumn prefWidth="114.0" text="C1" />
-          <TableColumn prefWidth="60.0" text="C2" />
+          <TableColumn fx:id="itemNameOrder" prefWidth="114.0" text="Item" />
+          <TableColumn fx:id="priceOrder" prefWidth="60.0" text="Price" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" text="Back" />
-      <Button layoutX="535.0" layoutY="355.0" mnemonicParsing="false" text="Order" />
-      <Button layoutX="201.0" layoutY="124.0" mnemonicParsing="false" text="-&gt;" />
-      <Button layoutX="202.0" layoutY="262.0" mnemonicParsing="false" text="&lt;-" />
-      <TextArea layoutX="429.0" layoutY="78.0" prefHeight="126.0" prefWidth="154.0" promptText="Diets" />
-      <TextArea layoutX="429.0" layoutY="213.0" prefHeight="126.0" prefWidth="154.0" promptText="Comments" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="orderBtn" layoutX="535.0" layoutY="355.0" mnemonicParsing="false" text="Order" />
+      <Button fx:id="addToOrderBtn" layoutX="201.0" layoutY="124.0" mnemonicParsing="false" onAction="#addToOrder" text="-&gt;" />
+      <Button fx:id="removeFromOrderBtn" layoutX="202.0" layoutY="262.0" mnemonicParsing="false" onAction="#removeFromOrder" text="&lt;-" />
+      <TextArea fx:id="dietaryNeeds" layoutX="429.0" layoutY="78.0" prefHeight="126.0" prefWidth="154.0" promptText="Diets" />
+      <TextArea fx:id="comment" layoutX="429.0" layoutY="213.0" prefHeight="126.0" prefWidth="154.0" promptText="Comments" />
       <Label layoutX="174.0" layoutY="359.0" text="Table" />
-      <ChoiceBox layoutX="279.0" layoutY="355.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="tableBox" layoutX="279.0" layoutY="355.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

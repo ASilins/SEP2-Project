@@ -21,7 +21,7 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Label layoutX="105.0" layoutY="40.0" text="Take Away - summary">
+      <Label layoutX="109.0" layoutY="37.0" text="Take Away - overview">
          <font>
             <Font size="40.0" />
          </font>
