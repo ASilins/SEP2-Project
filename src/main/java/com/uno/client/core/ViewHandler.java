@@ -8,6 +8,12 @@ import com.uno.client.view.ViewController;
 
 import java.io.IOException;
 
+/**
+ * A model factory class
+ * @author Maximillian Wallin, Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewHandler {
 
   private Scene menuScene;
@@ -23,14 +29,26 @@ public class ViewHandler {
   private Stage stage;
   private ViewModelFactory vmf;
 
+  /**
+   * constructor for ViewHandler
+   * @param vmf takes ViewModelFactory as a parameter
+   */
+
   public ViewHandler(ViewModelFactory vmf) {
     this.vmf = vmf;
   }
+
+  /**
+   * executes the method that will open the login scene
+   */
 
   public void start() {
     stage = new Stage();
     openLoginScene();
   }
+  /**
+   * method to open the menu scene
+   */
 
   public void openMenuScene() {
     if (menuScene == null) {
@@ -47,6 +65,10 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * method to open the order scene
+   */
+
   public void openOrderScene() {
     if (orderScene == null) {
       try {
@@ -61,6 +83,10 @@ public class ViewHandler {
     stage.setScene(orderScene);
     stage.show();
   }
+
+  /**
+   * method to open the create account scene
+   */
 
   public void openCreateAccountScene() {
     if (createAccountScene == null) {
@@ -78,6 +104,10 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * method to open the login scene if the login scene is not created
+   */
+
   public void openLoginScene() {
     if (loginScene == null) {
       try {
@@ -93,6 +123,10 @@ public class ViewHandler {
     stage.setScene(loginScene);
     stage.show();
   }
+
+  /**
+   * method to open the main menu scene
+   */
 
   public void openMainMenu() {
     if (mainMenuScene == null) {
@@ -110,6 +144,10 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * method to open the staff main menu scene
+   */
+
   public void openStaffMainMenu() {
     if (staffMainMenuScene == null) {
       try {
@@ -125,6 +163,10 @@ public class ViewHandler {
     stage.setScene(staffMainMenuScene);
     stage.show();
   }
+
+  /**
+   * method to open the manager main menu scene
+   */
 
   public void openManagerMainMenu() {
     if (managerMainMenuScene == null) {
@@ -142,6 +184,10 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * method to open the manager view order scene
+   */
+
   public void openManagerViewOrders() {
     if (managerViewOrdersScene == null) {
       try {
@@ -157,6 +203,10 @@ public class ViewHandler {
     stage.setScene(managerViewOrdersScene);
     stage.show();
   }
+
+  /**
+   * method to open the edit order scene
+   */
 
   public void openEditOrder() {
     if (editOrderScene == null) {

@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 /**
  * A class that logins the account and can also create account.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class AccountClientImpl implements AccountClient{
 
@@ -28,7 +28,7 @@ public class AccountClientImpl implements AccountClient{
   }
 
   /**
-   * A method that takes account object and send it to the server.
+   * A method that takes account object and sends it to the server.
    * @param account The object that will be sent to the server.
    */
   @Override
@@ -39,6 +39,12 @@ public class AccountClientImpl implements AccountClient{
       e.printStackTrace();
     }
   }
+
+  /**
+   * A class that sends account object to client and returns it
+   * @param phoneNumber The object that will be sent.
+   * @param password The object that will be sent.
+   */
 
   @Override
   public Account login(String phoneNumber, String password) {

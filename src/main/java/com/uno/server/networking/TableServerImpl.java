@@ -12,7 +12,7 @@ import java.rmi.server.UnicastRemoteObject;
  * This class implements TableServer Interface. This server object handles
  * sending and receiving Table objects from client and server.
  * @author Siddhartha Grasse
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class TableServerImpl implements TableServer {
 

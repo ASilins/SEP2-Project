@@ -7,6 +7,12 @@ import javafx.collections.ObservableList;
 
 import java.util.List;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewOrdersViewModel {
 
   private MakeOrder model;

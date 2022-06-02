@@ -7,6 +7,13 @@ import com.uno.shared.transferobjects.Reservation;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/**
+ * This is a class with reservation server interface. This server object handles
+ * sending and receiving Reservation objects from client and server.
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ReservationServerImpl implements ReservationServer {
 
   private ReservationHandler handler;

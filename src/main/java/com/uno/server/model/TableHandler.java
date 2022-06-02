@@ -6,7 +6,7 @@ import com.uno.shared.transferobjects.Table;
  * An interface that is used to send and receive Table objects
  * using these methods.
  * @author Siddhartha Grasse, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface TableHandler {
 

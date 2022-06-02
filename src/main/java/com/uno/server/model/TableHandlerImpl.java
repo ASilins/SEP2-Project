@@ -6,7 +6,7 @@ import com.uno.shared.transferobjects.Table;
 /**
  * A class that handles Table objects from the database to the client.
  * @author Siddhartha Grasse, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class TableHandlerImpl implements TableHandler{
 

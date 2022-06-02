@@ -6,6 +6,12 @@ import com.uno.shared.util.PasswordHasher;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class CreateAccountViewModel {
 
   private AccountModel model;
@@ -14,25 +20,40 @@ public class CreateAccountViewModel {
   private StringProperty name;
   private StringProperty password;
 
+  /**
+   * Constructor that sets instance of create account view model for the object.
+   * @param model The object that gives the instance.
+   */
+
   public CreateAccountViewModel(AccountModel model) {
     this.model = model;
     phoneNumber = new SimpleStringProperty();
     name = new SimpleStringProperty();
     password = new SimpleStringProperty();
   }
-
+  /**
+   *
+   */
   public void createAccount() {
     model.createAccount(new Account(phoneNumber.get(), name.get(), "Guest", PasswordHasher.hashPassword(password.get())));
   }
-
+  /**
+   * returns the string property of the phone number
+   */
   public StringProperty phoneNumberProperty() {
     return phoneNumber;
   }
 
+  /**
+   * returns the string property of the name
+   */
   public StringProperty nameProperty() {
     return name;
   }
 
+  /**
+   * returns the string property of the password
+   */
   public StringProperty passwordProperty() {
     return password;
   }

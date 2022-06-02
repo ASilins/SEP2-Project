@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * An interface of a class for handling make order
  * @author Ondrej Klimek, Bhupas, Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface MakeOrder extends Subject {
 

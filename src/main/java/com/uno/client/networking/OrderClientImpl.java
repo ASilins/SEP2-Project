@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * class for Order client
  * @author Ondrej,Bhupas Gautam
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class OrderClientImpl implements OrderClient{
 

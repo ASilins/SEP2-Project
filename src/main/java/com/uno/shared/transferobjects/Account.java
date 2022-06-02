@@ -6,7 +6,7 @@ import java.io.Serializable;
  * A class that is used to send account objects from the client to the server
  * and database and back.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class Account implements Serializable {
 

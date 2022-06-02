@@ -6,6 +6,11 @@ import com.uno.shared.transferobjects.Reservation;
 
 import java.rmi.RemoteException;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class ReservationModelImpl implements ReservationModel{
 
   private ReservationClient client;

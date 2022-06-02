@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * A class for handling menu items
  * @author Ondrej Klimek
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 public class MenuItemsImpl implements MenuItems{

@@ -9,6 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class LoginController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -21,6 +27,9 @@ public class LoginController implements ViewController {
   @FXML
   private Label errorText;
 
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     this.viewModel = vmf.getLoginViewModel();

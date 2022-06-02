@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 /**
  * An interface for Order client
- * @author Ondrej,Bhupas Gautam
- * @version 0.2.0
+ * @author Ondrej Klimek,Bhupas Gautam
+ * @version 1.0.0
  */
 public interface OrderClient {
 

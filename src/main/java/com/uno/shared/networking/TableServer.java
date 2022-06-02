@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
 /**
  * This interface is for Tables that handles only things associated with tables
  * @author Siddhartha Grasse, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface TableServer extends Remote {
 

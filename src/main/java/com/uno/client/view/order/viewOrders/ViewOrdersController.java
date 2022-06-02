@@ -9,6 +9,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewOrdersController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -21,6 +27,9 @@ public class ViewOrdersController implements ViewController {
   public TableColumn<String, Order> comment;
   public TableColumn<String, Order> dietaryNeeds;
 
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     this.viewModel = vmf.getViewOrdersViewModel();
@@ -32,11 +41,16 @@ public class ViewOrdersController implements ViewController {
     comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
     dietaryNeeds.setCellValueFactory(new PropertyValueFactory<>("dietaryNeeds"));
   }
-
+  /**
+   * A method that returns the user to the manager main menu view
+   */
   public void backManager() {
     viewHandler.openManagerMainMenu();
   }
 
+  /**
+   * A method that returns the user to the manager main menu view
+   */
   public void back() {
     viewHandler.openStaffMainMenu();
   }

@@ -16,7 +16,7 @@ import java.rmi.server.UnicastRemoteObject;
  * This is a class with server interface implementation that creates other
  * classes and is the main class for the server.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class ServerImpl implements Server {
 

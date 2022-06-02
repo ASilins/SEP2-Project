@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * This class implements OrderServer Interface. This server object handles
  * sending and receiving Order objects from client and server.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class OrderServerImpl implements OrderServer {
 

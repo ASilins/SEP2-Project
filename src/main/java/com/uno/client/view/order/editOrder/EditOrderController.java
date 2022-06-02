@@ -6,6 +6,12 @@ import com.uno.client.view.ViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class EditOrderController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -20,6 +26,9 @@ public class EditOrderController implements ViewController {
   @FXML
   private TextField dietaryNeeds;
 
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     viewModel = vmf.getEditOrderViewModel();

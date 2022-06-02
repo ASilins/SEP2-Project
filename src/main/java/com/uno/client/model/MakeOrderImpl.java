@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * An interface of a class for making order
  * @author Ondrej Klimek, Bhupas Gautam
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class MakeOrderImpl implements MakeOrder {
 
@@ -79,10 +79,18 @@ public class MakeOrderImpl implements MakeOrder {
         }).start();
     }
 
+    /**
+     * A method for adding a listener
+     */
+
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
     }
+
+    /**
+     * A method for removing a listener
+     */
 
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {

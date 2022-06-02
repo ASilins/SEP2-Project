@@ -11,8 +11,8 @@ import java.rmi.RemoteException;
 
 /**
  * A class for handling tables
- * @author Siddhartha Grasse, Bhupas
- * @version 0.2.0
+ * @author Siddhartha Grasse, Bhupas Gautam
+ * @version 1.0.0
  */
 
 public class TablesImpl implements Tables{

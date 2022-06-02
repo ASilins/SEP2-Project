@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * A class that sends or takes objects from a database
  * @author Siddhartha Grasse
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class BookTableState implements DatabaseHandler {
     /**
@@ -27,11 +27,6 @@ public class BookTableState implements DatabaseHandler {
     public void sendToDatabase(Object object) {
 
     }
-
-    /**
-     * a method that returns null
-     * @return null
-     */
 
     @Override
     public Object getFromDatabase(Object searchParameter) {

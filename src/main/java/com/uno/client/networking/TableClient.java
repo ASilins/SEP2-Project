@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
 /**
  * An interface for table client
  * @author Siddhartha Grasse, Bhupas Gautam
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface TableClient {
 
@@ -21,7 +21,6 @@ public interface TableClient {
 
     /**
      * Method to edit table booking
-     * @param oldBooking takes the information from table booking
      * @param newBooking sends the new information about table booking
      */
 

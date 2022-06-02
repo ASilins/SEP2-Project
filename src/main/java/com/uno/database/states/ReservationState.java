@@ -8,7 +8,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * A class that sends or takes objects from a database
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ReservationState implements DatabaseHandler {
+
+  /**
+   * A method that creates a new entry in reservation table in the database.
+   * @param object The object that will be inserted in to database.
+   */
+
   @Override
   public void sendToDatabase(Object object) {
     Reservation temp = (Reservation) object;
