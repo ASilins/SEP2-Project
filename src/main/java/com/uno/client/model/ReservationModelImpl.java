@@ -4,6 +4,7 @@ import com.uno.client.networking.Client;
 import com.uno.client.networking.ReservationClient;
 import com.uno.shared.transferobjects.Reservation;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
@@ -18,11 +19,17 @@ public class ReservationModelImpl implements ReservationModel{
   public ReservationModelImpl(Client client) {
     try {
       this.client = client.getReservationClient();
+      this.client.registerClient();
+      this.client.addListener("Update", this::update);
     } catch (RemoteException e) {
       e.printStackTrace();
     }
 
     support = new PropertyChangeSupport(this);
+  }
+
+  private void update(PropertyChangeEvent event) {
+    support.firePropertyChange("Update", null, event.getNewValue());
   }
 
   @Override

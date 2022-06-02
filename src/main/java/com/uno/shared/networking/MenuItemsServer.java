@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public interface MenuItemsServer extends Remote {
 
+  void registerClient(MenuItemsClientCallBack client) throws RemoteException;
+
   /**
    * Method that returns list of menu items
    * @return List of menu items

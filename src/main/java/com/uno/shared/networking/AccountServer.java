@@ -14,6 +14,8 @@ import java.util.List;
  */
 public interface AccountServer extends Remote {
 
+  void registerClient(AccountClientCallBack client) throws RemoteException;
+
   /**
    * A method that send account object to the server.
    * @param account The account object that is sent from th client.
@@ -24,4 +26,6 @@ public interface AccountServer extends Remote {
   Account login(String phoneNumber, String password) throws RemoteException;
 
   List<Account> getUsers() throws RemoteException;
+
+  void editUser(Account account) throws RemoteException;
 }

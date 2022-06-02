@@ -13,6 +13,8 @@ import java.util.List;
  */
 public interface TableServer extends Remote {
 
+    void registerClient(TableClientCallBack client) throws RemoteException;
+
     void createTable(Table table) throws RemoteException;
 
     void updateTable(Table table) throws RemoteException;
@@ -24,7 +26,7 @@ public interface TableServer extends Remote {
      */
     void bookTable(Table table) throws RemoteException;
 
-    void editTableBooking(Table newBooking);
+    void editTableBooking(Table newBooking) throws RemoteException;
 
     List<Table> getTables() throws RemoteException;
 }

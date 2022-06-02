@@ -1,6 +1,8 @@
 package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Table;
+import com.uno.shared.util.Subject;
+import javafx.scene.Scene;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -11,7 +13,7 @@ import java.util.List;
  * @author Siddhartha Grasse, Bhupas Gautam
  * @version 0.2.1
  */
-public interface TableClient extends Remote {
+public interface TableClient extends Subject {
 
     void createTable(Table table);
 
@@ -32,4 +34,6 @@ public interface TableClient extends Remote {
     void editTableBooking(Table newBooking);
 
     List<Table> getTables();
+
+    void registerClient();
 }

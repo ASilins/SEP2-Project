@@ -48,7 +48,7 @@ public class TableState implements DatabaseHandler {
           connection.prepareStatement("SELECT * FROM \"Table\"");
       ResultSet result = statement.executeQuery();
       while (result.next()) {
-        list.add(new Table(result.getInt(1), result.getInt(2), result.getBoolean(4)));
+        list.add(new Table(result.getInt(1), result.getInt(2), result.getBoolean(3)));
       }
     } catch (SQLException e) {
       e.printStackTrace();

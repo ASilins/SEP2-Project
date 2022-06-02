@@ -1,6 +1,7 @@
 package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Account;
+import com.uno.shared.util.Subject;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * @author Arturs Silins
  * @version 0.2.0
  */
-public interface AccountClient {
+public interface AccountClient extends Subject {
 
   /**
    * A method that send account object to the server.
@@ -21,4 +22,8 @@ public interface AccountClient {
   Account login(String phoneNumber, String password);
 
   List<Account> getUsers();
+
+  void editUser(Account account);
+
+  void registerClient();
 }

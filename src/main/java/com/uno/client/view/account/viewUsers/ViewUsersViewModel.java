@@ -5,6 +5,7 @@ import com.uno.shared.transferobjects.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.beans.PropertyChangeEvent;
 import java.util.List;
 
 public class ViewUsersViewModel {
@@ -15,6 +16,12 @@ public class ViewUsersViewModel {
 
   public ViewUsersViewModel(AccountModel model) {
     this.model = model;
+    model.addListener("Update", this::update);
+  }
+
+  private void update(PropertyChangeEvent event) {
+    users.clear();
+    users.addAll((List<Account>) event.getNewValue());
   }
 
   public void loadUsers() {
@@ -23,7 +30,7 @@ public class ViewUsersViewModel {
   }
 
   public void editUser(Account account) {
-    model.editUser(account);
+    model.userToEdit(account);
   }
 
   public ObservableList<Account> getUsers() {

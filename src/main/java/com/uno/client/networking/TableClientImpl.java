@@ -1,11 +1,14 @@
 package com.uno.client.networking;
 
 import com.uno.shared.networking.Server;
+import com.uno.shared.networking.TableClientCallBack;
 import com.uno.shared.networking.TableServer;
-import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 /**
@@ -14,9 +17,11 @@ import java.util.List;
  * @version 0.2.0
  */
 
-public class TableClientImpl implements TableClient{
+public class TableClientImpl implements TableClient, TableClientCallBack {
 
     private TableServer server;
+
+    private PropertyChangeSupport support;
 
     /**
      * constructor for OrderClientImpl
@@ -25,6 +30,17 @@ public class TableClientImpl implements TableClient{
     public TableClientImpl(Server server){
         try {
             this.server = server.getTableServer();
+            UnicastRemoteObject.exportObject(this, 0);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        support = new PropertyChangeSupport(this);
+    }
+
+    public void registerClient() {
+        try {
+            server.registerClient(this);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -64,7 +80,11 @@ public class TableClientImpl implements TableClient{
      */
     @Override
     public void editTableBooking(Table newBooking) {
-        server.editTableBooking(newBooking);
+        try {
+            server.editTableBooking(newBooking);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -76,5 +96,20 @@ public class TableClientImpl implements TableClient{
         }
 
         return null;
+    }
+
+    @Override
+    public void update() {
+        support.firePropertyChange("Update", null, getTables());
+    }
+
+    @Override
+    public void addListener(String evtName, PropertyChangeListener lstnr) {
+        support.addPropertyChangeListener(evtName, lstnr);
+    }
+
+    @Override
+    public void removeListener(String evtName, PropertyChangeListener lstnr) {
+        support.removePropertyChangeListener(evtName, lstnr);
     }
 }

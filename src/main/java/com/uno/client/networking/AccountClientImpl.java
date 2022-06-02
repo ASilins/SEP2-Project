@@ -1,10 +1,14 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.AccountClientCallBack;
 import com.uno.shared.networking.AccountServer;
 import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Account;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 /**
@@ -12,9 +16,11 @@ import java.util.List;
  * @author Arturs Silins
  * @version 0.2.0
  */
-public class AccountClientImpl implements AccountClient{
+public class AccountClientImpl implements AccountClient, AccountClientCallBack {
 
   private AccountServer server;
+
+  private PropertyChangeSupport support;
 
   /**
    * Constructor that sets instance of account server for the object.
@@ -23,6 +29,17 @@ public class AccountClientImpl implements AccountClient{
   public AccountClientImpl(Server server) {
     try {
       this.server = server.getAccountServer();
+      UnicastRemoteObject.exportObject(this, 0);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+
+    support = new PropertyChangeSupport(this);
+  }
+
+  public void registerClient() {
+    try {
+      server.registerClient(this);
     } catch (RemoteException e) {
       e.printStackTrace();
     }
@@ -56,9 +73,36 @@ public class AccountClientImpl implements AccountClient{
 
   @Override
   public List<Account> getUsers() {
-
-    server.getUsers();
+    try {
+      return server.getUsers();
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
 
     return null;
+  }
+
+  @Override
+  public void editUser(Account account) {
+    try {
+      server.editUser(account);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void update() {
+      support.firePropertyChange("Update", null, getUsers());
+  }
+
+  @Override
+  public void addListener(String evtName, PropertyChangeListener lstnr) {
+    support.addPropertyChangeListener(evtName, lstnr);
+  }
+
+  @Override
+  public void removeListener(String evtName, PropertyChangeListener lstnr) {
+    support.removePropertyChangeListener(evtName, lstnr);
   }
 }
