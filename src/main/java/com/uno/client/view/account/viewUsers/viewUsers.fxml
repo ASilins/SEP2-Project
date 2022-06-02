@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.account.viewUsers.ViewUsersController">
+   <children>
+      <Label layoutX="264.0" layoutY="48.0" text="Users">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="133.0" layoutY="100.0" prefHeight="233.0" prefWidth="334.0">
+        <columns>
+          <TableColumn fx:id="phoneNr" prefWidth="103.66665649414062" text="Phone Nr" />
+          <TableColumn fx:id="name" prefWidth="113.11111450195312" text="Name" />
+            <TableColumn fx:id="position" prefWidth="116.22222900390625" text="Position" />
+        </columns>
+      </TableView>
+      <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Button layoutX="500.0" layoutY="350.0" mnemonicParsing="false" onAction="#editUser" text="Edit User" />
+   </children>
+</AnchorPane>

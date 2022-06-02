@@ -32,24 +32,35 @@ public class ViewBookingsController implements ViewController {
 
     viewModel.loadBookings();
     table.setItems(viewModel.getBookings());
-    bookingNr.setCellValueFactory(new PropertyValueFactory<>(""));
-    customerNr.setCellValueFactory(new PropertyValueFactory<>(""));
-    date.setCellValueFactory(new PropertyValueFactory<>(""));
-    guests.setCellValueFactory(new PropertyValueFactory<>(""));
-    comment.setCellValueFactory(new PropertyValueFactory<>(""));
-    dietaryNeeds.setCellValueFactory(new PropertyValueFactory<>(""));
-    tableNr.setCellValueFactory(new PropertyValueFactory<>(""));
-  }
 
-  public void backManager() {
-    viewHandler.openManagerMainMenu();
+    bookingNr.setCellValueFactory(new PropertyValueFactory<>("reservationNumber"));
+    customerNr.setCellValueFactory(new PropertyValueFactory<>("customerNumber"));
+    date.setCellValueFactory(new PropertyValueFactory<>("date"));
+    guests.setCellValueFactory(new PropertyValueFactory<>("amountOfPeople"));
+    comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
+    dietaryNeeds.setCellValueFactory(new PropertyValueFactory<>("dietaryNeeds"));
+    tableNr.setCellValueFactory(new PropertyValueFactory<>("table"));
   }
 
   public void back() {
     viewHandler.openStaffMainMenu();
   }
 
-  public void editBooking() {
+  public void backManager() {
+    viewHandler.openManagerMainMenu();
+  }
 
+  public void editBooking() {
+    sendSelectedBooking();
+    viewHandler.openEditBooking();
+  }
+
+  public void managerEditBooking() {
+    sendSelectedBooking();
+    viewHandler.openManagerEditBooking();
+  }
+
+  private void sendSelectedBooking() {
+    viewModel.sendSelectedBooking(table.getSelectionModel().getSelectedItem());
   }
 }

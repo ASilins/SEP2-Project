@@ -5,6 +5,7 @@ import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Account;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 /**
  * A class that logins the account and can also create account.
@@ -51,5 +52,13 @@ public class AccountClientImpl implements AccountClient{
     }
 
     return temp;
+  }
+
+  @Override
+  public List<Account> getUsers() {
+
+    server.getUsers();
+
+    return null;
   }
 }

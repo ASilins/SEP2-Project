@@ -11,9 +11,9 @@ public class Reservation implements Serializable {
   private int amountOfPeople;
   private String comment;
   private String dietaryNeeds;
-  private Table table;
+  private int table;
 
-  public Reservation(int reservationNumber, String customerNumber, Timestamp date, int amountOfPeople, String comment, String dietaryNeeds, Table table) {
+  public Reservation(int reservationNumber, String customerNumber, Timestamp date, int amountOfPeople, String comment, String dietaryNeeds, int table) {
     this.reservationNumber = reservationNumber;
     this.customerNumber = customerNumber;
     this.date = date;
@@ -47,7 +47,7 @@ public class Reservation implements Serializable {
     return dietaryNeeds;
   }
 
-  public Table getTable() {
+  public int getTable() {
     return table;
   }
 }

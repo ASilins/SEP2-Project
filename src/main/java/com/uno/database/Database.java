@@ -3,6 +3,7 @@ package com.uno.database;
 import com.uno.shared.transferobjects.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An interface that has all methods for getting items from and to the database.
@@ -52,4 +53,16 @@ public interface Database {
   Account login(String phoneNumber, String password);
 
   ArrayList<Order> getOrders();
+
+  void updateReservation(Reservation reservation);
+
+  List<Reservation> getReservations();
+
+  List<Table> getTables();
+
+  void createTable(Table table);
+
+  void updateTable(Table table);
+
+  List<Account> getUsers();
 }

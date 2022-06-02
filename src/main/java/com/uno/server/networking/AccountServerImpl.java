@@ -6,6 +6,7 @@ import com.uno.shared.transferobjects.Account;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 /**
  * A class that implements account server interface. Handles receiving and
@@ -42,5 +43,10 @@ public class AccountServerImpl implements AccountServer {
   @Override
   public Account login(String phoneNumber, String password) {
     return handler.login(phoneNumber, password);
+  }
+
+  @Override
+  public List<Account> getUsers() throws RemoteException {
+    return handler.getUsers();
   }
 }

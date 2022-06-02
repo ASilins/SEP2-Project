@@ -2,6 +2,8 @@ package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Account;
 
+import java.util.List;
+
 /**
  * An interface that is used to interact with the server
  * from the model using client classes.
@@ -17,4 +19,6 @@ public interface AccountClient {
   void createAccount(Account account);
 
   Account login(String phoneNumber, String password);
+
+  List<Account> getUsers();
 }
