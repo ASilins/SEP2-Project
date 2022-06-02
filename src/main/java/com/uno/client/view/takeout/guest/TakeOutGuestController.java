@@ -3,11 +3,16 @@ package com.uno.client.view.takeout.guest;
 import com.uno.client.core.ViewHandler;
 import com.uno.client.core.ViewModelFactory;
 import com.uno.client.view.ViewController;
-import com.uno.client.view.dineIn.DineInViewModel;
 import com.uno.shared.transferobjects.MenuItem;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+/**
+ * A controller for guest's Take Out views
+ * @version 1.0.0
+ * @author Ondrej Klimek
+ */
 
 public class TakeOutGuestController implements ViewController {
 
@@ -25,6 +30,12 @@ public class TakeOutGuestController implements ViewController {
     private ViewHandler viewHandler;
     private TakeOutViewModel viewModel;
 
+    /**
+     * method initializing the controller
+     * @param viewHandler takes a ViewHandler as a parameter
+     * @param vmf takes a ViewModelFactory as a parameter
+     */
+
     @Override
     public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
         viewModel = vmf.getTakeOutViewModel();
@@ -41,10 +52,18 @@ public class TakeOutGuestController implements ViewController {
         commentText.textProperty().bindBidirectional(viewModel.commentProperty());
     }
 
+    /**
+     * a method to add an item to an order
+     */
+
     public void addToOrder(){
         orderTableView.getItems().add(menuTableView.getSelectionModel().getSelectedItem());
         orderTableView.refresh();
     }
+
+    /**
+     * an onAction method to go to the previous window
+     */
 
     public void removeFromOrder(){
         orderTableView.getItems().remove(orderTableView.getSelectionModel().getSelectedItem());
