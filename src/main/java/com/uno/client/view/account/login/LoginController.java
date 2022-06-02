@@ -10,7 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
- *
+ * A method that controls login fxml
  * @author Arturs Silins
  * @version 1.0.0
  */
@@ -40,6 +40,9 @@ public class LoginController implements ViewController {
     errorText.textProperty().bindBidirectional(viewModel.errorTextProperty());
   }
 
+  /**
+   * A method that logins the user and changes to the correct view
+   */
   @FXML
   public void login() {
     Account login = viewModel.login();
@@ -60,6 +63,9 @@ public class LoginController implements ViewController {
     }
   }
 
+  /**
+   * A method that opens create account scene
+   */
   @FXML
   public void createAccount() {
     viewHandler.openCreateAccountScene();

@@ -9,11 +9,10 @@ import javafx.beans.property.StringProperty;
 import java.beans.PropertyChangeEvent;
 
 /**
- *
+ * A class that controls edit order controller and model
  * @author Arturs Silins
  * @version 1.0.0
  */
-
 public class EditOrderViewModel {
 
   private MakeOrder model;
@@ -23,6 +22,10 @@ public class EditOrderViewModel {
   private StringProperty comment;
   private StringProperty dietaryNeeds;
 
+  /**
+   * A constructor that sets the instance of the moodel
+   * @param model The instance
+   */
   public EditOrderViewModel(MakeOrder model) {
     this.model = model;
     model.addListener("OrderToEdit", this::orderToEdit);
@@ -33,6 +36,10 @@ public class EditOrderViewModel {
     dietaryNeeds = new SimpleStringProperty();
   }
 
+  /**
+   * Sets the information of the order that will be edited
+   * @param event The Order that will be edited
+   */
   private void orderToEdit(PropertyChangeEvent event) {
     Order order;
 
@@ -50,6 +57,9 @@ public class EditOrderViewModel {
     });
   }
 
+  /**
+   * A method tha creates and send order object to the model
+   */
   public void updateOrder() {
     model.editOrder(new Order(Integer.parseInt(orderNumber.get()), Integer.parseInt(menuItem.get()), comment.get(), dietaryNeeds.get()));
   }

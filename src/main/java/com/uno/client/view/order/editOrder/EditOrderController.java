@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 /**
- *
+ * A method that controls edit order fxml
  * @author Arturs Silins
  * @version 1.0.0
  */
@@ -40,15 +40,25 @@ public class EditOrderController implements ViewController {
     dietaryNeeds.textProperty().bindBidirectional(viewModel.dietaryNeedsProperty());
   }
 
+  /**
+   * Calls the view model update board
+   */
   public void updateOrder() {
     viewModel.updateOrder();
+    viewHandler.openManagerViewOrders();
   }
 
+  /**
+   * A method that opens the staff view order scene
+   */
   public void cancel() {
     //Opens staff order view
   }
 
+  /**
+   * A method that opens tha manager view order scene
+   */
   public void cancelManager() {
-    //Opens manager order view
+    viewHandler.openManagerViewOrders();
   }
 }

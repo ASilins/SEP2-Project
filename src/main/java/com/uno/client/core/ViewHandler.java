@@ -43,7 +43,6 @@ public class ViewHandler {
    * constructor for ViewHandler
    * @param vmf takes ViewModelFactory as a parameter
    */
-
   public ViewHandler(ViewModelFactory vmf) {
     this.vmf = vmf;
   }
@@ -51,15 +50,14 @@ public class ViewHandler {
   /**
    * executes the method that will open the login scene
    */
-
   public void start() {
     stage = new Stage();
     openLoginScene();
   }
+
   /**
    * method to open the menu scene
    */
-
   public void openMenuScene() {
     if (menuScene == null) {
       try {
@@ -78,7 +76,6 @@ public class ViewHandler {
   /**
    * method to open the order scene
    */
-
   public void openOrderScene() {
     if (orderScene == null) {
       try {
@@ -97,7 +94,6 @@ public class ViewHandler {
   /**
    * method to open the create account scene
    */
-
   public void openCreateAccountScene() {
     if (createAccountScene == null) {
       try {
@@ -117,7 +113,6 @@ public class ViewHandler {
   /**
    * method to open the login scene if the login scene is not created
    */
-
   public void openLoginScene() {
     if (loginScene == null) {
       try {
@@ -137,7 +132,6 @@ public class ViewHandler {
   /**
    * method to open the main menu scene
    */
-
   public void openMainMenu() {
     if (mainMenuScene == null) {
       try {
@@ -157,7 +151,6 @@ public class ViewHandler {
   /**
    * method to open the staff main menu scene
    */
-
   public void openStaffMainMenu() {
     if (staffMainMenuScene == null) {
       try {
@@ -177,7 +170,6 @@ public class ViewHandler {
   /**
    * method to open the manager main menu scene
    */
-
   public void openManagerMainMenu() {
     if (managerMainMenuScene == null) {
       try {
@@ -197,7 +189,6 @@ public class ViewHandler {
   /**
    * method to open the manager view order scene
    */
-
   public void openManagerViewOrders() {
     if (managerViewOrdersScene == null) {
       try {
@@ -217,7 +208,6 @@ public class ViewHandler {
   /**
    * method to open the edit order scene
    */
-
   public void openEditOrder() {
     if (editOrderScene == null) {
       try {
@@ -234,6 +224,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens edit booking scene
+   */
   public void openEditBooking() {
     if (editBookingScene == null) {
       try {
@@ -250,6 +243,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens manager edit booking scene
+   */
   public void openManagerEditBooking() {
     if (managerEditBookingScene == null) {
       try {
@@ -266,6 +262,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens view booking scene
+   */
   public void openViewBooking() {
     if (viewBookingScene == null) {
       try {
@@ -282,6 +281,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens manager view booking scene
+   */
   public void openManagerViewBooking() {
     if (managerViewBookingScene == null) {
       try {
@@ -298,6 +300,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens view tables scene
+   */
   public void openViewTables() {
     if (viewTablesScene == null) {
       try {
@@ -314,6 +319,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens manager view tables scene
+   */
   public void openManagerViewTables() {
     if (managerViewTablesScene == null) {
       try {
@@ -330,6 +338,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens edit table scene
+   */
   public void openEditTable() {
     if (editTableScene == null) {
       try {
@@ -346,6 +357,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens create table scene
+   */
   public void openCreateTable() {
     if (createTableScene == null) {
       try {
@@ -362,6 +376,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens view users scene
+   */
   public void openViewUsers() {
     if (viewUsersScene == null) {
       try {
@@ -378,6 +395,9 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that opens edit users scene
+   */
   public void openEditUser() {
     if (editUsersScene == null) {
       try {
@@ -394,6 +414,12 @@ public class ViewHandler {
     stage.show();
   }
 
+  /**
+   * A method that creates Parent root for a fxml file
+   * @param path The location of the fxml file
+   * @return Parent object
+   * @throws IOException If failed to find fxml file
+   */
   private Parent loadFXML(String path) throws IOException {
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource(path));

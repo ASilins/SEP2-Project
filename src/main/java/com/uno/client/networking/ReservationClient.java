@@ -15,12 +15,22 @@ public interface ReservationClient extends Subject {
    * method to create an order
    * @param reservation takes a reservation as a parameter
    */
-
   void createReservation(Reservation reservation);
 
+  /**
+   * A method that sends an edited object to the server
+   * @param reservation Teh object that will be sent
+   */
   void updateReservation(Reservation reservation);
 
+  /**
+   * A method that gets a list of Reservation objects from the server
+   * @return A list og Reservation objects
+   */
   List<Reservation> getReservations();
 
+  /**
+   * A method that registers client to the server
+   */
   void registerClient();
 }

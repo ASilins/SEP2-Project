@@ -20,7 +20,6 @@ import com.uno.client.view.tables.viewTables.ViewTablesViewModel;
  * @author Maximillian Wallin, Arturs Silins, Ondrej Klimek
  * @version 1.0.0
  */
-
 public class ViewModelFactory {
 
   private final ModelFactory modelFactory;
@@ -144,6 +143,11 @@ public class ViewModelFactory {
 
     return dineInViewModel;
   }
+
+  /**
+   * A method that returns edit booking view model
+   * @return A EditBookingViewModel object
+   */
   public EditBookingViewModel getEditBookingViewModel() {
     if (editBookingViewModel == null) {
       editBookingViewModel = new EditBookingViewModel(modelFactory.getReservationModel());
@@ -152,6 +156,10 @@ public class ViewModelFactory {
     return editBookingViewModel;
   }
 
+  /**
+   * A method that returns view tables view model
+   * @return a ViewTablesViewModel object
+   */
   public ViewTablesViewModel getViewTablesViewModel() {
     if (viewTablesViewModel == null) {
       viewTablesViewModel = new ViewTablesViewModel(modelFactory.getTables());
@@ -160,6 +168,10 @@ public class ViewModelFactory {
     return viewTablesViewModel;
   }
 
+  /**
+   * A method that returns edit table view model
+   * @return a EditTableViewModel object
+   */
   public EditTableViewModel getEditTableViewModel() {
     if (editTableViewModel == null) {
       editTableViewModel = new EditTableViewModel(modelFactory.getTables());
@@ -168,6 +180,10 @@ public class ViewModelFactory {
     return editTableViewModel;
   }
 
+  /**
+   * A method that returns create table view model
+   * @return a CreateTableViewModel object
+   */
   public CreateTableViewModel getCreateTableViewModel() {
     if (createTableViewModel == null) {
       createTableViewModel = new CreateTableViewModel(modelFactory.getTables());
@@ -176,6 +192,10 @@ public class ViewModelFactory {
     return createTableViewModel;
   }
 
+  /**
+   * A method that returns view users view model
+   * @return a ViewUsersViewModel object
+   */
   public ViewUsersViewModel getViewUsersViewModel() {
     if (viewUsersViewModel == null) {
       viewUsersViewModel = new ViewUsersViewModel(modelFactory.getAccountModel());
@@ -184,6 +204,10 @@ public class ViewModelFactory {
     return viewUsersViewModel;
   }
 
+  /**
+   * A method that returns edit user view model
+   * @return a EditUserViewModel object
+   */
   public EditUserViewModel getEditUserViewModel() {
     if (editUserViewModel == null) {
       editUserViewModel = new EditUserViewModel(modelFactory.getAccountModel());

@@ -5,10 +5,9 @@ import com.uno.client.core.ClientFactory;
 
 /**
  * A model factory class
- * @author Ondrej Klimek, Siddhartha Grasse
+ * @author Ondrej Klimek, Siddhartha Grasse, Arturs Silins
  * @version 1.0.0
  */
-
 public class ModelFactory {
 
     private final ClientFactory clientFactory;
@@ -22,7 +21,6 @@ public class ModelFactory {
      * constructor for ModelFactory
      * @param clientFactory takes client factory as a parameter
      */
-
     public ModelFactory(ClientFactory clientFactory){
         this.clientFactory = clientFactory;
     }
@@ -31,7 +29,6 @@ public class ModelFactory {
      * getter method for MakeOrder
      * @return returns an instance of MakeOrder
      */
-
     public MakeOrder getMakeOrder(){
         if (makeOrder == null){
             makeOrder = new MakeOrderImpl(clientFactory.getClient());
@@ -44,7 +41,6 @@ public class ModelFactory {
      * getter method for MenuItems
      * @return returns an instance of MenuItems
      */
-
     public MenuItems getMenuItems(){
         if (menuItems == null){
             menuItems = new MenuItemsImpl(clientFactory.getClient());

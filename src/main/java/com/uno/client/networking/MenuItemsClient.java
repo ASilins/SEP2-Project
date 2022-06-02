@@ -10,15 +10,16 @@ import java.util.ArrayList;
  * @author Ondrej Klimek
  * @version 1.0.0
  */
-
 public interface MenuItemsClient extends Subject {
 
     /**
      * method to retrieve menu items
      * @return returns an array list with menu items
      */
-
     ArrayList<MenuItem> getMenuItems();
 
+    /**
+     * A method that registers the client to the server
+     */
     void registerClient();
 }

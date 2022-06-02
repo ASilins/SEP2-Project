@@ -10,11 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- *
+ * A class that controls view order fxml
  * @author Arturs Silins
  * @version 1.0.0
  */
-
 public class ViewOrdersController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -55,6 +54,9 @@ public class ViewOrdersController implements ViewController {
     viewHandler.openStaffMainMenu();
   }
 
+  /**
+   * A method that sends the selected order and opens edit order scene
+   */
   public void editOrder() {
     viewModel.editOrder(table.getSelectionModel().getSelectedItem());
     viewHandler.openEditOrder();

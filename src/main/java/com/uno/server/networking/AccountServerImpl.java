@@ -36,10 +36,18 @@ public class AccountServerImpl implements AccountServer {
     clients = new ArrayList<>();
   }
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   public void registerClient(AccountClientCallBack client) throws RemoteException {
     clients.add(client);
   }
 
+  /**
+   * A method that sends an update to all clients
+   */
   private void update() {
     for (AccountClientCallBack account : clients) {
       try {
@@ -60,16 +68,33 @@ public class AccountServerImpl implements AccountServer {
     update();
   }
 
+  /**
+   * A method that sends login info and returns account
+   * @param phoneNumber the phone number
+   * @param password the hash code of the password
+   * @return An account object
+   * @throws RemoteException If connection failed
+   */
   @Override
   public Account login(String phoneNumber, String password) {
     return handler.login(phoneNumber, password);
   }
 
+  /**
+   * A method that returns a list of users
+   * @return A list of Account objects
+   * @throws RemoteException If connection failed
+   */
   @Override
   public List<Account> getUsers() throws RemoteException {
     return handler.getUsers();
   }
 
+  /**
+   * A method that sends Account object to the model
+   * @param account The object that will be sent
+   * @throws RemoteException If connection failed
+   */
   @Override
   public void editUser(Account account) throws RemoteException {
     handler.editUser(account);

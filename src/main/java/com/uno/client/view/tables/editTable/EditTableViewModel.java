@@ -8,6 +8,9 @@ import javafx.beans.property.StringProperty;
 
 import java.beans.PropertyChangeEvent;
 
+/**
+ * A class that controls edit table controller and model
+ */
 public class EditTableViewModel {
 
   private Tables model;
@@ -15,6 +18,10 @@ public class EditTableViewModel {
   private StringProperty tableNr;
   private StringProperty capacity;
 
+  /**
+   * A method that sets the instance of model
+   * @param model the instance of model
+   */
   public EditTableViewModel(Tables model) {
     this.model = model;
 
@@ -23,6 +30,10 @@ public class EditTableViewModel {
     model.addListener("TableToEdit", this::tableToEdit);
   }
 
+  /**
+   * A method that sets the info to edit
+   * @param event The table info
+   */
   private void tableToEdit(PropertyChangeEvent event) {
     Table table;
 
@@ -38,14 +49,25 @@ public class EditTableViewModel {
     });
   }
 
+  /**
+   * Returns a string property for tableNr
+   * @return String property for tableNr
+   */
   public StringProperty tableNrProperty() {
     return tableNr;
   }
 
+  /**
+   * Returns a String property for capacity
+   * @return String property for cpacity
+   */
   public StringProperty capacityProperty() {
     return capacity;
   }
 
+  /**
+   * A method that creates a table and sends it to the model
+   */
   public void updateTable() {
     model.updateTable(new Table(Integer.parseInt(tableNr.get()), Integer.parseInt(capacity.get()), true));
   }

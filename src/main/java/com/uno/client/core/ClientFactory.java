@@ -8,7 +8,6 @@ import com.uno.client.networking.ClientImpl;
  * @author Ondrej Klimek
  * @version 1.0.0
  */
-
 public class ClientFactory {
 
     private Client client;
@@ -17,7 +16,6 @@ public class ClientFactory {
      * Constructor ClientFactory
      * @param client client
      */
-
     public ClientFactory(Client client){
         this.client = client;
     }
@@ -26,7 +24,6 @@ public class ClientFactory {
      * getter method
      * @return returns a client
      */
-
     public Client getClient(){
         if (client == null){
             client = new ClientImpl();

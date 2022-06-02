@@ -10,30 +10,31 @@ import java.util.List;
 
 /**
  * An interface for table client
- * @author Siddhartha Grasse, Bhupas Gautam
+ * @author Siddhartha Grasse, Bhupas Gautam, Arturs Silins
  * @version 1.0.0
  */
 public interface TableClient extends Subject {
 
+    /**
+     * A method that sends a Table object to the server
+     * @param table The Table object that will be sent
+     */
     void createTable(Table table);
 
+    /**
+     * A method that sends an edited Table object to the server
+     * @param table The Table Object that will be sent
+     */
     void updateTable(Table table);
 
     /**
-     * Method to create a table booking
-     * @param table takes a table as a parameter
-     * @throws RemoteException If it is not possible to receive the object.
+     * A method that takes a list of Table objects from the server
+     * @return A list of Table objects
      */
-    void bookTable(Table table) throws RemoteException;
-
-    /**
-     * Method to edit table booking
-     * @param newBooking sends the new information about table booking
-     */
-
-    void editTableBooking(Table newBooking);
-
     List<Table> getTables();
 
+    /**
+     * A method that registers client to the server
+     */
     void registerClient();
 }

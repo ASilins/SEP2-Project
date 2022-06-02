@@ -15,6 +15,11 @@ import java.util.ArrayList;
  */
 public interface OrderServer extends Remote {
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   void registerClient(OrderClientCallBack client) throws RemoteException;
 
   /**

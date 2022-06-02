@@ -37,6 +37,9 @@ public class AccountClientImpl implements AccountClient, AccountClientCallBack {
     support = new PropertyChangeSupport(this);
   }
 
+  /**
+   * A method that registers client to the server
+   */
   public void registerClient() {
     try {
       server.registerClient(this);
@@ -63,7 +66,6 @@ public class AccountClientImpl implements AccountClient, AccountClientCallBack {
    * @param phoneNumber The object that will be sent.
    * @param password The object that will be sent.
    */
-
   @Override
   public Account login(String phoneNumber, String password) {
     Account temp = null;
@@ -88,6 +90,10 @@ public class AccountClientImpl implements AccountClient, AccountClientCallBack {
     return null;
   }
 
+  /**
+   * A method that send an edited object to the server
+   * @param account The object that will be sent
+   */
   @Override
   public void editUser(Account account) {
     try {
@@ -97,16 +103,29 @@ public class AccountClientImpl implements AccountClient, AccountClientCallBack {
     }
   }
 
+  /**
+   * A method that fires property change event
+   */
   @Override
   public void update() {
       support.firePropertyChange("Update", null, getUsers());
   }
 
+  /**
+   * A method that adds property change listener
+   * @param evtName The name of event it is waiting
+   * @param lstnr An object that is listening
+   */
   @Override
   public void addListener(String evtName, PropertyChangeListener lstnr) {
     support.addPropertyChangeListener(evtName, lstnr);
   }
 
+  /**
+   * A method that removes property change listener
+   * @param evtName The name of the event it was waiting
+   * @param lstnr An object that was listening
+   */
   @Override
   public void removeListener(String evtName, PropertyChangeListener lstnr) {
     support.removePropertyChangeListener(evtName, lstnr);

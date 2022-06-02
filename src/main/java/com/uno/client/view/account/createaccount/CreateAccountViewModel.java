@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * A class that controls Create Account and model
  * @author Arturs Silins
  * @version 1.0.0
  */
@@ -24,15 +24,15 @@ public class CreateAccountViewModel {
    * Constructor that sets instance of create account view model for the object.
    * @param model The object that gives the instance.
    */
-
   public CreateAccountViewModel(AccountModel model) {
     this.model = model;
     phoneNumber = new SimpleStringProperty();
     name = new SimpleStringProperty();
     password = new SimpleStringProperty();
   }
+
   /**
-   *
+   * A method that creates and sends an Account object to the model
    */
   public void createAccount() {
     model.createAccount(new Account(phoneNumber.get(), name.get(), "Guest", PasswordHasher.hashPassword(password.get())));

@@ -23,16 +23,29 @@ public class ReservationServerImpl implements ReservationServer {
   private ReservationHandler handler;
   private List<ReservationClientCallBack> clients;
 
+  /**
+   * A constructor that sets the instance of the handler
+   * @param handler The instance of the handler
+   * @throws RemoteException If connection failed
+   */
   public ReservationServerImpl(ReservationHandler handler) throws RemoteException{
     UnicastRemoteObject.exportObject(this, 0);
     this.handler = handler;
     clients = new ArrayList<>();
   }
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   public void registerClient(ReservationClientCallBack client) throws RemoteException {
     clients.add(client);
   }
 
+  /**
+   * A method that sends an update to all clients
+   */
   private void update() {
     for (ReservationClientCallBack account : clients) {
       try {
@@ -43,17 +56,32 @@ public class ReservationServerImpl implements ReservationServer {
     }
   }
 
+  /**
+   * A method that send reservation to the model
+   * @param reservation The object that will be sent
+   * @throws RemoteException If connection failed
+   */
   @Override
   public void createReservation(Reservation reservation) throws RemoteException {
 
   }
 
+  /**
+   * A method that send an edited reservation object to the model
+   * @param reservation The object that will be sent
+   * @throws RemoteException If connection failed
+   */
   @Override
   public void updateReservation(Reservation reservation) throws RemoteException {
     handler.updateReservation(reservation);
     update();
   }
 
+  /**
+   * Return a list of reservations
+   * @return A list of reservations
+   * @throws RemoteException If connection failed
+   */
   @Override
   public List<Reservation> getReservations() throws RemoteException {
     return handler.getReservations();
