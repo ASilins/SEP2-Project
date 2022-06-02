@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Account">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Log out" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="91.0" layoutY="43.0" text="Take Away - information">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="199.0" text="Date:" />
+      <Label layoutX="97.0" layoutY="138.0" text="Phone Number:" />
+      <TextField layoutX="306.0" layoutY="125.0" prefHeight="26.0" prefWidth="175.0" promptText="Enter a Danish Phone Number" />
+      <DatePicker layoutX="307.0" layoutY="195.0" promptText="Pick a date..." showWeekNumbers="true" />
+      <Button layoutX="370.0" layoutY="325.0" mnemonicParsing="false" text="Next" />
+      <Button layoutX="185.0" layoutY="325.0" mnemonicParsing="false" text="Back" />
+<!--      <JFXTimePicker layoutX="200.0" layoutY="200.0" />-->
+   </children>
+</AnchorPane>

@@ -2,6 +2,8 @@ package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Table;
 
+import java.util.List;
+
 /**
  * An interface that is used to send and receive Table objects
  * using these methods.
@@ -10,6 +12,10 @@ import com.uno.shared.transferobjects.Table;
  */
 public interface TableHandler {
 
+    void createTable(Table table);
+
+    void updateTable(Table table);
+
     /**
      * Send table object to the database.
      * @param table The object that will be sent to the database.
@@ -17,4 +23,6 @@ public interface TableHandler {
     void bookTable(Table table);
 
     void editTableBooking(Table newBooking);
+
+    List<Table> getTables();
 }

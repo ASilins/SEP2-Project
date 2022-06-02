@@ -41,22 +41,22 @@ public class MainMenuController implements ViewController {
   }
 
   public void viewBookings() {
-
+    viewHandler.openViewBooking();
   }
 
   public void viewManagerBookings() {
-
+    viewHandler.openManagerViewBooking();
   }
 
   public void viewTables() {
-
+    viewHandler.openViewTables();
   }
 
   public void viewManagerTables() {
-
+    viewHandler.openManagerViewTables();
   }
 
   public void viewUsers() {
-
+    viewHandler.openViewUsers();
   }
 }

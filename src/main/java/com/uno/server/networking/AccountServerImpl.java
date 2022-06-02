@@ -1,11 +1,14 @@
 package com.uno.server.networking;
 
 import com.uno.server.model.AccountHandler;
+import com.uno.shared.networking.AccountClientCallBack;
 import com.uno.shared.networking.AccountServer;
 import com.uno.shared.transferobjects.Account;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A class that implements account server interface. Handles receiving and
@@ -16,6 +19,8 @@ import java.rmi.server.UnicastRemoteObject;
 public class AccountServerImpl implements AccountServer {
 
   private AccountHandler handler;
+
+  private List<AccountClientCallBack> clients;
 
   /**
    * A constructor that sets the account handler instance for the object.
@@ -28,6 +33,21 @@ public class AccountServerImpl implements AccountServer {
       e.printStackTrace();
     }
     this.handler = handler;
+    clients = new ArrayList<>();
+  }
+
+  public void registerClient(AccountClientCallBack client) throws RemoteException {
+    clients.add(client);
+  }
+
+  private void update() {
+    for (AccountClientCallBack account : clients) {
+      try {
+        account.update();
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**
@@ -37,10 +57,22 @@ public class AccountServerImpl implements AccountServer {
   @Override
   public void createAccount(Account account) {
     handler.createAccount(account);
+    update();
   }
 
   @Override
   public Account login(String phoneNumber, String password) {
     return handler.login(phoneNumber, password);
+  }
+
+  @Override
+  public List<Account> getUsers() throws RemoteException {
+    return handler.getUsers();
+  }
+
+  @Override
+  public void editUser(Account account) throws RemoteException {
+    handler.editUser(account);
+    update();
   }
 }

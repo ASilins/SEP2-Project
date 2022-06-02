@@ -1,6 +1,8 @@
 package com.uno.server.networking;
 
 import com.uno.server.model.OrderHandler;
+import com.uno.shared.networking.AccountClientCallBack;
+import com.uno.shared.networking.OrderClientCallBack;
 import com.uno.shared.networking.OrderServer;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.PreOrder;
@@ -9,6 +11,7 @@ import com.uno.shared.transferobjects.Reservation;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class implements OrderServer Interface. This server object handles
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 public class OrderServerImpl implements OrderServer {
 
   private OrderHandler handler;
+  private List<OrderClientCallBack> clients;
 
   /**
    * Constructor that export instance and sets the instance for a class
@@ -26,8 +30,23 @@ public class OrderServerImpl implements OrderServer {
    * @param handler
    */
   public OrderServerImpl(OrderHandler handler) throws RemoteException {
-      UnicastRemoteObject.exportObject(this, 0);
+    UnicastRemoteObject.exportObject(this, 0);
     this.handler = handler;
+    clients = new ArrayList<>();
+  }
+
+  public void registerClient(OrderClientCallBack client) throws RemoteException {
+    clients.add(client);
+  }
+
+  private void update() {
+    for (OrderClientCallBack account : clients) {
+      try {
+        account.update();
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**
@@ -38,6 +57,7 @@ public class OrderServerImpl implements OrderServer {
   @Override
   public void createOrder(Order order) throws RemoteException {
     handler.createOrder(order);
+    update();
   }
 
   /**
@@ -59,10 +79,12 @@ public class OrderServerImpl implements OrderServer {
   @Override
   public void createPreOrder(Order order, Reservation reservation) throws RemoteException {
     handler.createPreOrder(order, reservation);
+    update();
   }
 
   @Override
   public void editOrder(Order newOrder) throws RemoteException{
     handler.editOrder(newOrder);
+    update();
   }
 }

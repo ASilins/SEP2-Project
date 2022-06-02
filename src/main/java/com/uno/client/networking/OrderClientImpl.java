@@ -1,10 +1,15 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.OrderClientCallBack;
 import com.uno.shared.networking.OrderServer;
 import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Reservation;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 /**
@@ -12,9 +17,11 @@ import java.util.ArrayList;
  * @author Ondrej,Bhupas Gautam
  * @version 1.0.0
  */
-public class OrderClientImpl implements OrderClient{
+public class OrderClientImpl implements OrderClient, OrderClientCallBack {
 
     private OrderServer server;
+
+    private PropertyChangeSupport support;
 
     /**
      * Constructor for OrderClientImpl
@@ -24,6 +31,17 @@ public class OrderClientImpl implements OrderClient{
     public OrderClientImpl(Server server) {
         try {
             this.server = server.getOrderServer();
+            UnicastRemoteObject.exportObject(this, 0);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        support = new PropertyChangeSupport(this);
+    }
+
+    public void registerClient() {
+        try {
+            server.registerClient(this);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -82,5 +100,20 @@ public class OrderClientImpl implements OrderClient{
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void update() {
+        support.firePropertyChange("Update", null, getOrders());
+    }
+
+    @Override
+    public void addListener(String evtName, PropertyChangeListener lstnr) {
+        support.addPropertyChangeListener(evtName, lstnr);
+    }
+
+    @Override
+    public void removeListener(String evtName, PropertyChangeListener lstnr) {
+        support.removePropertyChangeListener(evtName, lstnr);
     }
 }

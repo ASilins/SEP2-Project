@@ -35,7 +35,7 @@ public class EditBookingController implements ViewController {
    */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
-
+    viewModel = vmf.getEditBookingViewModel();
     this.viewHandler = viewHandler;
 
     bookingNr.textProperty().bindBidirectional(viewModel.bookingNrProperty());
@@ -47,16 +47,17 @@ public class EditBookingController implements ViewController {
   }
   //Opens staff booking view
   public void cancel() {
+    viewHandler.openViewBooking();
   }
 
   //Opens manager booking view
   public void cancelManager() {
+    viewHandler.openManagerViewBooking();
   }
 
   /**
    * A method that updates the booking
    */
-
   public void updateBooking() {
     viewModel.updateBooking();
   }

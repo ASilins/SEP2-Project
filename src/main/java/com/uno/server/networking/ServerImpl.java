@@ -98,8 +98,13 @@ public class ServerImpl implements Server {
   @Override
   public TableServer getTableServer() {
     if (ts == null) {
-      ts = new TableServerImpl(new TableHandlerImpl(new DatabaseImpl()));
+      try {
+        ts = new TableServerImpl(new TableHandlerImpl(new DatabaseImpl()));
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
     }
+
     return ts;
   }
 

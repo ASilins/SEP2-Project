@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Account">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Log out" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="170.0" layoutY="27.0" text="Dine In - order">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <TableView layoutX="14.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
+        <columns>
+          <TableColumn prefWidth="114.0" text="C1" />
+          <TableColumn prefWidth="60.0" text="C2" />
+        </columns>
+      </TableView>
+      <TableView layoutX="244.0" layoutY="78.0" prefHeight="262.0" prefWidth="174.0">
+        <columns>
+          <TableColumn prefWidth="114.0" text="C1" />
+          <TableColumn prefWidth="60.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="535.0" layoutY="355.0" mnemonicParsing="false" text="Order" />
+      <Button layoutX="201.0" layoutY="124.0" mnemonicParsing="false" text="-&gt;" />
+      <Button layoutX="202.0" layoutY="262.0" mnemonicParsing="false" text="&lt;-" />
+      <TextArea layoutX="429.0" layoutY="78.0" prefHeight="126.0" prefWidth="154.0" promptText="Diets" />
+      <TextArea layoutX="429.0" layoutY="213.0" prefHeight="126.0" prefWidth="154.0" promptText="Comments" />
+      <Label layoutX="174.0" layoutY="359.0" text="Table" />
+      <ChoiceBox layoutX="279.0" layoutY="355.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

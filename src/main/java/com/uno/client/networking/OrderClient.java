@@ -2,6 +2,7 @@ package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Reservation;
+import com.uno.shared.util.Subject;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author Ondrej Klimek,Bhupas Gautam
  * @version 1.0.0
  */
-public interface OrderClient {
+public interface OrderClient extends Subject {
 
     /**
      * method to create an order
@@ -36,4 +37,6 @@ public interface OrderClient {
      * @param newOrder replaces the old order with the new one
      */
     void editOrder(Order newOrder);
+
+    void registerClient();
 }
