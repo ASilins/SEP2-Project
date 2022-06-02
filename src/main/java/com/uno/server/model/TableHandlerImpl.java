@@ -22,10 +22,20 @@ public class TableHandlerImpl implements TableHandler{
         this.database = database;
     }
 
+    /**
+     * a method that creates a table
+     * @param table takes a table as a parameter
+     */
+
     @Override
     public void createTable(Table table) {
         database.createTable(table);
     }
+
+    /**
+     * a method that updates a table
+     * @param table takes a table as a parameter
+     */
 
     @Override
     public void updateTable(Table table) {
@@ -33,18 +43,9 @@ public class TableHandlerImpl implements TableHandler{
     }
 
     /**
-     * A method that sends table object to the database.
-     * @param table The object that will be sent to the database
+     * a method that retrieves tables
+     * @return returns a list of tables
      */
-    @Override
-    public void bookTable(Table table) {
-        database.bookTable(table);
-    }
-
-    @Override
-    public void editTableBooking(Table newBooking) {
-
-    }
 
     @Override
     public List<Table> getTables() {

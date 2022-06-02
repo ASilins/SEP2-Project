@@ -12,17 +12,24 @@ import java.util.List;
  */
 public interface TableHandler {
 
+    /**
+     * a method that creates a table
+     * @param table takes a table as a parameter
+     */
+
     void createTable(Table table);
+
+    /**
+     * a method that updates a table
+     * @param table takes a table as a parameter
+     */
 
     void updateTable(Table table);
 
     /**
-     * Send table object to the database.
-     * @param table The object that will be sent to the database.
+     * a method that retrieves tables
+     * @return returns a list of tables
      */
-    void bookTable(Table table);
-
-    void editTableBooking(Table newBooking);
 
     List<Table> getTables();
 }

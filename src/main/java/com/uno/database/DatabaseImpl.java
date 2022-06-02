@@ -47,15 +47,6 @@ public class DatabaseImpl implements Database {
     currentState.sendToDatabase(order);
   }
 
-  @Override public void bookTable(Table table)
-  {
-
-  }
-
-  @Override
-  public void editTableBooking(Table oldBooking, Table newBooking) {
-
-  }
 
   @Override
   public void editOrder(Order newOrder) {
@@ -87,11 +78,23 @@ public class DatabaseImpl implements Database {
     currentState.sendToDatabase(account);
   }
 
+  /**
+   * method that creates a new entry in the database
+   * @param reservation takes a reservation as a parameter
+   */
+
   @Override
   public void createReservation(Reservation reservation) {
     setState(new ReservationState());
     currentState.sendToDatabase(reservation);
   }
+
+  /**
+   * a method for logging in
+   * @param phoneNumber takes phone number as a parameter
+   * @param password takes password as a parameter
+   * @return returns an account
+   */
 
   @Override
   public Account login(String phoneNumber, String password) {
@@ -109,11 +112,21 @@ public class DatabaseImpl implements Database {
     return account;
   }
 
+  /**
+   * a method that retrieves orders from the database
+   * @return returns an ArrayList of orders
+   */
+
   @Override
   public ArrayList<Order> getOrders() {
     setState(new OrderState());
     return (ArrayList<Order>) currentState.getListFromDatabase();
   }
+
+  /**
+   * a method that updates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
 
   @Override
   public void updateReservation(Reservation reservation) {
@@ -121,11 +134,21 @@ public class DatabaseImpl implements Database {
     currentState.sendToDatabase(reservation);
   }
 
+  /**
+   * a method that gets reservations
+   * @return returns a list of reservations
+   */
+
   @Override
   public List<Reservation> getReservations() {
     setState(new ReservationState());
     return (List<Reservation>) currentState.getListFromDatabase();
   }
+
+  /**
+   * a method that gets tables
+   * @return returns a list of tables
+   */
 
   @Override
   public List<Table> getTables() {
@@ -133,11 +156,21 @@ public class DatabaseImpl implements Database {
     return (List<Table>) currentState.getListFromDatabase();
   }
 
+  /**
+   * a method that creates a new table
+   * @param table takes a table as a parameter
+   */
+
   @Override
   public void createTable(Table table) {
     setState(new TableState());
     currentState.sendToDatabase(table);
   }
+
+  /**
+   * a method that edits a table
+   * @param table takes a table as a parameter
+   */
 
   @Override
   public void updateTable(Table table) {
@@ -145,11 +178,21 @@ public class DatabaseImpl implements Database {
     currentState.sendToDatabase(table);
   }
 
+  /**
+   * a method that retrieves a list of users
+   * @return returns a list of accounts
+   */
+
   @Override
   public List<Account> getUsers() {
     setState(new AccountState());
     return (List<Account>) currentState.getListFromDatabase();
   }
+
+  /**
+   * a method that edits a user
+   * @param account takes an updated version of account as a parameter
+   */
 
   @Override
   public void editUser(Account account) {
