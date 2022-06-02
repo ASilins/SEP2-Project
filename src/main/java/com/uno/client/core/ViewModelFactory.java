@@ -2,6 +2,7 @@ package com.uno.client.core;
 
 import com.uno.client.view.bookings.ViewBookingsViewModel;
 import com.uno.client.view.account.createaccount.CreateAccountViewModel;
+import com.uno.client.view.dineIn.DineInViewModel;
 import com.uno.client.view.order.editOrder.EditOrderViewModel;
 import com.uno.client.view.account.login.LoginViewModel;
 import com.uno.client.view.menuItem.MenuItemViewModel;
@@ -19,6 +20,7 @@ public class ViewModelFactory {
   private ViewOrdersViewModel viewOrdersViewModel;
   private EditOrderViewModel editOrderViewModel;
   private ViewBookingsViewModel viewBookingsViewModel;
+  private DineInViewModel dineInViewModel;
 
   public ViewModelFactory(ModelFactory modelFactory) {
     this.modelFactory = modelFactory;
@@ -78,5 +80,13 @@ public class ViewModelFactory {
     }
 
     return viewBookingsViewModel;
+  }
+
+  public DineInViewModel getDineInViewModel(){
+    if (dineInViewModel == null){
+      dineInViewModel = new DineInViewModel(modelFactory.getMenuItems());
+    }
+
+    return dineInViewModel;
   }
 }

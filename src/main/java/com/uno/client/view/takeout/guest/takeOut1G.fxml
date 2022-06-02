@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.takeout.guest.TakeOutGuestController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
@@ -28,10 +28,10 @@
       </Label>
       <Label layoutX="125.0" layoutY="199.0" text="Date:" />
       <Label layoutX="97.0" layoutY="138.0" text="Phone Number:" />
-      <TextField layoutX="306.0" layoutY="125.0" prefHeight="26.0" prefWidth="175.0" promptText="Enter a Danish Phone Number" />
-      <DatePicker layoutX="307.0" layoutY="195.0" promptText="Pick a date..." showWeekNumbers="true" />
-      <Button layoutX="370.0" layoutY="325.0" mnemonicParsing="false" text="Next" />
-      <Button layoutX="185.0" layoutY="325.0" mnemonicParsing="false" text="Back" />
+      <TextField fx:id="phoneTextField" layoutX="306.0" layoutY="125.0" prefHeight="26.0" prefWidth="175.0" promptText="Enter a Danish Phone Number" />
+      <DatePicker fx:id="datePicker" layoutX="307.0" layoutY="195.0" promptText="Pick a date..." showWeekNumbers="true" />
+      <Button fx:id="nextBtn" layoutX="370.0" layoutY="325.0" mnemonicParsing="false" text="Next" />
+      <Button fx:id="backBtn" layoutX="185.0" layoutY="325.0" mnemonicParsing="false" text="Back" />
 <!--      <JFXTimePicker layoutX="200.0" layoutY="200.0" />-->
    </children>
 </AnchorPane>

@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.takeout.guest.TakeOutGuestController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
@@ -27,23 +26,23 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <TableView layoutX="62.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="menuTableView" layoutX="62.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="68.800048828125" text="Item Num." />
-          <TableColumn prefWidth="130.39996337890625" text="Item Name" />
+          <TableColumn fx:id="nameMenu" prefWidth="136.800048828125" text="Item Name" />
+          <TableColumn fx:id="priceMenu" prefWidth="63.199951171875" text="Price" />
         </columns>
       </TableView>
-      <TableView layoutX="340.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="orderTableView" layoutX="340.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0">
          <columns>
-            <TableColumn prefWidth="68.800048828125" text="Item Num." />
-            <TableColumn prefWidth="130.39996337890625" text="Item Name" />
+            <TableColumn fx:id="nameOrder" prefWidth="134.4000244140625" text="Item Name" />
+            <TableColumn fx:id="priceOrder" prefWidth="65.5999755859375" text="Price" />
          </columns>
       </TableView>
       <Label layoutX="135.0" layoutY="95.0" text="Our Menu" />
       <Label layoutX="410.0" layoutY="95.0" text="Your Order" />
-      <Button layoutX="142.0" layoutY="348.0" mnemonicParsing="false" text="Back" />
-      <Button layoutX="419.0" layoutY="348.0" mnemonicParsing="false" text="Next" />
-      <Button layoutX="274.0" layoutY="175.0" mnemonicParsing="false" text="Add &gt;" />
-      <Button layoutX="265.0" layoutY="242.0" mnemonicParsing="false" text="&lt; Remove" />
+      <Button fx:id="backBtn" layoutX="142.0" layoutY="348.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="nextBtn" layoutX="419.0" layoutY="348.0" mnemonicParsing="false" text="Next" />
+      <Button fx:id="addBtn" layoutX="274.0" layoutY="175.0" mnemonicParsing="false" text="Add &gt;" />
+      <Button fx:id="removeBtn" layoutX="265.0" layoutY="242.0" mnemonicParsing="false" text="&lt; Remove" />
    </children>
 </AnchorPane>

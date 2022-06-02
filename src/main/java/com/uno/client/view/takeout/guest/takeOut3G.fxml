@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uno.client.view.takeout.guest.TakeOutGuestController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
@@ -28,8 +27,8 @@
       </Label>
       <Label layoutX="59.0" layoutY="107.0" prefHeight="36.0" prefWidth="56.0" text="Allergies &amp; Diets:" textAlignment="CENTER" wrapText="true" />
       <Label layoutX="57.0" layoutY="237.0" text="Comments:" />
-      <TextArea layoutX="173.0" layoutY="107.0" prefHeight="90.0" prefWidth="330.0" promptText="Gluten intolerant/Pescaterian..." />
-      <TextArea layoutX="173.0" layoutY="237.0" prefHeight="90.0" prefWidth="330.0" promptText="Extra mozzarella on pizza/Tomatos from salad on side..." />
+      <TextArea fx:id="dietaryNeedsText" layoutX="173.0" layoutY="107.0" prefHeight="90.0" prefWidth="330.0" promptText="Gluten intolerant/Pescaterian..." />
+      <TextArea fx:id="commentText" layoutX="173.0" layoutY="237.0" prefHeight="90.0" prefWidth="330.0" promptText="Extra mozzarella on pizza/Tomatos from salad on side..." />
       <Button layoutX="147.0" layoutY="352.0" mnemonicParsing="false" text="Back" />
       <Button layoutX="418.0" layoutY="352.0" mnemonicParsing="false" text="Next" />
    </children>
