@@ -151,6 +151,12 @@ public class DatabaseImpl implements Database {
     return (List<Account>) currentState.getListFromDatabase();
   }
 
+  @Override
+  public void editUser(Account account) {
+    setState(new EditAccountState());
+    currentState.sendToDatabase(account);
+  }
+
   /**
    * Changes state of the handler so that the correct methods are used
    * @param state The handler that will be used

@@ -31,5 +31,8 @@ public class CreateTableController implements ViewController {
 
   public void createTable() {
     viewModel.createTable();
+    tableNr.clear();
+    capacity.clear();
+    viewHandler.openManagerViewTables();
   }
 }

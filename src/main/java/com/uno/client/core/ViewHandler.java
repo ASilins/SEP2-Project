@@ -155,7 +155,7 @@ public class ViewHandler {
   public void openManagerViewOrders() {
     if (managerViewOrdersScene == null) {
       try {
-        Parent root = loadFXML("../view/viewOrders/viewOrders.fxml");
+        Parent root = loadFXML("../view/order/viewOrders/viewOrders.fxml");
 
         managerViewOrdersScene = new Scene(root);
         stage.setTitle("Orders");
@@ -171,7 +171,7 @@ public class ViewHandler {
   public void openEditOrder() {
     if (editOrderScene == null) {
       try {
-        Parent root = loadFXML("../view/editOrder/editOrder.fxml");
+        Parent root = loadFXML("../view/order/editOrder/editOrder.fxml");
 
         editOrderScene = new Scene(root);
         stage.setTitle("Edit Order");
@@ -329,18 +329,18 @@ public class ViewHandler {
   }
 
   public void openEditUser() {
-    if (viewUsersScene == null) {
+    if (editUsersScene == null) {
       try {
-        Parent root = loadFXML("../view/account/viewUsers/viewUsers.fxml");
+        Parent root = loadFXML("../view/account/editUser/editUser.fxml");
 
-        viewUsersScene = new Scene(root);
+        editUsersScene = new Scene(root);
         stage.setTitle("Users");
       } catch (IOException e) {
         e.printStackTrace();
       }
     }
 
-    stage.setScene(viewUsersScene);
+    stage.setScene(editUsersScene);
     stage.show();
   }
 

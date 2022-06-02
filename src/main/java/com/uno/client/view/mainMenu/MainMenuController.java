@@ -50,6 +50,6 @@ public class MainMenuController implements ViewController {
   }
 
   public void viewUsers() {
-
+    viewHandler.openViewUsers();
   }
 }

@@ -6,6 +6,7 @@ import com.uno.client.networking.TableClient;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
@@ -31,9 +32,17 @@ public class TablesImpl implements Tables{
     public TablesImpl(Client client) {
         try {
             this.tableClient = client.getTableClient();
+            tableClient.registerClient();
+            tableClient.addListener("Update", this::update);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
+        support = new PropertyChangeSupport(this);
+    }
+
+    private void update(PropertyChangeEvent event) {
+        support.firePropertyChange("Update", null, event.getNewValue());
     }
 
     @Override

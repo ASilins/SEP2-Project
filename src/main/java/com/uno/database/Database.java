@@ -65,4 +65,6 @@ public interface Database {
   void updateTable(Table table);
 
   List<Account> getUsers();
+
+  void editUser(Account account);
 }

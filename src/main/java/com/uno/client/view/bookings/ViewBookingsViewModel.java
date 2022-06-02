@@ -6,6 +6,7 @@ import com.uno.shared.transferobjects.Reservation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.beans.PropertyChangeEvent;
 import java.util.List;
 
 public class ViewBookingsViewModel {
@@ -16,6 +17,11 @@ public class ViewBookingsViewModel {
 
   public ViewBookingsViewModel(ReservationModel model) {
     this.model = model;
+    model.addListener("Update", this::update);
+  }
+
+  private void update(PropertyChangeEvent event) {
+    loadBookings();
   }
 
   public void loadBookings() {

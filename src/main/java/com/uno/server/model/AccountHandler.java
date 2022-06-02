@@ -20,4 +20,6 @@ public interface AccountHandler {
   Account login(String phoneNumber, String password);
 
   List<Account> getUsers();
+
+  void editUser(Account account);
 }

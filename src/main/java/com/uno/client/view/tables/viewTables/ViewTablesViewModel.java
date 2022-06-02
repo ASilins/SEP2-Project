@@ -5,6 +5,7 @@ import com.uno.shared.transferobjects.Table;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.beans.PropertyChangeEvent;
 import java.util.List;
 
 public class ViewTablesViewModel {
@@ -15,6 +16,12 @@ public class ViewTablesViewModel {
 
   public ViewTablesViewModel(Tables model) {
     this.model = model;
+    model.addListener("Update", this::update);
+  }
+
+  private void update(PropertyChangeEvent event) {
+    tables.clear();
+    tables.addAll((List<Table>)event.getNewValue());
   }
 
   public void loadTables() {

@@ -40,4 +40,9 @@ public class AccountHandlerImpl implements AccountHandler {
   public List<Account> getUsers() {
     return database.getUsers();
   }
+
+  @Override
+  public void editUser(Account account) {
+    database.editUser(account);
+  }
 }

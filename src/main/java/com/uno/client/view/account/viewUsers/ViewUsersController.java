@@ -34,6 +34,7 @@ public class ViewUsersController implements ViewController {
 
   public void editUser() {
     viewModel.editUser(table.getSelectionModel().getSelectedItem());
+    viewHandler.openEditUser();
   }
 
   public void back() {

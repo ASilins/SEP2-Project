@@ -15,6 +15,8 @@ import java.util.ArrayList;
  */
 public interface OrderServer extends Remote {
 
+  void registerClient(OrderClientCallBack client) throws RemoteException;
+
   /**
    * Method that creates an Order object in database.
    * @param order The order that will be created in the database.

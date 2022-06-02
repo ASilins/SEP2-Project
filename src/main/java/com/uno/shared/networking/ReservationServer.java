@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ReservationServer extends Remote {
 
+  void registerClient(ReservationClientCallBack client) throws RemoteException;
+
   void createReservation(Reservation reservation) throws RemoteException;
 
   void updateReservation(Reservation reservation) throws RemoteException;

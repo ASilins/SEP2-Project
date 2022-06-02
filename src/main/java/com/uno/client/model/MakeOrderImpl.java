@@ -5,6 +5,7 @@ import com.uno.client.networking.OrderClient;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Reservation;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
@@ -28,11 +29,17 @@ public class MakeOrderImpl implements MakeOrder {
     public MakeOrderImpl(Client client) {
         try {
             this.orderClient = client.getOrderClient();
+            orderClient.registerClient();
+            orderClient.addListener("Update", this::update);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
 
         support = new PropertyChangeSupport(this);
+    }
+
+    private void update(PropertyChangeEvent event) {
+        support.firePropertyChange("Update", null, event.getNewValue());
     }
 
     /**

@@ -31,5 +31,8 @@ public class EditTableController implements ViewController {
 
   public void updateTable() {
     viewModel.updateTable();
+    tableNr.clear();
+    capacity.clear();
+    viewHandler.openManagerViewTables();
   }
 }

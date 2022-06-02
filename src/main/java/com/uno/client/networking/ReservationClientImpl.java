@@ -1,19 +1,36 @@
 package com.uno.client.networking;
 
+import com.uno.shared.networking.ReservationClientCallBack;
 import com.uno.shared.networking.ReservationServer;
 import com.uno.shared.networking.Server;
 import com.uno.shared.transferobjects.Reservation;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-public class ReservationClientImpl implements ReservationClient {
+public class ReservationClientImpl implements ReservationClient, ReservationClientCallBack {
 
   private ReservationServer server;
+
+  private PropertyChangeSupport support;
 
   public ReservationClientImpl(Server server) {
     try {
       this.server = server.getReservationServer();
+      UnicastRemoteObject.exportObject(this, 0);
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    }
+
+    support = new PropertyChangeSupport(this);
+  }
+
+  public void registerClient() {
+    try {
+      server.registerClient(this);
     } catch (RemoteException e) {
       e.printStackTrace();
     }
@@ -39,8 +56,6 @@ public class ReservationClientImpl implements ReservationClient {
 
   @Override
   public List<Reservation> getReservations() {
-    List<Reservation> list;
-
     try {
       return server.getReservations();
     } catch (RemoteException e) {
@@ -48,5 +63,20 @@ public class ReservationClientImpl implements ReservationClient {
     }
 
     return null;
+  }
+
+  @Override
+  public void update() {
+    support.firePropertyChange("Update", null, getReservations());
+  }
+
+  @Override
+  public void addListener(String evtName, PropertyChangeListener lstnr) {
+    support.addPropertyChangeListener(evtName, lstnr);
+  }
+
+  @Override
+  public void removeListener(String evtName, PropertyChangeListener lstnr) {
+    support.removePropertyChangeListener(evtName, lstnr);
   }
 }
