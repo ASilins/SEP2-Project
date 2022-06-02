@@ -65,14 +65,26 @@ public class DineInController implements ViewController {
         orderTable.refresh();
     }
 
+    /**
+     * a method to remove an item from an order
+     */
+
     public void removeFromOrder(){
         orderTable.getItems().remove(orderTable.getSelectionModel().getSelectedItem());
         orderTable.refresh();
     }
 
+    /**
+     * an onAction method to go to the previous window
+     */
+
     public void back(){
         //open staffView
     }
+
+    /**
+     * an onAction method to finish an order
+     */
 
     public void order(){
         //send order

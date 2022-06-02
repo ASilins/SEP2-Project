@@ -17,7 +17,7 @@ import com.uno.client.view.tables.viewTables.ViewTablesViewModel;
 
 /**
  * A model factory class
- * @author Maximillian Wallin, Arturs Silins
+ * @author Maximillian Wallin, Arturs Silins, Ondrej Klimek
  * @version 1.0.0
  */
 
@@ -132,9 +132,14 @@ public class ViewModelFactory {
     return viewBookingsViewModel;
   }
 
+  /**
+   * method to retrieve DineInViewModel
+   * @return returns DineInViewModel
+   */
+
   public DineInViewModel getDineInViewModel(){
     if (dineInViewModel == null){
-      dineInViewModel = new DineInViewModel(modelFactory.getMenuItems());
+      dineInViewModel = new DineInViewModel(modelFactory.getMenuItems(), modelFactory.getTables());
     }
 
     return dineInViewModel;
