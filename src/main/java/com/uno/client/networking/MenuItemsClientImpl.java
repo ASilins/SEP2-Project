@@ -16,7 +16,6 @@ import java.util.ArrayList;
  * @author Ondrej Klimek
  * @version 1.0.0
  */
-
 public class MenuItemsClientImpl implements MenuItemsClient, MenuItemsClientCallBack {
 
     private MenuItemsServer server;
@@ -27,7 +26,6 @@ public class MenuItemsClientImpl implements MenuItemsClient, MenuItemsClientCall
      * constructor for MenuItemsClientImpl class
      * @param server
      */
-
     public MenuItemsClientImpl(Server server){
         try {
             this.server = server.getMenuItemsServer();
@@ -39,6 +37,9 @@ public class MenuItemsClientImpl implements MenuItemsClient, MenuItemsClientCall
         support = new PropertyChangeSupport(this);
     }
 
+    /**
+     * A method that registers the client to the server
+     */
     public void registerClient() {
         try {
             server.registerClient(this);
@@ -51,7 +52,6 @@ public class MenuItemsClientImpl implements MenuItemsClient, MenuItemsClientCall
      * get method to retrieve menu items
      * @return returns an array list with menu items
      */
-
     @Override
     public ArrayList<MenuItem> getMenuItems() {
         try {
@@ -63,16 +63,29 @@ public class MenuItemsClientImpl implements MenuItemsClient, MenuItemsClientCall
         return null;
     }
 
+    /**
+     * A method that fires a property change
+     */
     @Override
     public void update() {
         support.firePropertyChange("Update", null, getMenuItems());
     }
 
+    /**
+     * A method that adds property change listener
+     * @param evtName The name of event it is waiting
+     * @param lstnr An object that is listening
+     */
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
     }
 
+    /**
+     * A method that removes property change listener
+     * @param evtName The name of the event it was waiting
+     * @param lstnr An object that was listening
+     */
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {
         support.removePropertyChangeListener(evtName, lstnr);

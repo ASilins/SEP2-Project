@@ -37,6 +37,5 @@ public interface Client extends Remote {
     /** A method that returns and/or creates reservation client instance.
      * @return reservation client object
      */
-
     ReservationClient getReservationClient() throws RemoteException;
 }

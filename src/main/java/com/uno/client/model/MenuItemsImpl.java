@@ -26,7 +26,6 @@ public class MenuItemsImpl implements MenuItems{
      * a constructor for MenuItemsImpl
      * @param client takes a client as a parameter
      */
-
     public MenuItemsImpl(Client client) {
         try {
             this.menuItemClient = client.getMenuItemsClient();
@@ -39,6 +38,10 @@ public class MenuItemsImpl implements MenuItems{
         support = new PropertyChangeSupport(this);
     }
 
+    /**
+     * A method that fires a property change listener
+     * @param event Property change event that was fired
+     */
     private void update(PropertyChangeEvent event) {
         support.firePropertyChange("Update", null, event.getNewValue());
     }
@@ -47,18 +50,27 @@ public class MenuItemsImpl implements MenuItems{
      * a method to retrieve menu items
      * @return retrieves an ArrayList of menu items
      */
-
     @Override
     public ArrayList<MenuItem> getMenuItems() {
         //method body
         return menuItemClient.getMenuItems();
     }
 
+    /**
+     * A method that adds property change listener
+     * @param evtName The name of event it is waiting
+     * @param lstnr An object that is listening
+     */
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
     }
 
+    /**
+     * A method that removes property change listener
+     * @param evtName The name of the event it was waiting
+     * @param lstnr An object that was listening
+     */
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {
         support.removePropertyChangeListener(evtName, lstnr);

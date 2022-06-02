@@ -38,5 +38,9 @@ public interface MakeOrder extends Subject {
      */
     void editOrder(Order newOrder);
 
+    /**
+     * A method that fires a property change by sending the order
+     * @param order The order object that is fired
+     */
     void OrderToEdit(Order order);
 }

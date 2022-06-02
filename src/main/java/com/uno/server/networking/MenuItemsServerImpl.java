@@ -36,10 +36,18 @@ public class MenuItemsServerImpl implements MenuItemsServer {
     clients = new ArrayList<>();
   }
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   public void registerClient(MenuItemsClientCallBack client) throws RemoteException {
     clients.add(client);
   }
 
+  /**
+   * A method that sends an update to all clients
+   */
   private void update() {
     for (MenuItemsClientCallBack account : clients) {
       try {

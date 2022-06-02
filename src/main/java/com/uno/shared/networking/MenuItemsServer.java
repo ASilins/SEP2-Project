@@ -13,6 +13,11 @@ import java.util.ArrayList;
  */
 public interface MenuItemsServer extends Remote {
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   void registerClient(MenuItemsClientCallBack client) throws RemoteException;
 
   /**

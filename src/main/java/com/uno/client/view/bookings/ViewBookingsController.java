@@ -10,11 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- *
+ * A method that controls 2 different fxml files
  * @author Arturs Silins
  * @version 1.0.0
  */
-
 public class ViewBookingsController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -64,16 +63,25 @@ public class ViewBookingsController implements ViewController {
     viewHandler.openManagerMainMenu();
   }
 
+  /**
+   * A method that changes the scene
+   */
   public void editBooking() {
     sendSelectedBooking();
     viewHandler.openEditBooking();
   }
 
+  /**
+   * A method that changes the scene
+   */
   public void managerEditBooking() {
     sendSelectedBooking();
     viewHandler.openManagerEditBooking();
   }
 
+  /**
+   * A method that sends the selected object to the view model
+   */
   private void sendSelectedBooking() {
     viewModel.sendSelectedBooking(table.getSelectionModel().getSelectedItem());
   }

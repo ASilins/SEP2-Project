@@ -9,6 +9,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * A class that controls view table fxml and manager view table
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class ViewTablesController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -20,6 +25,11 @@ public class ViewTablesController implements ViewController {
   public TableColumn<String, Table> capacity;
   public TableColumn<String, Table> availability;
 
+  /**
+   * A method that sets instance of view handler and view model
+   * @param viewHandler the instance of view handler
+   * @param vmf Object that will give instance of view model
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     viewModel = vmf.getViewTablesViewModel();
@@ -32,18 +42,30 @@ public class ViewTablesController implements ViewController {
     availability.setCellValueFactory(new PropertyValueFactory<>("availability"));
   }
 
+  /**
+   * Changes the view
+   */
   public void back() {
     viewHandler.openStaffMainMenu();
   }
 
+  /**
+   * Changes the view
+   */
   public void managerBack() {
     viewHandler.openManagerMainMenu();
   }
 
+  /**
+   * Changes the view
+   */
   public void createTable() {
     viewHandler.openCreateTable();
   }
 
+  /**
+   * Changes the view and sends the selected object from the table
+   */
   public void editTable() {
     viewModel.tableToEdit(table.getSelectionModel().getSelectedItem());
     viewHandler.openEditTable();

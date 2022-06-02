@@ -14,6 +14,11 @@ import java.util.List;
  */
 public interface AccountServer extends Remote {
 
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   void registerClient(AccountClientCallBack client) throws RemoteException;
 
   /**
@@ -23,9 +28,26 @@ public interface AccountServer extends Remote {
    */
   void createAccount(Account account) throws RemoteException;
 
+  /**
+   * A method that sends login info and returns account
+   * @param phoneNumber the phone number
+   * @param password the hash code of the password
+   * @return An account object
+   * @throws RemoteException If connection failed
+   */
   Account login(String phoneNumber, String password) throws RemoteException;
 
+  /**
+   * A method that returns a list of users
+   * @return A list of Account objects
+   * @throws RemoteException If connection failed
+   */
   List<Account> getUsers() throws RemoteException;
 
+  /**
+   * A method that sends Account object to the model
+   * @param account The object that will be sent
+   * @throws RemoteException If connection failed
+   */
   void editUser(Account account) throws RemoteException;
 }

@@ -22,12 +22,22 @@ public interface AccountClient extends Subject {
   /**
    * A method that finds the connected phoneNumber and password in the system to login
    */
-
   Account login(String phoneNumber, String password);
 
+  /**
+   * A method that returns a list of Accounts from a server
+   * @return A list of Account objects
+   */
   List<Account> getUsers();
 
+  /**
+   * A method that send an edited object to the server
+   * @param account The object that will be sent
+   */
   void editUser(Account account);
 
+  /**
+   * A method that registers client to the server
+   */
   void registerClient();
 }

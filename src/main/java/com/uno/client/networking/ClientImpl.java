@@ -42,9 +42,8 @@ public class ClientImpl implements Client {
     }
 
     /**
-     *
+     * A method that finds the server on the registery
      */
-
     public void startClient() {
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 22222);
@@ -71,7 +70,6 @@ public class ClientImpl implements Client {
      * get method to retrieve a MenuItemsClient
      * @return menu item client
      */
-
     @Override
     public MenuItemsClient getMenuItemsClient() {
         if (mic == null) {
@@ -94,7 +92,8 @@ public class ClientImpl implements Client {
         return tc;
     }
 
-     /** A method that returns and/or creates account client object.
+     /**
+      * A method that returns and/or creates account client object.
      * @return An account client object
      */
     @Override
@@ -106,10 +105,10 @@ public class ClientImpl implements Client {
         return ac;
     }
 
-    /** A method that returns and/or creates reservation client object.
+    /**
+     * A method that returns and/or creates reservation client object.
      * @return reservation client object
      */
-
     @Override
     public ReservationClient getReservationClient() {
         if (rc == null) {

@@ -37,6 +37,9 @@ public class ReservationClientImpl implements ReservationClient, ReservationClie
     support = new PropertyChangeSupport(this);
   }
 
+  /**
+   * A method that registers client to the server
+   */
   public void registerClient() {
     try {
       server.registerClient(this);
@@ -45,6 +48,10 @@ public class ReservationClientImpl implements ReservationClient, ReservationClie
     }
   }
 
+  /**
+   * method to create an order
+   * @param reservation takes a reservation as a parameter
+   */
   @Override
   public void createReservation(Reservation reservation) {
     try {
@@ -54,6 +61,10 @@ public class ReservationClientImpl implements ReservationClient, ReservationClie
     }
   }
 
+  /**
+   * A method that sends an edited object to the server
+   * @param reservation Teh object that will be sent
+   */
   @Override
   public void updateReservation(Reservation reservation) {
     try {
@@ -63,6 +74,10 @@ public class ReservationClientImpl implements ReservationClient, ReservationClie
     }
   }
 
+  /**
+   * A method that gets a list of Reservation objects from the server
+   * @return A list og Reservation objects
+   */
   @Override
   public List<Reservation> getReservations() {
     try {
@@ -74,16 +89,29 @@ public class ReservationClientImpl implements ReservationClient, ReservationClie
     return null;
   }
 
+  /**
+   * A method that fires a property change
+   */
   @Override
   public void update() {
     support.firePropertyChange("Update", null, getReservations());
   }
 
+  /**
+   * A method that adds property change listener
+   * @param evtName The name of event it is waiting
+   * @param lstnr An object that is listening
+   */
   @Override
   public void addListener(String evtName, PropertyChangeListener lstnr) {
     support.addPropertyChangeListener(evtName, lstnr);
   }
 
+  /**
+   * A method that removes property change listener
+   * @param evtName The name of the event it was waiting
+   * @param lstnr An object that was listening
+   */
   @Override
   public void removeListener(String evtName, PropertyChangeListener lstnr) {
     support.removePropertyChangeListener(evtName, lstnr);

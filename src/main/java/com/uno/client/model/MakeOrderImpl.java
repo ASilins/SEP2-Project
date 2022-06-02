@@ -74,6 +74,11 @@ public class MakeOrderImpl implements MakeOrder {
         orderClient.editOrder(newOrder);
     }
 
+    /**
+     * A method that stores and then fires property change listener with the
+     * order object
+     * @param order The order object that is fired
+     */
     @Override
     public void OrderToEdit(Order order) {
         new Thread(() -> {
@@ -89,7 +94,6 @@ public class MakeOrderImpl implements MakeOrder {
     /**
      * A method for adding a listener
      */
-
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
@@ -98,7 +102,6 @@ public class MakeOrderImpl implements MakeOrder {
     /**
      * A method for removing a listener
      */
-
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {
         support.removePropertyChangeListener(evtName, lstnr);

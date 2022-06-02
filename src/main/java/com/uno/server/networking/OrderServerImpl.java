@@ -34,11 +34,18 @@ public class OrderServerImpl implements OrderServer {
     this.handler = handler;
     clients = new ArrayList<>();
   }
-
+  /**
+   * A method that registers the client in the server
+   * @param client The object that is registered
+   * @throws RemoteException If connection failed
+   */
   public void registerClient(OrderClientCallBack client) throws RemoteException {
     clients.add(client);
   }
 
+  /**
+   * A method that sends an update to all clients
+   */
   private void update() {
     for (OrderClientCallBack account : clients) {
       try {
@@ -82,6 +89,10 @@ public class OrderServerImpl implements OrderServer {
     update();
   }
 
+  /**
+   * A method that send order that has to be eddited and the new information.
+   * @param newOrder The information that will be set in the old object.
+   */
   @Override
   public void editOrder(Order newOrder) throws RemoteException{
     handler.editOrder(newOrder);

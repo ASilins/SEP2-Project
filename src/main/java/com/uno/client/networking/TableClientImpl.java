@@ -16,7 +16,6 @@ import java.util.List;
  * @author Arturs Silins, Siddhartha Grasse, Bhupas Gautam
  * @version 1.0.0
  */
-
 public class TableClientImpl implements TableClient, TableClientCallBack {
 
     private TableServer server;
@@ -38,6 +37,9 @@ public class TableClientImpl implements TableClient, TableClientCallBack {
         support = new PropertyChangeSupport(this);
     }
 
+    /**
+     * A method that registers client to the server
+     */
     public void registerClient() {
         try {
             server.registerClient(this);
@@ -46,6 +48,10 @@ public class TableClientImpl implements TableClient, TableClientCallBack {
         }
     }
 
+    /**
+     * A method that sends a Table object to the server
+     * @param table The Table object that will be sent
+     */
     @Override
     public void createTable(Table table) {
         try {
@@ -55,6 +61,10 @@ public class TableClientImpl implements TableClient, TableClientCallBack {
         }
     }
 
+    /**
+     * A method that sends an edited Table object to the server
+     * @param table The Table Object that will be sent
+     */
     @Override
     public void updateTable(Table table) {
         try {
@@ -65,28 +75,9 @@ public class TableClientImpl implements TableClient, TableClientCallBack {
     }
 
     /**
-     * Method to create a table booking
-     * @param table takes a table as a parameter
-     * @throws RemoteException If it is not possible to receive the object.
+     * A method that takes a list of Table objects from the server
+     * @return A list of Table objects
      */
-    @Override
-    public void bookTable(Table table) throws RemoteException {
-        server.bookTable(table);
-    }
-
-    /**
-     * Method to edit the table booking
-     * @param newBooking send out the information for new booking
-     */
-    @Override
-    public void editTableBooking(Table newBooking) {
-        try {
-            server.editTableBooking(newBooking);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public List<Table> getTables() {
         try {
@@ -98,16 +89,29 @@ public class TableClientImpl implements TableClient, TableClientCallBack {
         return null;
     }
 
+    /**
+     * A method that fires property change event
+     */
     @Override
     public void update() {
         support.firePropertyChange("Update", null, getTables());
     }
 
+    /**
+     * A method that adds property change listener
+     * @param evtName The name of event it is waiting
+     * @param lstnr An object that is listening
+     */
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
     }
 
+    /**
+     * A method that removes property change listener
+     * @param evtName The name of the event it was waiting
+     * @param lstnr An object that was listening
+     */
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {
         support.removePropertyChangeListener(evtName, lstnr);

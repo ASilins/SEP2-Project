@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * A method that controls login view and account model class
  * @author Arturs Silins
  * @version 1.0.0
  */
@@ -24,7 +24,6 @@ public class LoginViewModel {
    * Constructor that sets instance of login view model for the object.
    * @param model The object that gives the instance.
    */
-
   public LoginViewModel(AccountModel model) {
     this.model = model;
     phoneNumber = new SimpleStringProperty();
@@ -32,6 +31,10 @@ public class LoginViewModel {
     errorText = new SimpleStringProperty();
   }
 
+  /**
+   * A method that gets from the model an account object
+   * @return An Account object
+   */
   public Account login() {
     Account account = model.login(phoneNumber.get(), PasswordHasher.hashPassword(password.get()));
     
@@ -49,12 +52,14 @@ public class LoginViewModel {
   public StringProperty phoneNumberProperty() {
     return phoneNumber;
   }
+
   /**
    * returns the string property of the password
    */
   public StringProperty passwordProperty() {
     return password;
   }
+
   /**
    * returns the string property of the error text
    */

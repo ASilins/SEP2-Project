@@ -27,7 +27,6 @@ public class OrderClientImpl implements OrderClient, OrderClientCallBack {
      * Constructor for OrderClientImpl
      * @param server takes a server as a parameter
      */
-
     public OrderClientImpl(Server server) {
         try {
             this.server = server.getOrderServer();
@@ -39,6 +38,9 @@ public class OrderClientImpl implements OrderClient, OrderClientCallBack {
         support = new PropertyChangeSupport(this);
     }
 
+    /**
+     * A method that registers the client to the server
+     */
     public void registerClient() {
         try {
             server.registerClient(this);
@@ -102,16 +104,29 @@ public class OrderClientImpl implements OrderClient, OrderClientCallBack {
         }
     }
 
+    /**
+     * A method that fires a property change event
+     */
     @Override
     public void update() {
         support.firePropertyChange("Update", null, getOrders());
     }
 
+    /**
+     * A method that adds property change listener
+     * @param evtName The name of event it is waiting
+     * @param lstnr An object that is listening
+     */
     @Override
     public void addListener(String evtName, PropertyChangeListener lstnr) {
         support.addPropertyChangeListener(evtName, lstnr);
     }
 
+    /**
+     * A method that removes property change listener
+     * @param evtName The name of the event it was waiting
+     * @param lstnr An object that was listening
+     */
     @Override
     public void removeListener(String evtName, PropertyChangeListener lstnr) {
         support.removePropertyChangeListener(evtName, lstnr);

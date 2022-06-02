@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * An interface for Order client
- * @author Ondrej Klimek,Bhupas Gautam
+ * @author Ondrej Klimek,Bhupas Gautam, Arturs Silins
  * @version 1.0.0
  */
 public interface OrderClient extends Subject {
@@ -38,5 +38,8 @@ public interface OrderClient extends Subject {
      */
     void editOrder(Order newOrder);
 
+    /**
+     * A method that registers the client to the server
+     */
     void registerClient();
 }

@@ -7,6 +7,11 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.util.Scanner;
 
+/**
+ * A method that sets the instance of the database connection and starts the server
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class RunServer {
   public static void main(String[] args) {
     try {

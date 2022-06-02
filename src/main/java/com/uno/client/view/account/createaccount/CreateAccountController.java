@@ -8,11 +8,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 /**
- * a class that
+ * a class that controls the CreateAccount fxml file
  * @author Arturs Silins
  * @version 1.0.0
  */
-
 public class CreateAccountController implements ViewController {
 
   private ViewHandler viewHandler;
