@@ -2,13 +2,19 @@ package com.uno.server.model;
 
 import com.uno.shared.transferobjects.Table;
 
+import java.util.List;
+
 /**
  * An interface that is used to send and receive Table objects
  * using these methods.
  * @author Siddhartha Grasse, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface TableHandler {
+
+    void createTable(Table table);
+
+    void updateTable(Table table);
 
     /**
      * Send table object to the database.
@@ -17,4 +23,6 @@ public interface TableHandler {
     void bookTable(Table table);
 
     void editTableBooking(Table newBooking);
+
+    List<Table> getTables();
 }

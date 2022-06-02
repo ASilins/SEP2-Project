@@ -6,18 +6,23 @@ import com.uno.client.networking.TableClient;
 import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Table;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
-
+import java.util.List;
 
 /**
  * A class for handling tables
- * @author Siddhartha Grasse, Bhupas
- * @version 0.2.0
+ * @author Siddhartha Grasse, Bhupas Gautam
+ * @version 1.0.0
  */
 
 public class TablesImpl implements Tables{
 
     private TableClient tableClient;
+
+    private PropertyChangeSupport support;
 
     /**
      * a constructor for MenuItemsImpl
@@ -27,9 +32,27 @@ public class TablesImpl implements Tables{
     public TablesImpl(Client client) {
         try {
             this.tableClient = client.getTableClient();
+            tableClient.registerClient();
+            tableClient.addListener("Update", this::update);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
+        support = new PropertyChangeSupport(this);
+    }
+
+    private void update(PropertyChangeEvent event) {
+        support.firePropertyChange("Update", null, event.getNewValue());
+    }
+
+    @Override
+    public void createTable(Table table) {
+        tableClient.createTable(table);
+    }
+
+    @Override
+    public void updateTable(Table table) {
+        tableClient.updateTable(table);
     }
 
     /**
@@ -50,4 +73,32 @@ public class TablesImpl implements Tables{
      */
     public void editTableBooking(Table newBooking) {
         tableClient.editTableBooking(newBooking);
-    }}
+    }
+
+    @Override
+    public List<Table> getTables() {
+        return tableClient.getTables();
+    }
+
+    @Override
+    public void tableToEdit(Table table) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(250);
+                support.firePropertyChange("TableToUpdate", null, table);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    @Override
+    public void addListener(String evtName, PropertyChangeListener lstnr) {
+        support.addPropertyChangeListener(evtName, lstnr);
+    }
+
+    @Override
+    public void removeListener(String evtName, PropertyChangeListener lstnr) {
+        support.removePropertyChangeListener(evtName, lstnr);
+    }
+}

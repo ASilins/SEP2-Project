@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * A class that stores connection information with the database and returns
  * connection to the database.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class DatabaseConnection {
 

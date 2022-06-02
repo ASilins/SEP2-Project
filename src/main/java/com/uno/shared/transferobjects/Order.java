@@ -2,6 +2,11 @@ package com.uno.shared.transferobjects;
 
 import java.io.Serializable;
 
+/**
+ * A class for an object that will be transferred between the server and the database
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class Order implements Serializable {
 
     private int orderNumber;

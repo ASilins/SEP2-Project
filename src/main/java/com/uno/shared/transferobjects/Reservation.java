@@ -3,6 +3,11 @@ package com.uno.shared.transferobjects;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+/**
+ * A class for an object that will be transferred between the server and the database
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class Reservation implements Serializable {
 
   private int reservationNumber;
@@ -11,9 +16,9 @@ public class Reservation implements Serializable {
   private int amountOfPeople;
   private String comment;
   private String dietaryNeeds;
-  private Table table;
+  private int table;
 
-  public Reservation(int reservationNumber, String customerNumber, Timestamp date, int amountOfPeople, String comment, String dietaryNeeds, Table table) {
+  public Reservation(int reservationNumber, String customerNumber, Timestamp date, int amountOfPeople, String comment, String dietaryNeeds, int table) {
     this.reservationNumber = reservationNumber;
     this.customerNumber = customerNumber;
     this.date = date;
@@ -47,7 +52,7 @@ public class Reservation implements Serializable {
     return dietaryNeeds;
   }
 
-  public Table getTable() {
+  public int getTable() {
     return table;
   }
 }

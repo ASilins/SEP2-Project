@@ -6,7 +6,7 @@ import com.uno.client.core.ClientFactory;
 /**
  * A model factory class
  * @author Ondrej Klimek, Siddhartha Grasse
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public class ModelFactory {
@@ -65,7 +65,10 @@ public class ModelFactory {
         }
         return tables;
     }
-
+    /**
+     * getter method for AccountModel
+     * @return returns an instance of AccountModel
+     */
     public AccountModel getAccountModel() {
         if (accountModel == null) {
             accountModel = new AccountImpl(clientFactory.getClient());
@@ -73,7 +76,10 @@ public class ModelFactory {
 
         return accountModel;
     }
-
+    /**
+     * getter method for ReservationModel
+     * @return returns an instance of ReservationModel
+     */
     public ReservationModel getReservationModel() {
         if (reservationModel == null) {
             reservationModel = new ReservationModelImpl(clientFactory.getClient());

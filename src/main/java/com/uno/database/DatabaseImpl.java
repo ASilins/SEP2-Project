@@ -7,12 +7,13 @@ import com.uno.database.states.ordersstates.PreOrderState;
 import com.uno.shared.transferobjects.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A class that implements Database interface. The class handles sending the
  * objects from database to the server or back.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class DatabaseImpl implements Database {
 
@@ -112,6 +113,48 @@ public class DatabaseImpl implements Database {
   public ArrayList<Order> getOrders() {
     setState(new OrderState());
     return (ArrayList<Order>) currentState.getListFromDatabase();
+  }
+
+  @Override
+  public void updateReservation(Reservation reservation) {
+    setState(new EditReservationState());
+    currentState.sendToDatabase(reservation);
+  }
+
+  @Override
+  public List<Reservation> getReservations() {
+    setState(new ReservationState());
+    return (List<Reservation>) currentState.getListFromDatabase();
+  }
+
+  @Override
+  public List<Table> getTables() {
+    setState(new TableState());
+    return (List<Table>) currentState.getListFromDatabase();
+  }
+
+  @Override
+  public void createTable(Table table) {
+    setState(new TableState());
+    currentState.sendToDatabase(table);
+  }
+
+  @Override
+  public void updateTable(Table table) {
+    setState(new EditTableState());
+    currentState.sendToDatabase(table);
+  }
+
+  @Override
+  public List<Account> getUsers() {
+    setState(new AccountState());
+    return (List<Account>) currentState.getListFromDatabase();
+  }
+
+  @Override
+  public void editUser(Account account) {
+    setState(new EditAccountState());
+    currentState.sendToDatabase(account);
   }
 
   /**

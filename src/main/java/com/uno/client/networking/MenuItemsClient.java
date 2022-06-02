@@ -1,16 +1,17 @@
 package com.uno.client.networking;
 
 import com.uno.shared.transferobjects.MenuItem;
+import com.uno.shared.util.Subject;
 
 import java.util.ArrayList;
 
 /**
  * An interface for menu items client
  * @author Ondrej Klimek
- * @version 0.1.0
+ * @version 1.0.0
  */
 
-public interface MenuItemsClient {
+public interface MenuItemsClient extends Subject {
 
     /**
      * method to retrieve menu items
@@ -19,4 +20,5 @@ public interface MenuItemsClient {
 
     ArrayList<MenuItem> getMenuItems();
 
+    void registerClient();
 }

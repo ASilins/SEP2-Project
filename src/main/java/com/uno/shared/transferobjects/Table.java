@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * transferobject to use in the system
  * @author Siddhartha Grasse
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public class Table implements Serializable {

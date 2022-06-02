@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * A class that sends and/or takes objects to/from the database
  * @author Ondrej Klimek
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public class PreOrderState implements DatabaseHandler {

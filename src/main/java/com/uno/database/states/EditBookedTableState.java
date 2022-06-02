@@ -13,12 +13,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class that updates objects from a database
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class EditBookedTableState implements DatabaseHandler
 {
 
   /**
    * a method that sends an object to the database
-   *
    * @param object The object that will be inserted in to database.
    */
 
@@ -39,6 +43,12 @@ public class EditBookedTableState implements DatabaseHandler
       e.printStackTrace();
     }
   }
+
+  /**
+   * A method that creates and returns booked table objects from tables
+   * table in the database
+   * @return null
+   */
 
   @Override public Object getFromDatabase(Object searchParameter)
   {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * An interface that has methods that can be used for database queries
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public interface DatabaseHandler {
 

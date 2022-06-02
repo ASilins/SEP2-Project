@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * A class that handles Order objects from the database to the client.
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class OrderHandlerImpl implements OrderHandler{
 
@@ -52,6 +52,10 @@ public class OrderHandlerImpl implements OrderHandler{
     database.createPreOrder(order.getOrderNumber(), reservation.getReservationNumber());
   }
 
+  /**
+   * A method that updates Order in the database
+   * @param newOrder to get its orderNumber
+   */
   @Override
   public void editOrder(Order newOrder) {
     database.editOrder(newOrder);

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * An interface that is used to send and receive Order objects
  * using these methods.
  * @author Arturs Silins, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface OrderHandler {
 

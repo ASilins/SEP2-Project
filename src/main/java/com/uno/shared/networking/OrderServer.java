@@ -11,9 +11,11 @@ import java.util.ArrayList;
 /**
  * An interface that creates order object in database.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface OrderServer extends Remote {
+
+  void registerClient(OrderClientCallBack client) throws RemoteException;
 
   /**
    * Method that creates an Order object in database.

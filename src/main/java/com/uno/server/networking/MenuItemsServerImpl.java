@@ -1,21 +1,25 @@
 package com.uno.server.networking;
 
 import com.uno.server.model.MenuItemsHandler;
+import com.uno.shared.networking.AccountClientCallBack;
+import com.uno.shared.networking.MenuItemsClientCallBack;
 import com.uno.shared.networking.MenuItemsServer;
 import com.uno.shared.transferobjects.MenuItem;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is a server class that handles menu item objects in the server
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class MenuItemsServerImpl implements MenuItemsServer {
 
   private MenuItemsHandler handler;
+  private List<MenuItemsClientCallBack> clients;
 
   /**
    * Constructor that takes as a parameter an MenuItemsHandler object
@@ -29,6 +33,21 @@ public class MenuItemsServerImpl implements MenuItemsServer {
     }
 
     this.handler = handler;
+    clients = new ArrayList<>();
+  }
+
+  public void registerClient(MenuItemsClientCallBack client) throws RemoteException {
+    clients.add(client);
+  }
+
+  private void update() {
+    for (MenuItemsClientCallBack account : clients) {
+      try {
+        account.update();
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**

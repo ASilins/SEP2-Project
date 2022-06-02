@@ -9,6 +9,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewBookingsController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -24,7 +30,9 @@ public class ViewBookingsController implements ViewController {
   public TableColumn<String, Reservation> dietaryNeeds;
   public TableColumn<String, Reservation> tableNr;
 
-
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     viewModel = vmf.getViewBookingsViewModel();
@@ -32,24 +40,41 @@ public class ViewBookingsController implements ViewController {
 
     viewModel.loadBookings();
     table.setItems(viewModel.getBookings());
-    bookingNr.setCellValueFactory(new PropertyValueFactory<>(""));
-    customerNr.setCellValueFactory(new PropertyValueFactory<>(""));
-    date.setCellValueFactory(new PropertyValueFactory<>(""));
-    guests.setCellValueFactory(new PropertyValueFactory<>(""));
-    comment.setCellValueFactory(new PropertyValueFactory<>(""));
-    dietaryNeeds.setCellValueFactory(new PropertyValueFactory<>(""));
-    tableNr.setCellValueFactory(new PropertyValueFactory<>(""));
+
+    bookingNr.setCellValueFactory(new PropertyValueFactory<>("reservationNumber"));
+    customerNr.setCellValueFactory(new PropertyValueFactory<>("customerNumber"));
+    date.setCellValueFactory(new PropertyValueFactory<>("date"));
+    guests.setCellValueFactory(new PropertyValueFactory<>("amountOfPeople"));
+    comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
+    dietaryNeeds.setCellValueFactory(new PropertyValueFactory<>("dietaryNeeds"));
+    tableNr.setCellValueFactory(new PropertyValueFactory<>("table"));
   }
 
-  public void backManager() {
-    viewHandler.openManagerMainMenu();
-  }
-
+  /**
+   * returns the user to the staff main menu
+   */
   public void back() {
     viewHandler.openStaffMainMenu();
   }
 
-  public void editBooking() {
+  /**
+   * returns the user to the manager main menu
+   */
+  public void backManager() {
+    viewHandler.openManagerMainMenu();
+  }
 
+  public void editBooking() {
+    sendSelectedBooking();
+    viewHandler.openEditBooking();
+  }
+
+  public void managerEditBooking() {
+    sendSelectedBooking();
+    viewHandler.openManagerEditBooking();
+  }
+
+  private void sendSelectedBooking() {
+    viewModel.sendSelectedBooking(table.getSelectionModel().getSelectedItem());
   }
 }

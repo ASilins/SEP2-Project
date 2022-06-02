@@ -1,6 +1,7 @@
 package com.uno.client.model;
 
 import com.uno.shared.transferobjects.MenuItem;
+import com.uno.shared.util.Subject;
 
 import java.util.ArrayList;
 
@@ -10,11 +11,11 @@ import java.util.ArrayList;
  * @version 0.1.0
  */
 
-public interface MenuItems {
+public interface MenuItems extends Subject {
 
     /**
      * a method to retrieve menu items
-     * @return retruns an ArrayList of menu items
+     * @return returns an ArrayList of menu items
      */
 
     ArrayList<MenuItem> getMenuItems();

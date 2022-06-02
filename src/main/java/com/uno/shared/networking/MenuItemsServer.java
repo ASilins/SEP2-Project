@@ -9,9 +9,11 @@ import java.util.ArrayList;
 /**
  * This interface is for MenuItemsServer that handles only things associated with menu items
  * @author Arturs Silins, Maximillian Wallin
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface MenuItemsServer extends Remote {
+
+  void registerClient(MenuItemsClientCallBack client) throws RemoteException;
 
   /**
    * Method that returns list of menu items

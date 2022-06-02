@@ -3,10 +3,12 @@ package com.uno.server.model;
 import com.uno.database.Database;
 import com.uno.shared.transferobjects.Account;
 
+import java.util.List;
+
 /**
  * A class that implements account handler interface and handles account objects.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class AccountHandlerImpl implements AccountHandler {
 
@@ -32,5 +34,15 @@ public class AccountHandlerImpl implements AccountHandler {
   @Override
   public Account login(String phoneNumber, String password) {
     return database.login(phoneNumber, password);
+  }
+
+  @Override
+  public List<Account> getUsers() {
+    return database.getUsers();
+  }
+
+  @Override
+  public void editUser(Account account) {
+    database.editUser(account);
   }
 }

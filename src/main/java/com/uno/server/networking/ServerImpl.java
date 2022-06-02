@@ -16,7 +16,7 @@ import java.rmi.server.UnicastRemoteObject;
  * This is a class with server interface implementation that creates other
  * classes and is the main class for the server.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class ServerImpl implements Server {
 
@@ -98,8 +98,13 @@ public class ServerImpl implements Server {
   @Override
   public TableServer getTableServer() {
     if (ts == null) {
-      ts = new TableServerImpl(new TableHandlerImpl(new DatabaseImpl()));
+      try {
+        ts = new TableServerImpl(new TableHandlerImpl(new DatabaseImpl()));
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
     }
+
     return ts;
   }
 

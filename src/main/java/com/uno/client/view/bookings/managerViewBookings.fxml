@@ -23,6 +23,6 @@
         </columns>
       </TableView>
       <Button layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#backManager" text="Back" />
-      <Button layoutX="486.0" layoutY="350.0" mnemonicParsing="false" onAction="#editBooking" text="Edit Booking" />
+      <Button layoutX="486.0" layoutY="350.0" mnemonicParsing="false" onAction="#managerEditBooking" text="Edit Booking" />
    </children>
 </AnchorPane>
