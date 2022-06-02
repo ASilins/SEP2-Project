@@ -14,6 +14,12 @@ import com.uno.client.view.tables.createTable.CreateTableViewModel;
 import com.uno.client.view.tables.editTable.EditTableViewModel;
 import com.uno.client.view.tables.viewTables.ViewTablesViewModel;
 
+/**
+ * A model factory class
+ * @author Maximillian Wallin, Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewModelFactory {
 
   private final ModelFactory modelFactory;
@@ -32,9 +38,19 @@ public class ViewModelFactory {
   private EditUserViewModel editUserViewModel;
   private ViewUsersViewModel viewUsersViewModel;
 
+  /**
+   * constructor for ViewModelFactory
+   * @param modelFactory takes client factory as a parameter
+   */
+
   public ViewModelFactory(ModelFactory modelFactory) {
     this.modelFactory = modelFactory;
   }
+
+  /**
+   * getter method for MenuItemViewModel
+   * @return returns an instance of MenuItemViewModel
+   */
 
   public MenuItemViewModel getMenuItemViewModel(){
     if(menuItemViewModel == null){
@@ -44,6 +60,11 @@ public class ViewModelFactory {
     return menuItemViewModel;
   }
 
+  /**
+   * getter method for MakeOrderViewModel
+   * @return returns an instance of MakeOrderViewModel
+   */
+
   public MakeOrderViewModel getMakeOrderViewModel(){
     if(makeOrderViewModel == null){
       makeOrderViewModel = new MakeOrderViewModel(modelFactory.getMakeOrder());
@@ -51,6 +72,11 @@ public class ViewModelFactory {
 
     return makeOrderViewModel;
   }
+
+  /**
+   * getter method for CreateAccountViewModel
+   * @return returns an instance of CreateAccountViewModel
+   */
 
   public CreateAccountViewModel getCreateAccountViewModel() {
     if (createAccountViewModel == null) {
@@ -60,6 +86,11 @@ public class ViewModelFactory {
     return createAccountViewModel;
   }
 
+  /**
+   * getter method for LoginViewModel
+   * @return returns an instance of LoginViewModel
+   */
+
   public LoginViewModel getLoginViewModel() {
     if (loginViewModel == null) {
       loginViewModel = new LoginViewModel(modelFactory.getAccountModel());
@@ -67,6 +98,11 @@ public class ViewModelFactory {
 
     return loginViewModel;
   }
+
+  /**
+   * getter method for ViewOrdersViewModel
+   * @return returns an instance of ViewOrdersViewModel
+   */
 
   public ViewOrdersViewModel getViewOrdersViewModel() {
     if (viewOrdersViewModel == null) {
@@ -76,6 +112,11 @@ public class ViewModelFactory {
     return viewOrdersViewModel;
   }
 
+  /**
+   * getter method for EditOrderViewModel
+   * @return returns an instance of EditOrderViewModel
+   */
+
   public EditOrderViewModel getEditOrderViewModel() {
     if (editOrderViewModel == null) {
       editOrderViewModel = new EditOrderViewModel(modelFactory.getMakeOrder());
@@ -83,6 +124,11 @@ public class ViewModelFactory {
 
     return editOrderViewModel;
   }
+
+  /**
+   * getter method for ViewBookingsViewModel
+   * @return returns an instance of ViewBookingsViewModel
+   */
 
   public ViewBookingsViewModel getViewBookingsViewModel() {
     if (viewBookingsViewModel == null) {

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * An interface for table client
  * @author Siddhartha Grasse, Bhupas Gautam
- * @version 0.2.1
+ * @version 1.0.0
  */
 public interface TableClient extends Subject {
 

@@ -15,7 +15,7 @@ public interface MenuItems extends Subject {
 
     /**
      * a method to retrieve menu items
-     * @return retruns an ArrayList of menu items
+     * @return returns an ArrayList of menu items
      */
 
     ArrayList<MenuItem> getMenuItems();

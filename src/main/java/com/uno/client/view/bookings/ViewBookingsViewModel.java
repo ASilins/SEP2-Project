@@ -5,10 +5,14 @@ import com.uno.shared.transferobjects.Order;
 import com.uno.shared.transferobjects.Reservation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.beans.PropertyChangeEvent;
 import java.util.List;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class ViewBookingsViewModel {
 
   private ReservationModel model;

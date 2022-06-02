@@ -9,6 +9,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class ViewBookingsController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -24,7 +30,9 @@ public class ViewBookingsController implements ViewController {
   public TableColumn<String, Reservation> dietaryNeeds;
   public TableColumn<String, Reservation> tableNr;
 
-
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     viewModel = vmf.getViewBookingsViewModel();
@@ -42,10 +50,16 @@ public class ViewBookingsController implements ViewController {
     tableNr.setCellValueFactory(new PropertyValueFactory<>("table"));
   }
 
+  /**
+   * returns the user to the staff main menu
+   */
   public void back() {
     viewHandler.openStaffMainMenu();
   }
 
+  /**
+   * returns the user to the manager main menu
+   */
   public void backManager() {
     viewHandler.openManagerMainMenu();
   }

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * A class that updates objects from a database
  * @author Maximillian Wallin
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 public class EditOrderState implements DatabaseHandler {

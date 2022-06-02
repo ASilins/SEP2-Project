@@ -6,6 +6,12 @@ import com.uno.client.view.ViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class EditBookingController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -24,7 +30,9 @@ public class EditBookingController implements ViewController {
   @FXML
   private TextField tableNr;
 
-
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     viewModel = vmf.getEditBookingViewModel();
@@ -37,15 +45,19 @@ public class EditBookingController implements ViewController {
     dietaryNeeds.textProperty().bindBidirectional(viewModel.dietaryNeedsProperty());
     tableNr.textProperty().bindBidirectional(viewModel.tableNrProperty());
   }
-
+  //Opens staff booking view
   public void cancel() {
     viewHandler.openViewBooking();
   }
 
+  //Opens manager booking view
   public void cancelManager() {
     viewHandler.openManagerViewBooking();
   }
 
+  /**
+   * A method that updates the booking
+   */
   public void updateBooking() {
     viewModel.updateBooking();
   }

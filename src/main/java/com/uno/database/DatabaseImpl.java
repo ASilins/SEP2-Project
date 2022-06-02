@@ -13,7 +13,7 @@ import java.util.List;
  * A class that implements Database interface. The class handles sending the
  * objects from database to the server or back.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class DatabaseImpl implements Database {
 

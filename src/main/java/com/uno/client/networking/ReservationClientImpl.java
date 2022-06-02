@@ -11,12 +11,21 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+/**
+ * class for reservation client
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class ReservationClientImpl implements ReservationClient, ReservationClientCallBack {
 
   private ReservationServer server;
 
   private PropertyChangeSupport support;
-
+  
+ /**
+   * Constructor for ReservationClientImpl
+   * @param server takes a server as a parameter
+   */
   public ReservationClientImpl(Server server) {
     try {
       this.server = server.getReservationServer();

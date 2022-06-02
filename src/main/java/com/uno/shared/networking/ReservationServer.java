@@ -6,6 +6,11 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
+/**
+ * An interface that creates order object in database.
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public interface ReservationServer extends Remote {
 
   void registerClient(ReservationClientCallBack client) throws RemoteException;

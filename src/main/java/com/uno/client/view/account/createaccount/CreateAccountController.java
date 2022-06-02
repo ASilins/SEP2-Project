@@ -7,6 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * a class that
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class CreateAccountController implements ViewController {
 
   private ViewHandler viewHandler;
@@ -19,6 +25,9 @@ public class CreateAccountController implements ViewController {
   @FXML
   private PasswordField password;
 
+  /**
+   * A method that initializes the view handler and view model factory
+   */
   @Override
   public void init(ViewHandler viewHandler, ViewModelFactory vmf) {
     this.viewHandler = viewHandler;
@@ -27,6 +36,10 @@ public class CreateAccountController implements ViewController {
     name.textProperty().bindBidirectional(viewModel.nameProperty());
     password.textProperty().bindBidirectional(viewModel.passwordProperty());
   }
+
+  /**
+   * A method that creates the account
+   */
 
   @FXML
   public void createAccount() {
@@ -37,6 +50,10 @@ public class CreateAccountController implements ViewController {
     viewHandler.openLoginScene();
 
   }
+
+  /**
+   * A method that cancels the account creation and goes back to login scene
+   */
 
   @FXML
   public void cancel() {

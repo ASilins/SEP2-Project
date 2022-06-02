@@ -14,7 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
 /**
  * A class that handles clients
  * @author Ondrej Klimek, Siddhartha Grasse, Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public class ClientImpl implements Client {
@@ -41,6 +41,10 @@ public class ClientImpl implements Client {
         }
     }
 
+    /**
+     *
+     */
+
     public void startClient() {
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 22222);
@@ -52,7 +56,7 @@ public class ClientImpl implements Client {
 
     /**
      * get method to retrieve an OrderClient
-     * @return
+     * @return order client
      */
     @Override
     public OrderClient getOrderClient() {
@@ -65,7 +69,7 @@ public class ClientImpl implements Client {
 
     /**
      * get method to retrieve a MenuItemsClient
-     * @return
+     * @return menu item client
      */
 
     @Override
@@ -101,6 +105,10 @@ public class ClientImpl implements Client {
 
         return ac;
     }
+
+    /** A method that returns and/or creates reservation client object.
+     * @return reservation client object
+     */
 
     @Override
     public ReservationClient getReservationClient() {

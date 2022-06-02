@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * A class that handles sending and receiving MenuItem objects
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class MenuItemsHandlerImpl implements MenuItemsHandler {
 

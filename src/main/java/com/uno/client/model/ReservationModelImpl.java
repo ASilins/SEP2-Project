@@ -10,6 +10,11 @@ import java.beans.PropertyChangeSupport;
 import java.rmi.RemoteException;
 import java.util.List;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class ReservationModelImpl implements ReservationModel{
 
   private ReservationClient client;

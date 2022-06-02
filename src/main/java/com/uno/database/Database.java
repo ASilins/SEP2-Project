@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * An interface that has all methods for getting items from and to the database.
  * @author Arturs Silins, Siddhartha Grasse
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface Database {
 

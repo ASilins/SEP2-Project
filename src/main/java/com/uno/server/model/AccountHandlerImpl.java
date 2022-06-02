@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * A class that implements account handler interface and handles account objects.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class AccountHandlerImpl implements AccountHandler {
 

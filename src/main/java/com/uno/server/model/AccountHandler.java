@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Interface that lets server interact with database for the client account
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface AccountHandler {
 

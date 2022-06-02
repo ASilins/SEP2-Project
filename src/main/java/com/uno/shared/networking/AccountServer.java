@@ -10,7 +10,7 @@ import java.util.List;
  * An interface that extends remote. Handles receiving and sending account
  * objects to the server and back to the client.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface AccountServer extends Remote {
 

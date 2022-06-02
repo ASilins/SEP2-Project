@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * An interface of a class for handling table items
  * @author Siddhartha Grasse, Bhupas Gautam
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public interface Tables extends Subject {

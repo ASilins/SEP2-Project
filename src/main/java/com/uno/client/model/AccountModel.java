@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * An interface that is used to interact from the gui with the model.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public interface AccountModel extends Subject {
 
@@ -17,6 +17,10 @@ public interface AccountModel extends Subject {
    * @param account The object that will be sent.
    */
   void createAccount(Account account);
+
+  /**
+   * A method that finds the connected phoneNumber and password in the system to login
+   */
 
   Account login(String phoneNumber, String password);
 

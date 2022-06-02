@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * This class is a server class that handles menu item objects in the server
  * @author Arturs Silins
- * @version 0.1.0
+ * @version 1.0.0
  */
 public class MenuItemsServerImpl implements MenuItemsServer {
 

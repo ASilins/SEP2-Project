@@ -6,11 +6,15 @@ import com.uno.shared.transferobjects.Reservation;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
 import java.beans.PropertyChangeEvent;
 import java.sql.Timestamp;
 import java.util.Date;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
 public class EditBookingViewModel {
 
   private ReservationModel model;
@@ -58,26 +62,44 @@ public class EditBookingViewModel {
     model.updateReservation(new Reservation(Integer.parseInt(bookingNr.get()), customerNr.get(), null, Integer.parseInt(guests.get()), comment.get(), dietaryNeeds.get(), Integer.parseInt(tableNr.get())));
   }
 
+  /**
+   * returns the string property of the bookingNr
+   */
   public StringProperty bookingNrProperty() {
     return bookingNr;
   }
 
+  /**
+   * returns the string property of the customerNr
+   */
   public StringProperty customerNrProperty() {
     return customerNr;
   }
 
+  /**
+   * returns the string property of the guests
+   */
   public StringProperty guestsProperty() {
     return guests;
   }
 
+  /**
+   * returns the string property of the comment
+   */
   public StringProperty commentProperty() {
     return comment;
   }
 
+  /**
+   * returns the string property of the dietaryNeeds
+   */
   public StringProperty dietaryNeedsProperty() {
     return dietaryNeeds;
   }
 
+  /**
+   * returns the string property of the tableNr
+   */
   public StringProperty tableNrProperty() {
     return tableNr;
   }

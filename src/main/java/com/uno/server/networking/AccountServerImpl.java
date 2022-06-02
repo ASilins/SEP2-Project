@@ -14,7 +14,7 @@ import java.util.List;
  * A class that implements account server interface. Handles receiving and
  * sending account objects from the server to the client.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class AccountServerImpl implements AccountServer {
 

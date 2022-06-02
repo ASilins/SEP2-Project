@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * A class for an object that will be transferred between the server and the database
  * @author Ondrej Klimek
- * @version 0.2.0
+ * @version 1.0.0
  */
 
 public class PreOrder implements Serializable {

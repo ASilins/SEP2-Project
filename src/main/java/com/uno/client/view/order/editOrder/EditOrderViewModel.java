@@ -8,6 +8,12 @@ import javafx.beans.property.StringProperty;
 
 import java.beans.PropertyChangeEvent;
 
+/**
+ *
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class EditOrderViewModel {
 
   private MakeOrder model;
@@ -48,18 +54,30 @@ public class EditOrderViewModel {
     model.editOrder(new Order(Integer.parseInt(orderNumber.get()), Integer.parseInt(menuItem.get()), comment.get(), dietaryNeeds.get()));
   }
 
+  /**
+   * returns the string property of the order number
+   */
   public StringProperty orderNumberProperty() {
     return orderNumber;
   }
 
+  /**
+   * returns the string property of the menu item
+   */
   public StringProperty menuItemProperty() {
     return menuItem;
   }
 
+  /**
+   * returns the string property of the comment
+   */
   public StringProperty commentProperty() {
     return comment;
   }
 
+  /**
+   * returns the string property of the dietary needs
+   */
   public StringProperty dietaryNeedsProperty() {
     return dietaryNeeds;
   }

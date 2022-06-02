@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * A class that handles creating and logging in account.
  * @author Arturs Silins
- * @version 0.2.0
+ * @version 1.0.0
  */
 public class AccountImpl implements AccountModel {
 
@@ -49,6 +49,12 @@ public class AccountImpl implements AccountModel {
   public void createAccount(Account account) {
     client.createAccount(account);
   }
+
+  /**
+   * A class that sends account object to client and returns it
+   * @param phoneNumber The object that will be sent.
+   * @param password The object that will be sent.
+   */
 
   @Override
   public Account login(String phoneNumber, String password) {
