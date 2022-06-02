@@ -31,15 +31,32 @@ public class AccountHandlerImpl implements AccountHandler {
     database.createAccount(account);
   }
 
+  /**
+   * a login method
+   * @param phoneNumber takes phone number as a parameter
+   * @param password takes password as a parameter
+   * @return returns an account
+   */
+
   @Override
   public Account login(String phoneNumber, String password) {
     return database.login(phoneNumber, password);
   }
 
+  /**
+   * a method that retrieves users
+   * @return returns a list of accounts
+   */
+
   @Override
   public List<Account> getUsers() {
     return database.getUsers();
   }
+
+  /**
+   * a method that edits a user
+   * @param account takes an account as a parameter
+   */
 
   @Override
   public void editUser(Account account) {

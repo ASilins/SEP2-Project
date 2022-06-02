@@ -11,9 +11,24 @@ import java.util.List;
  */
 public interface ReservationHandler {
 
+  /**
+   * a method that creates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
+
   void createReservation(Reservation reservation);
 
+  /**
+   * a method that updates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
+
   void updateReservation(Reservation reservation);
+
+  /**
+   * a method that retrieves reservations
+   * @return returns a list of reservations
+   */
 
   List<Reservation> getReservations();
 }

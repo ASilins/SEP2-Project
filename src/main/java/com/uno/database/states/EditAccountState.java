@@ -9,7 +9,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * A class for editing accounts
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class EditAccountState implements DatabaseHandler {
+
+  /**
+   * a method that sends an account to the database
+   * @param object The object that will be inserted in to database.
+   */
 
   @Override
   public void sendToDatabase(Object object) {

@@ -17,15 +17,30 @@ public class ReservationHandlerImpl implements ReservationHandler {
     this.database = database;
   }
 
+  /**
+   * a method that creates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
+
   @Override
   public void createReservation(Reservation reservation) {
     database.createReservation(reservation);
   }
 
+  /**
+   * a method that updates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
+
   @Override
   public void updateReservation(Reservation reservation) {
     database.updateReservation(reservation);
   }
+
+  /**
+   * a method that retrieves reservations
+   * @return returns a list of reservations
+   */
 
   @Override
   public List<Reservation> getReservations() {

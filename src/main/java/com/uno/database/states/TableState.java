@@ -12,7 +12,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class for table state
+ * @author Arturs Silins
+ * @version 1.0.0
+ */
+
 public class TableState implements DatabaseHandler {
+
+  /**
+   * a method that sends a table object to the database
+   * @param object The object that will be inserted in to database.
+   */
 
   @Override
   public void sendToDatabase(Object object) {
@@ -38,6 +49,11 @@ public class TableState implements DatabaseHandler {
   public void sendListToDatabase(Object list) {
 
   }
+
+  /**
+   * a method that retrieves a list of tables from the database
+   * @return returns a table list
+   */
 
   @Override
   public Object getListFromDatabase() {

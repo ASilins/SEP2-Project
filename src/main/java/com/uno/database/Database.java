@@ -31,14 +31,11 @@ public interface Database {
    */
 
   void createPreOrder(int orderNum, int reservationNum);
-  
-  
-   /** Method that creates a new Table entry in the database.
-   * @param table The entry that will be inserted in the database.
-   */
-  void bookTable(Table table);
 
-  void editTableBooking(Table oldBooking, Table newBooking);
+  /**
+   * a method that edits an order in the database
+   * @param newOrder takes the new version of the order as a parameter
+   */
 
   void editOrder(Order newOrder);
 
@@ -48,23 +45,75 @@ public interface Database {
    */
   void createAccount(Account account);
 
+  /**
+   * method that creates a new entry in the database
+   * @param reservation takes a reservation as a parameter
+   */
+
   void createReservation(Reservation reservation);
+
+  /**
+   * a method for logging in
+   * @param phoneNumber takes phone number as a parameter
+   * @param password takes password as a parameter
+   * @return returns an account
+   */
 
   Account login(String phoneNumber, String password);
 
+  /**
+   * a method that retrieves orders from the database
+   * @return returns an ArrayList of orders
+   */
+
   ArrayList<Order> getOrders();
+
+  /**
+   * a method that updates a reservation
+   * @param reservation takes a reservation as a parameter
+   */
 
   void updateReservation(Reservation reservation);
 
+  /**
+   * a method that gets reservations
+   * @return returns a list of reservations
+   */
+
   List<Reservation> getReservations();
+
+  /**
+   * a method that gets tables
+   * @return returns a list of tables
+   */
 
   List<Table> getTables();
 
+  /**
+   * a method that creates a new table
+   * @param table takes a table as a parameter
+   */
+
   void createTable(Table table);
+
+  /**
+   * a method that edits a table
+   * @param table takes a table as a parameter
+   */
 
   void updateTable(Table table);
 
+  /**
+   * a method that retrieves a list of users
+   * @return returns a list of accounts
+   */
+
   List<Account> getUsers();
+
+  /**
+   * a method that edits a user
+   * @param account takes an updated version of account as a parameter
+   */
 
   void editUser(Account account);
 }

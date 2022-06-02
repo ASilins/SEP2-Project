@@ -55,6 +55,11 @@ public class ReservationState implements DatabaseHandler {
 
   }
 
+  /**
+   * a method that gets a list of reservations from the database
+   * @return returns a reservation list
+   */
+
   @Override
   public Object getListFromDatabase() {
     List<Reservation> list = new ArrayList<>();

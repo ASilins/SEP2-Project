@@ -17,9 +17,26 @@ public interface AccountHandler {
    */
   void createAccount(Account account);
 
+  /**
+   * a login method
+   * @param phoneNumber takes phone number as a parameter
+   * @param password takes password as a parameter
+   * @return returns an account
+   */
+
   Account login(String phoneNumber, String password);
 
+  /**
+   * a method that retrieves users
+   * @return returns a list of accounts
+   */
+
   List<Account> getUsers();
+
+  /**
+   * a method that edits a user
+   * @param account takes an account as a parameter
+   */
 
   void editUser(Account account);
 }

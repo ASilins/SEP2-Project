@@ -42,6 +42,12 @@ public class AccountState implements DatabaseHandler {
     }
   }
 
+  /**
+   * A method that gets a user corresponding to the searchParameter
+   * @param searchParameter search parameter
+   * @return returns the user that corresponds to the search parameter
+   */
+
   @Override
   public Object getFromDatabase(Object searchParameter) {
     try (Connection connection = DatabaseConnection.getInstance().getConnection()) {
@@ -65,6 +71,11 @@ public class AccountState implements DatabaseHandler {
   public void sendListToDatabase(Object list) {
 
   }
+
+  /**
+   * A method that retrieves a list of users
+   * @return list of accounts
+   */
 
   @Override
   public Object getListFromDatabase() {
