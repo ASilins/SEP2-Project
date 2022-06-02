@@ -24,8 +24,8 @@ public class Table implements Serializable {
     public Table(int tableNumber, int capacity, boolean availability)
     {
         this.tableNumber = tableNumber;
-        this.capacity=capacity;
-        this.availability=availability;
+        this.capacity = capacity;
+        this.availability = availability;
 
 
     }
